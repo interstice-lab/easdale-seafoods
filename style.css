@@ -1,13 +1,6 @@
 /* =========================================================
    🎨 PALETTE COULEUR – extraite du logo Easdale Seafoods
-   =========================================================
-   🔵 Bleu marine (texte)    : #0b3c5d
-   🔷 Bleu clair (vague)     : #8eaddb
-   🟠 Rouge crevette         : #d3654f
-   ⚪ Crème clair (fond)     : #f1f0ed
-   🪢 Bleu corde (footer)    : #1f558c
    ========================================================= */
-
 :root {
   --color-text-dark: #0b3c5d;
   --color-blue-light: #8eaddb;
@@ -17,7 +10,7 @@
 }
 
 /* =========================================================
-   🧱 BASE GLOBALE DU SITE (body, typos, couleurs)
+   🔤 TYPOGRAPHIE & BASE GLOBALE
    ========================================================= */
 body {
   font-family: "Inter", "Segoe UI", sans-serif;
@@ -27,9 +20,6 @@ body {
   color: var(--color-text-dark);
 }
 
-/* =========================================================
-   🧩 TITRES (hiérarchie visuelle + cohérence de charte)
-   ========================================================= */
 h1 {
   color: var(--color-text-dark);
   font-size: 2rem;
@@ -42,7 +32,7 @@ h2 {
 }
 
 /* =========================================================
-   🖼️ IMAGES STANDARD (format, aspect ratio, bord doux)
+   🖼️ IMAGES & LOGO
    ========================================================= */
 img {
   width: 620px;
@@ -51,11 +41,8 @@ img {
   border-radius: 6px;
 }
 
-/* =========================================================
-   🦐 LOGO IMAGE (plus petit, aligné au texte si inline)
-   ========================================================= */
 #img-logo {
-  width: 150px;                  /* Suggestion : 96px en version mobile */
+  width: 150px;
   height: auto;
   vertical-align: middle;
   margin-right: 0.5rem;
@@ -63,21 +50,7 @@ img {
 }
 
 /* =========================================================
-   📐 FLEX CONTAINER GÉNÉRAL POUR PIED DE PAGE STICKY
-   ========================================================= */
-#flex-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  min-height: 100svh; /* support mobile moderne */
-}
-
-#flex-container > footer {
-  margin-top: auto;
-}
-
-/* =========================================================
-   🔘 BOUTONS – couleur crevette, style arrondi simple
+   🔘 BOUTONS & ACTIONS
    ========================================================= */
 .button {
   background-color: var(--color-shrimp);
@@ -89,113 +62,8 @@ img {
 }
 
 /* =========================================================
-   🧭 FOOTER – fond corde, texte clair centré
+   🌐 NAVIGATION & HEADER
    ========================================================= */
-footer {
-  background-color: var(--color-cord);
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-/* =========================================================
-   🌊 BANNIÈRE D’ACCUEIL (hero) – image plein écran
-   ========================================================= */
-.hero-banner {
-  background-image: url("Images/Boats.jpeg");
-  background-size: cover;
-  background-position: center;
-  width: 100vw;
-  height: 400px;
-  margin-left: calc(-50vw + 50%);
-}
-
-/* =========================================================
-   📱 RESPONSIVE DESIGN – TABLETTES / PETITS ÉCRANS
-   ========================================================= */
-
-@media (max-width: 1024px) {
-  body {
-    margin: 1rem;
-  }
-
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  #img-logo {
-    width: 96px;
-  }
-}
-
-/* =========================================================
-   📲 RESPONSIVE DESIGN – MOBILES (portrait < 768px)
-   ========================================================= */
-
-@media (max-width: 768px) {
-  .logo-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  h1 {
-    font-size: 1.5rem;
-    text-align: center;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-    text-align: center;
-  }
-
-  p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  video {
-    width: 100%;
-    height: auto;
-  }
-
-  #img-logo {
-    width: 72px;
-  }
-}
-
-/* =========================================================
-   🧾 RESPONSIVE DESIGN – ÉCRANS TRÈS PETITS (< 480px)
-   ========================================================= */
-
-@media (max-width: 480px) {
-  body {
-    font-size: 0.9rem;
-  }
-
-  footer {
-    text-align: center;
-    font-size: 0.8rem;
-    padding: 1rem 0.5rem;
-  }
-
-  #img-logo {
-    width: 58px;
-  }
-}
-/* ========== NAVIGATION PRINCIPALE ========== */
-
-/* ========== Branding (Logo + Nom du site) ========== */
 .brand {
   display: flex;
   align-items: center;
@@ -242,71 +110,91 @@ footer {
   border: 1px solid #ccc;
 }
 
-/* ========== BURGER ICON ========== */
 .burger {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
 }
 
-/* ========== MOBILE ========== */
-@media (max-width: 768px) {
-  #nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--color-background);
-    position: absolute;
-    top: 60px;
-    right: 0;
-    padding: 1rem;
-    border-left: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-  }
-
-  #nav-links.show {
-    display: flex;
-  }
-
-  .burger {
-    display: block;
-  }
-}
-/* ========== MOBILE LOGO ========== */
-@media (max-width: 480px) {
-  .brand {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .site-title {
-    font-size: 1rem;
-    text-align: left;
-  }
+/* =========================================================
+   🧱 STRUCTURE PRINCIPALE
+   ========================================================= */
+#flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* ========== Blocs de contenu ========== */
+#flex-container > footer {
+  margin-top: auto;
+}
+
+footer {
+  background-color: var(--color-cord);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* =========================================================
+   🌊 HERO BANNER / VIDEO
+   ========================================================= */
+.hero-banner {
+  background-image: url("Images/Boats.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 400px;
+  margin-left: calc(-50vw + 50%);
+}
+
+.hero-video,
+.product-video video {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 8px;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-video h3 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--color-text-dark);
+}
+
+/* =========================================================
+   🧩 BLOCS DE CONTENU
+   ========================================================= */
 .content-block {
   display: flex;
   gap: 2rem;
   padding: 2rem 0;
   align-items: center;
   border-bottom: 1px solid #ccc;
-}
-.content-block.reverse {
-  flex-direction: row-reverse;
-}
-/*ANIMATION*/
-.content-block {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.content-block.reverse {
+  flex-direction: row-reverse;
 }
 
 .content-block.visible {
   opacity: 1;
   transform: translateY(0);
 }
-/* ---------------------------------------------*/
+
 .text-block {
   flex: 1;
 }
@@ -334,18 +222,9 @@ footer {
   border-radius: 8px;
 }
 
-/* ========== Responsive empilement mobile ========== */
-@media (max-width: 768px) {
-  .content-block {
-    flex-direction: column;
-  }
-
-  .text-block, .media-block {
-    width: 100%;
-  }
-}
-
-/*====== Gallery===========*/
+/* =========================================================
+   📷 GALERIE
+   ========================================================= */
 .gallery-section {
   padding: 2rem 0;
   text-align: center;
@@ -356,6 +235,7 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
   margin-top: 1rem;
+  width: 100%;
 }
 
 .gallery-grid img {
@@ -368,7 +248,27 @@ footer {
   transform: scale(1.05);
 }
 
-/* ========== Produits : titre + grille de cartes ========== */
+.gallery-preview {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.gallery-cover {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-cover:hover {
+  transform: scale(1.03);
+}
+
+/* =========================================================
+   🦐 PRODUITS
+   ========================================================= */
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -381,7 +281,7 @@ footer {
 .product-card {
   background-color: white;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   padding: 1rem;
   text-align: center;
   transition: transform 0.3s ease;
@@ -403,49 +303,97 @@ footer {
   font-size: 1.1rem;
   color: var(--color-text-dark);
 }
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
+
+/* =========================================================
+   📱 RESPONSIVE DESIGN
+   ========================================================= */
+@media (max-width: 1024px) {
+  body {
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #img-logo {
+    width: 96px;
+  }
 }
 
-.gallery-grid,
-.product-grid {
-  width: 100%;
-  margin-top: 2rem;
+@media (max-width: 768px) {
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+
+  #img-logo {
+    width: 72px;
+  }
+
+  .content-block {
+    flex-direction: column;
+  }
+
+  .text-block,
+  .media-block {
+    width: 100%;
+  }
 }
 
-.gallery-preview {
-  margin-top: 2rem;
-  text-align: center;
-}
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
 
-.gallery-cover {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
+  footer {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 1rem 0.5rem;
+  }
 
-.gallery-cover:hover {
-  transform: scale(1.03);
-}
-.hero-video,
-.product-video video {
-  width: 100%;
-  max-width: 900px;
-  border-radius: 8px;
-  margin: 2rem auto;
-  display: block;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-}
+  #img-logo {
+    width: 58px;
+  }
 
-.product-video h3 {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  color: var(--color-text-dark);
+  .brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-title {
+    font-size: 1rem;
+    text-align: left;
+  }
 }
