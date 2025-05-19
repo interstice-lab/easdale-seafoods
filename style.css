@@ -471,6 +471,21 @@ footer {
   font-size: 0.8rem;
 }
 
+/* =========================================================
+   🎥     VIDÉOS RESPONSIVES
+   ========================================================= */
+.media-block video,
+.product-video video,
+.hero-video,
+.hero-video-footer video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
 
 /* =========================================================
    📱 RESPONSIVE DESIGN
@@ -509,6 +524,12 @@ footer {
     padding: 1rem;
     border-left: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+  }
+  .media-block video,
+  .product-video video,
+  .hero-video,
+  .hero-video-footer video {
+    display: block !important;
   }
  .contact-page .contact-grid {
     grid-template-columns: 1fr;
