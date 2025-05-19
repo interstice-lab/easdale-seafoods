@@ -71,3 +71,22 @@ The goal: rebuild everything from scratch while respecting the client’s identi
 * This project documents a real learning curve in HTML/CSS and site structure.
 * The goal is not only to showcase a redesign but also to prove my ability to think, build, and iterate.
 * This `devlog.md` is a mirror of the process, not just a list of technical tasks.
+
+## 🔁 2025-05-20 – CSS Refactor + Media Folder Cleanup
+
+**What was done:**
+- ♻️ Full reorganization of `style.css`:
+  - Grouped by logical sections (color palette, layout, nav, gallery, products…)
+  - Cleaned up redundant rules
+  - Better media query hierarchy (1024px, 768px, 480px)
+
+- 📂 Media tidy-up:
+  - Moved all `.mp4` files from `/Images` to a new `/Videos` folder
+  - Updated all paths in `index.html` accordingly
+  - Removed unused `image.png`
+
+**Why it matters:**
+- Improves CSS readability and maintainability
+- Prepares the project for long-term scalability?
+- Keeps media assets well organized for future usage (e.g. image vs. video handling)
+
