@@ -379,7 +379,7 @@ footer {
 }
 
 /* =========================================================
-   🦐 PRODUITS – Uniformisation des cartes
+   🦐 PRODUITS – Cartes uniformes
    ========================================================= */
 .product-grid {
   display: grid;
@@ -389,15 +389,33 @@ footer {
   margin: 2rem auto 0;
 }
 
-/* Carte en flex vertical, image en haut, texte en bas */
 .product-card {
   display: flex;
   flex-direction: column;
-  background-color: rgb(246, 248, 249);
+  background-color: rgb(197, 231, 255);
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
   transition: transform 0.3s ease;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-body h3 {
+  margin: 0;
+  color: var(--color-text-dark);
+  font-size: 1.2rem;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
 }
 
 /* Container fixe pour l’image, ratio 4:3 */
