@@ -221,7 +221,22 @@ footer {
   height: auto;
   border-radius: 8px;
 }
+/* =========================================================
+   📽️ SECTION HÉRO VIDÉO – Contact
+   ========================================================= */
+.hero-video-footer {
+  width: 100%;
+  background-color: #000;
+  padding: 2rem 0;
+}
 
+.hero-video-footer video {
+  display: block;
+  margin: 0 auto;
+  max-width: 960px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
 /* =========================================================
    📷 GALERIE
    ========================================================= */
@@ -331,6 +346,25 @@ footer {
 }
 
 @media (max-width: 768px) {
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-background);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 1rem;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
   .logo-container {
     display: flex;
     flex-direction: column;

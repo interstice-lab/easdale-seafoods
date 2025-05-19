@@ -10,155 +10,132 @@
 </head>
 <body>
     <header class="navbar">
-  <div class="nav-container">
-    <!-- 👇 Bloc logo + nom wrappé proprement -->
-   <div class="brand">
-      <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale">
-      <h1 class="site-title">Easdale Seafoods Ltd</h1>
+      <div class="nav-container">
+        <div class="brand">
+          <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale">
+          <h1 class="site-title">Easdale Seafoods Ltd</h1>
+        </div>
+        <nav id="nav-links">
+          <a href="index.html#about">About us</a>
+          <a href="index.html#products">Our products</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <select id="lang-select" aria-label="Language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+          </select>
+        </nav>
+        <div class="burger" id="burger-toggle">&#9776;</div>
+      </div>
+    </header>
+
+    <div id="flex-container">
+      <h1>Live Shellfish from the West coast of Scotland</h1>
+      <div class="hero-banner"></div>
+
+      <section class="content-block" id="about">
+        <div class="text-block">
+          <h2>About Us</h2>
+          <p>Easdale Seafoods is a small, family-run business based on the West Coast of Scotland. Since 1990, we have specialised in the export of live shellfish — with a focus on quality, sustainability, and trust.</p>
+          <p>We source exclusively from local 'creel' boats operating in the clear waters surrounding Easdale, ensuring gentle handling and top-grade freshness at every stage of the process.</p>
+          <p>Our products are delivered to wholesalers, chefs, and distributors across Europe and beyond — with the care and consistency only a close-knit team can provide.</p>
+          <a href="contact.html" class="button">Contact us</a>
+        </div>
+        <div class="media-block">
+          <video src="videos/EasdaleIsland.mp4" controls muted playsinline class="hero-video"></video>
+        </div>
+      </section>
+
+      <section id="products" class="content-block column">
+        <div class="container">
+          <div class="text-block center">
+            <h2>Our Products</h2>
+            <p>We export live langoustines, lobsters, and razor clams to markets across Europe and Asia. Our products are harvested sustainably and packed with care.</p>
+            <a href="gallery.html" class="button">See Gallery</a>
+          </div>
+          <div class="product-grid">
+            <div class="product-card">
+              <img src="Images/liveprawns.jpeg" alt="Live Langoustines">
+              <h3>Langoustines</h3>
+            </div>
+            <div class="product-card">
+              <img src="Images/Couteaux.jpg" alt="Live Razors">
+              <h3>Razor Clams</h3>
+            </div>
+            <div class="product-card">
+              <img src="Images/lobsters.jpeg" alt="Live Lobsters">
+              <h3>Lobsters</h3>
+            </div>
+          </div>
+          <div class="product-video">
+            <h3>Freshness in Motion</h3>
+            <video src="videos/liveprawns1.mp4" controls muted playsinline></video>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="content-block column">
+        <div class="container">
+          <div class="text-block center">
+            <h2>Gallery</h2>
+            <p>Discover where we work, what we catch, and how we live — in images.</p>
+            <a href="gallery.html" class="button">View Full Gallery</a>
+          </div>
+          <div class="gallery-preview">
+            <a href="gallery.html">
+              <img src="Images/boatsbalvicar.jpeg" alt="View Gallery" class="gallery-cover">
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="hero-video-footer">
+        <video src="Videos/Landscape.mp4" autoplay muted loop playsinline></video>
+      </section>
+
+      <footer class="footer-grid">
+        <div>
+          <h4>Easdale Seafoods Ltd</h4>
+          <p>Balvicar, Isle of Seil<br>OBAN, Argyll, Scotland PA34 4T</p>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p>📞 01852 300 295<br>📠 01852 300 422</p>
+        </div>
+        <div>
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Legal notice</a></li>
+          </ul>
+        </div>
+      </footer>
     </div>
-     <!-- Menu de navigation -->
-    <nav id="nav-links">
-      <a href="#about">About us</a>
-      <a href="#products">Our products</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-      <select id="lang-select" aria-label="Language">
-        <option value="en">EN</option>
-        <option value="fr">FR</option>
-      </select>
-    </nav>
 
-    <div class="burger" id="burger-toggle">&#9776;</div>
-  </div>
-</header>
+    <script>
+      const burger = document.getElementById("burger-toggle");
+      const navLinks = document.getElementById("nav-links");
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    </script>
 
-<div id="flex-container">
-  <h1>Live Shellfish from the West coast of Scotland</h1>
+    <script>
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
 
-  <div class="hero-banner"></div>
-
-    <section class="content-block" id="about">
-    <div class="text-block">
-      <h2>About Us</h2>
-      <p>
-      Easdale Seafoods is a small, family-run business based on the West Coast of Scotland.  
-      Since 1990, we have specialised in the export of live shellfish — with a focus on quality, sustainability, and trust.
-    </p>
-    <p>
-      We source exclusively from local 'creel' boats operating in the clear waters surrounding Easdale, ensuring gentle handling and top-grade freshness at every stage of the process.
-    </p>
-    <p>
-      Our products are delivered to wholesalers, chefs, and distributors across Europe and beyond — with the care and consistency only a close-knit team can provide.
-    </p>
-      <a href="#contact" class="button">Contact us</a>
-    </div>
-    <div class="media-block">
-        <video src="videos/EasdaleIsland.mp4" controls muted playsinline class="hero-video"></video>
-    </div>
-    </section>
-
-<section id="products" class="content-block column">
-  <div class="container">
-    <div class="text-block center">
-    <h2>Our Products</h2>
-    <p>
-      We export live langoustines, lobsters, and razor clams to markets across Europe and Asia.  
-      Our products are harvested sustainably and packed with care.
-    </p>
-    <a href="#gallery" class="button">See Gallery</a>
-  </div>
-
-  <div class="product-grid">
-    <div class="product-card">
-      <img src="Images/liveprawns.jpeg" alt="Live Langoustines">
-      <h3>Langoustines</h3>
-      
-    </div>
-    <div class="product-card">
-      <img src="Images/Couteaux.jpg" alt="Live Razors">
-      <h3>Razor Clams</h3>
-    </div>
-    <div class="product-card">
-      <img src="Images/lobsters.jpeg" alt="Live Lobsters">
-      <h3>Lobsters</h3>
-    </div>
-  </div>
-  <!-- 👇 Vidéo hors grille -->
-<div class="product-video">
-  <h3>Freshness in Motion</h3>
-  <video src="videos/liveprawns1.mp4" controls muted playsinline></video>
-</div>
-</section>
-
-
-<section id="gallery" class="content-block column">
-  <div class="container">
-    <div class="text-block center">
-      <h2>Gallery</h2>
-      <p>Discover where we work, what we catch, and how we live — in images.</p>
-      <a href="gallery.html" class="button">View Full Gallery</a>
-    </div>
-
-    <div class="gallery-preview">
-      <a href="gallery.html">
-        <img src="Images/boatsbalvicar.jpeg" alt="View Gallery" class="gallery-cover">
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<section class="content-block reverse" id="Contact">
-  <div class="text-block">
-    <h2>Contact Us</h2>
-    <p>xxx</p>
-    <a href="#contact" class="button">Contact</a>
-  </div>
-  <div class="media-block">
-    <video src="Videos/Landscape.mp4" autoplay muted loop playsinline poster="Images/Logo.png"></video>
-  </div>
-</section>
-
-   
-    </main>
-    
-
-
-    <footer>
-        © EASDALE SEAFOODS Limited - 2025 - Web Design by BDF Consulting Ltd.
-       EASDALE SEAFOODS LTD 
-       Balvicar, Isle of Seil
-       OBAN Argyll 
-       Scotland
-       PA34 4T
-       TEL   01852 300 295
-       Fax   01852 300 422
-    </footer>
-</div>
-<script>
-  const burger = document.getElementById("burger-toggle");
-  const navLinks = document.getElementById("nav-links");
-
-  burger.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-  });
-</script>
-<script>
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  document.querySelectorAll('.content-block').forEach(block => {
-    observer.observe(block);
-  });
-</script>
-
+      document.querySelectorAll('.content-block').forEach(block => {
+        observer.observe(block);
+      });
+    </script>
 </body>
 </html>
