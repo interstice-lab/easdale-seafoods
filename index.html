@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easdale Seafoods</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="Images/favicon-shrimp-wave.ico">
+</head>
+<body>
+    <header class="navbar">
+  <div class="nav-container">
+    <!-- 👇 Bloc logo + nom wrappé proprement -->
+   <div class="brand">
+      <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale">
+      <h1 class="site-title">Easdale Seafoods Ltd</h1>
+    </div>
+     <!-- Menu de navigation -->
+    <nav id="nav-links">
+      <a href="#about">About us</a>
+      <a href="#products">Our products</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+      <select id="lang-select" aria-label="Language">
+        <option value="en">EN</option>
+        <option value="fr">FR</option>
+      </select>
+    </nav>
+
+    <div class="burger" id="burger-toggle">&#9776;</div>
+  </div>
+</header>
+
+<div id="flex-container">
+  <h1>Live Shellfish from the West coast of Scotland</h1>
+
+  <div class="hero-banner"></div>
+
+    <section class="content-block" id="about">
+    <div class="text-block">
+      <h2>About Us</h2>
+      <p>
+      Easdale Seafoods is a small, family-run business based on the West Coast of Scotland.  
+      Since 1990, we have specialised in the export of live shellfish — with a focus on quality, sustainability, and trust.
+    </p>
+    <p>
+      We source exclusively from local 'creel' boats operating in the clear waters surrounding Easdale, ensuring gentle handling and top-grade freshness at every stage of the process.
+    </p>
+    <p>
+      Our products are delivered to wholesalers, chefs, and distributors across Europe and beyond — with the care and consistency only a close-knit team can provide.
+    </p>
+      <a href="#contact" class="button">Contact us</a>
+    </div>
+    <div class="media-block">
+        <video src="images/EasdaleIsland.mp4" controls muted playsinline class="hero-video"></video>
+    </div>
+    </section>
+
+<section id="products" class="content-block column">
+  <div class="container">
+    <div class="text-block center">
+    <h2>Our Products</h2>
+    <p>
+      We export live langoustines, lobsters, and razor clams to markets across Europe and Asia.  
+      Our products are harvested sustainably and packed with care.
+    </p>
+    <a href="#gallery" class="button">See Gallery</a>
+  </div>
+
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="Images/liveprawns.jpeg" alt="Live Langoustines">
+      <h3>Langoustines</h3>
+      
+    </div>
+    <div class="product-card">
+      <img src="Images/Couteaux.jpg" alt="Live Razors">
+      <h3>Razor Clams</h3>
+    </div>
+    <div class="product-card">
+      <img src="Images/lobsters.jpeg" alt="Live Lobsters">
+      <h3>Lobsters</h3>
+    </div>
+  </div>
+  <!-- 👇 Vidéo hors grille -->
+<div class="product-video">
+  <h3>Freshness in Motion</h3>
+  <video src="images/liveprawns1.mp4" controls muted playsinline></video>
+</div>
+</section>
+
+
+<section id="gallery" class="content-block column">
+  <div class="container">
+    <div class="text-block center">
+      <h2>Gallery</h2>
+      <p>Discover where we work, what we catch, and how we live — in images.</p>
+      <a href="gallery.html" class="button">View Full Gallery</a>
+    </div>
+
+    <div class="gallery-preview">
+      <a href="gallery.html">
+        <img src="Images/boatsbalvicar.jpeg" alt="View Gallery" class="gallery-cover">
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<section class="content-block reverse" id="Contact">
+  <div class="text-block">
+    <h2>Contact Us</h2>
+    <p>xxx</p>
+    <a href="#contact" class="button">Contact</a>
+  </div>
+  <div class="media-block">
+    <video src="Images/Landscape.mp4" autoplay muted loop playsinline poster="Images/Logo.png"></video>
+  </div>
+</section>
+
+   
+    </main>
+    
+
+
+    <footer>
+        © EASDALE SEAFOODS Limited - 2025 - Web Design by BDF Consulting Ltd.
+       EASDALE SEAFOODS LTD 
+       Balvicar, Isle of Seil
+       OBAN Argyll 
+       Scotland
+       PA34 4T
+       TEL   01852 300 295
+       Fax   01852 300 422
+    </footer>
+</div>
+<script>
+  const burger = document.getElementById("burger-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  burger.addEventListener("click", () => {
+    navLinks.classList.toggle("show");
+  });
+</script>
+<script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.content-block').forEach(block => {
+    observer.observe(block);
+  });
+</script>
+
+</body>
+</html>

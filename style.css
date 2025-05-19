@@ -1,0 +1,451 @@
+/* =========================================================
+   🎨 PALETTE COULEUR – extraite du logo Easdale Seafoods
+   =========================================================
+   🔵 Bleu marine (texte)    : #0b3c5d
+   🔷 Bleu clair (vague)     : #8eaddb
+   🟠 Rouge crevette         : #d3654f
+   ⚪ Crème clair (fond)     : #f1f0ed
+   🪢 Bleu corde (footer)    : #1f558c
+   ========================================================= */
+
+:root {
+  --color-text-dark: #0b3c5d;
+  --color-blue-light: #8eaddb;
+  --color-shrimp: #d3654f;
+  --color-background: #fefefe;
+  --color-cord: #1f558c;
+}
+
+/* =========================================================
+   🧱 BASE GLOBALE DU SITE (body, typos, couleurs)
+   ========================================================= */
+body {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  line-height: 1.6;
+  margin: 2rem;
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
+}
+
+/* =========================================================
+   🧩 TITRES (hiérarchie visuelle + cohérence de charte)
+   ========================================================= */
+h1 {
+  color: var(--color-text-dark);
+  font-size: 2rem;
+  padding: 6px;
+}
+
+h2 {
+  color: var(--color-blue-light);
+  font-weight: normal;
+}
+
+/* =========================================================
+   🖼️ IMAGES STANDARD (format, aspect ratio, bord doux)
+   ========================================================= */
+img {
+  width: 620px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   🦐 LOGO IMAGE (plus petit, aligné au texte si inline)
+   ========================================================= */
+#img-logo {
+  width: 150px;                  /* Suggestion : 96px en version mobile */
+  height: auto;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   📐 FLEX CONTAINER GÉNÉRAL POUR PIED DE PAGE STICKY
+   ========================================================= */
+#flex-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100svh; /* support mobile moderne */
+}
+
+#flex-container > footer {
+  margin-top: auto;
+}
+
+/* =========================================================
+   🔘 BOUTONS – couleur crevette, style arrondi simple
+   ========================================================= */
+.button {
+  background-color: var(--color-shrimp);
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* =========================================================
+   🧭 FOOTER – fond corde, texte clair centré
+   ========================================================= */
+footer {
+  background-color: var(--color-cord);
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* =========================================================
+   🌊 BANNIÈRE D’ACCUEIL (hero) – image plein écran
+   ========================================================= */
+.hero-banner {
+  background-image: url("Images/Boats.jpeg");
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 400px;
+  margin-left: calc(-50vw + 50%);
+}
+
+/* =========================================================
+   📱 RESPONSIVE DESIGN – TABLETTES / PETITS ÉCRANS
+   ========================================================= */
+
+@media (max-width: 1024px) {
+  body {
+    margin: 1rem;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #img-logo {
+    width: 96px;
+  }
+}
+
+/* =========================================================
+   📲 RESPONSIVE DESIGN – MOBILES (portrait < 768px)
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+
+  #img-logo {
+    width: 72px;
+  }
+}
+
+/* =========================================================
+   🧾 RESPONSIVE DESIGN – ÉCRANS TRÈS PETITS (< 480px)
+   ========================================================= */
+
+@media (max-width: 480px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 1rem 0.5rem;
+  }
+
+  #img-logo {
+    width: 58px;
+  }
+}
+/* ========== NAVIGATION PRINCIPALE ========== */
+
+/* ========== Branding (Logo + Nom du site) ========== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-size: 1.3rem;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+
+.navbar {
+  background-color: var(--color-background);
+  border-bottom: 1px solid #ccc;
+  padding: 0.5rem 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+#nav-links a {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-weight: 500;
+}
+
+#lang-select {
+  padding: 0.2rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* ========== BURGER ICON ========== */
+.burger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 768px) {
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--color-background);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    padding: 1rem;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+  }
+
+  #nav-links.show {
+    display: flex;
+  }
+
+  .burger {
+    display: block;
+  }
+}
+/* ========== MOBILE LOGO ========== */
+@media (max-width: 480px) {
+  .brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-title {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
+
+/* ========== Blocs de contenu ========== */
+.content-block {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+.content-block.reverse {
+  flex-direction: row-reverse;
+}
+/*ANIMATION*/
+.content-block {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.content-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* ---------------------------------------------*/
+.text-block {
+  flex: 1;
+}
+
+.text-block h2 {
+  font-size: 1.6rem;
+  color: var(--color-blue-light);
+  margin-bottom: 1rem;
+}
+
+.text-block p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.media-block {
+  flex: 1;
+}
+
+.media-block video,
+.media-block img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ========== Responsive empilement mobile ========== */
+@media (max-width: 768px) {
+  .content-block {
+    flex-direction: column;
+  }
+
+  .text-block, .media-block {
+    width: 100%;
+  }
+}
+
+/*====== Gallery===========*/
+.gallery-section {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05);
+}
+
+/* ========== Produits : titre + grille de cartes ========== */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: var(--color-text-dark);
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.gallery-grid,
+.product-grid {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.gallery-preview {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.gallery-cover {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-cover:hover {
+  transform: scale(1.03);
+}
+.hero-video,
+.product-video video {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 8px;
+  margin: 2rem auto;
+  display: block;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.product-video h3 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--color-text-dark);
+}
