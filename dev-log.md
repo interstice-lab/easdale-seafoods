@@ -90,3 +90,31 @@ The goal: rebuild everything from scratch while respecting the client’s identi
 - Prepares the project for long-term scalability?
 - Keeps media assets well organized for future usage (e.g. image vs. video handling)
 
+## 2025-05-19 – Contact Page & Footer Overhaul
+
+**What was done:**  
+- Created `contact.html` with hero banner and overlay to introduce the form visually.  
+- Implemented a two‑column grid: introductory text + styled form container.  
+- Updated `style.css` with responsive CSS for `.contact-hero`, `.contact-page .contact-grid`, and form styling.  
+- Refactored the footer into a three‑column layout (`.footer-grid`) matching brand colors and added a separate credits line (`.footer-credits`).  
+- Removed legacy `.contact-hero` CSS rules now superseded by `.hero-video-footer` and new hero styling.
+
+**Why it matters:**  
+- Enhances user engagement by giving the contact form context and visual appeal.  
+- Ensures consistency across pages (header, footer).  
+- Lays groundwork for future form handling and accessibility improvements.
+
+## 🔁 2025-05-19 – Contact Page & Footer Overhaul
+
+**What was done:**
+- 📄 Added `contact.html` page with hero banner and overlay for visual context
+- 🧩 Implemented a responsive two-column grid combining intro text and a styled form container
+- 🖌️ Updated `style.css` with new rules for `.contact-hero`, `.contact-page .contact-grid`, and form styling
+- 🪢 Refactored footer into a three-column layout (`.footer-grid`) matching brand colors and added a separate credits line (`.footer-credits`)
+- ♼ Removed legacy CSS rules superseded by the new contact and footer styling
+
+**Why it matters:**
+- Enhances user engagement by giving the contact form context and visual appeal
+- Ensures consistent header, form, and footer design across the site
+- Lays groundwork for future enhancements like form handling and accessibility
+

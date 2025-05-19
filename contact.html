@@ -20,37 +20,65 @@
         <a href="gallery.html">Gallery</a>
         <a href="contact.html" class="active">Contact</a>
       </nav>
+      <div class="burger" id="burger-toggle">&#9776;</div>
     </div>
   </header>
 
+  <!-- Hero Banner for Contact -->
+  <section class="hero-banner contact-hero" style="background-image: url('Images/factorydrone.jpeg');">
+    <div class="hero-content">
+      <h2>Get in Touch</h2>
+      <p>Whether you're a buyer, partner, or curious visitor, we’d love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
   <main class="container contact-page">
-    <h2>Contact Us</h2>
-    <p>We’d love to hear from you. Whether you're a buyer, partner or curious visitor — drop us a message!</p>
-
-    <form class="contact-form" action="#" method="POST">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required>
-
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required>
-
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-
-      <button type="submit" class="button">Send</button>
-    </form>
+    <div class="contact-grid">
+      <!-- Intro Text -->
+      <div class="contact-intro">
+        <h3>Contact Us</h3>
+        <p>For inquiries about orders, partnerships, or product information, please fill out the form — we’ll get back to you promptly.</p>
+      </div>
+      <!-- Form -->
+      <div class="contact-form-container">
+        <form class="contact-form" action="#" method="POST">
+          <div class="form-row">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-row full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <div class="form-row full">
+            <button type="submit" class="button">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </main>
 
+  <!-- Footer -->
   <footer class="footer-grid">
-    <div>
+    <div class="footer-col">
       <h4>Easdale Seafoods Ltd</h4>
       <p>Balvicar, Isle of Seil<br>OBAN, Argyll, Scotland PA34 4T</p>
+      <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
     </div>
-    <div>
-      <h4>Contact</h4>
-      <p>📞 01852 300 295<br>📠 01852 300 422</p>
+    <div class="footer-col">
+      <h4>Our Products</h4>
+      <ul>
+        <li>Live Langoustines</li>
+        <li>Razor Clams</li>
+        <li>Lobsters</li>
+      </ul>
     </div>
-    <div>
+    <div class="footer-col">
       <h4>Links</h4>
       <ul>
         <li><a href="index.html#about">About</a></li>
@@ -61,5 +89,14 @@
       </ul>
     </div>
   </footer>
+  <div class="footer-credits">
+    <small>© Easdale Seafoods Ltd – 2025 • Web design by BDF Consulting Ltd</small>
+  </div>
+
+  <script>
+    const burger = document.getElementById("burger-toggle");
+    const navLinks = document.getElementById("nav-links");
+    burger.addEventListener("click", () => navLinks.classList.toggle("show"));
+  </script>
 </body>
 </html>
