@@ -70,6 +70,53 @@ img {
   gap: 0.5rem;
 }
 
+/* 🌟 BRAND CONTAINER (full-width, centered content) */
+.brand-container {
+  width: 100%;
+  background: var(--color-background);
+  padding: 1rem 0;
+}
+.brand-container .brand,
+.brand-container .site-title {
+  display: inline-block;
+  vertical-align: middle;
+}
+.brand-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.brand-container #img-logo {
+  width: 120px;           /* tweak as needed */
+  margin-right: 0.5rem;
+}
+.brand-container .site-title {
+  font-size: 1.5rem;
+  color: var(--color-text-dark);
+  margin: 0;
+}
+/* ─── Brand sizing ───────────────────────────────────────── */
+.brand-container {
+  /* give some breathing room below the brand */
+  padding-bottom: 1.5rem;
+}
+
+.brand-container #img-logo {
+  width: 200px;      /* increase logo width */
+}
+
+.brand-container .site-title {
+  font-size: 2.5rem; /* larger brand title */
+  line-height: 1.2;
+}
+
+/* make sure your page H1 sits a notch below */
+h1 {
+  font-size: 2rem;   /* slightly smaller than the brand title */
+  margin-top: 0;     /* reduce extra space */
+  padding: 0.5rem 0;
+}
+
 .site-title {
   font-size: 1.3rem;
   color: var(--color-text-dark);
@@ -154,14 +201,16 @@ footer {
 /* =========================================================
    🌊 HERO BANNER / VIDEO
    ========================================================= */
+
 .hero-banner {
-  width: 100%;              /* plein conteneur, pas plein viewport */
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1500px;
+  margin: 1rem auto;             /* sits under the header */
   height: 400px;
   background: url("Images/Boats.jpeg") center/cover no-repeat;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
-
 .hero-video,
 .product-video video {
   width: 100%;
@@ -326,7 +375,7 @@ footer {
   border-radius: 8px;
 }
 /* =========================================================
-   📽️ SECTION HÉRO VIDÉO – Contact
+   📽️ SECTION HÉRO VIDÉO FOOTER
    ========================================================= */
 .hero-video-footer {
   width: 100%;
