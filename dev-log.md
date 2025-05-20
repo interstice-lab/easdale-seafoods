@@ -172,3 +172,19 @@ Unified layout logic for .content-block, .product-card, and responsive stacking
 Creates a cohesive experience across all pages and screen sizes
 
 Fixes critical navigation issues that could confuse or block user flow
+
+## Dev-Log Entry (2025-05-20) afternoon
+
+What was done:
+
+🐞 Tracked down a stubborn CSS bug: a missing } in the 768px media query was breaking the responsive layout.
+
+🔧 Added the closing brace, restored full-width banner overflow, and re-centered all content on smaller screens.
+
+✨ Tweaked container padding and breakpoints so no more horizontal scrolling or squeezed sections on mobile.
+
+Why it matters:
+
+Users on phones and tablets will now see edge-to-edge banners and properly centered content without accidentally swiping side to side.
+
+Sets a solid CSS foundation for future tweaks and keeps our design consistent across all devices.

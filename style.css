@@ -22,6 +22,10 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-dark);
 }
+html,
+body {
+  overflow-x: hidden;
+}
 h1,
 h2,
 h3,
@@ -68,11 +72,15 @@ p {
 /* =========================================================
    🖼️ IMAGES & MEDIA
    ========================================================= */
-img,
+img {
+  max-width: 100%;
+  height: auto;
+}
 video {
   max-width: 100%;
   height: auto;
   display: block;
+  border-radius: 6px;
 }
 
 /* =========================================================
@@ -160,21 +168,29 @@ video {
   min-height: 100vh;
 }
 .site-container {
-  max-width: 600px;
+  max-width: 900px;
   margin: 0 auto;
   padding: 0 1rem;
   flex: 1;
+  box-sizing: border-box;
+}
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 /* =========================================================
    🌊 HERO BANNER / SECTION
    ========================================================= */
 .hero-banner {
+  position: relative;
   width: 100vw;
-  height: 400px;
-  margin-left: 50%;
+  left: 50%;
   transform: translateX(-50%);
-  background: url('Images/Boats.jpeg') no-repeat center/cover;
+  height: 400px;
+  background: url('Images/Boats.jpeg') center/cover no-repeat;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .page-title {
@@ -199,16 +215,19 @@ video {
 .content-block .media-block {
   flex: 1;
 }
-
+body.index-page .site-container {
+  max-width: 1000px;
+}
 /* =========================================================
    🦐 PRODUCTS GRID
    ========================================================= */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* plus étroit que 240px */
   gap: 2rem;
   max-width: 1000px;
   margin: 2rem auto;
+  padding: 0 1rem; /* un peu d’air autour */
 }
 .product-card {
   background-color: rgb(197, 231, 255);
@@ -237,15 +256,29 @@ video {
 }
 
 /* =========================================================
-   📽️ VIDEO WRAPPER
+   📽️ VIDEO WRAPPER - FOOTER
    ========================================================= */
-.video-wrapper,
+
 .hero-video-footer {
+  width: 100vw; /* full viewport width */
+  position: relative;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  height: auto;
+  padding: 0;
+}
+
+.hero-video-footer video {
+  width: 100%;
+  max-height: 500px; /* Hauteur de la video*/
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper video {
   text-align: center;
   padding: 2rem 0;
-}
-.video-wrapper video,
-.hero-video-footer video {
   max-width: 960px;
   width: 100%;
   aspect-ratio: 16/9;
@@ -311,9 +344,9 @@ video {
    📷 GALLERY PREVIEW
    ========================================================= */
 .gallery-cover {
-  max-width: 800px;
+  max-width: 400px;
   margin: 2rem auto;
-  border-radius: 10px;
+  border-radius: 2px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
 }
@@ -353,28 +386,6 @@ video {
 /* =========================================================
    📱 RESPONSIVE DESIGN
    ========================================================= */
-@media (max-width: 1024px) {
-  .video-wrapper {
-    max-width: 70vw;
-  }
-
-  body {
-    margin: 1rem;
-  }
-  h1 {
-    font-size: 1.8rem;
-  }
-  h2 {
-    font-size: 1.4rem;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  #img-logo {
-    width: 96px;
-  }
-}
 
 /* DESKTOP NAV — always visible, horizontal */
 #nav-links {
@@ -391,7 +402,7 @@ video {
 .burger {
   display: none; /* hide burger on desktop */
 }
-
+/*==================768 px ======================*/
 @media (max-width: 768px) {
   #nav-links {
     display: none;
@@ -418,11 +429,27 @@ video {
     cursor: pointer;
     margin-left: auto;
   }
-  .content-block {
-    flex-direction: column;
-  }
+
   .site-container {
     padding: 0 1rem;
+  }
+  .content-block,
+  .content-block.reverse {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .content-block .text-block,
+  .content-block .media-block {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+  .product-grid {
+    grid-template-columns: 1fr; /* une seule colonne */
+    max-width: 100%; /* réduit la largeur max globale */
+    margin: 2rem auto;
+    padding: 0 1rem;
+    gap: 1.5rem;
   }
 }
 @media (max-width: 480px) {
