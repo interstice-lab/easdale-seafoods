@@ -184,6 +184,13 @@ h1 {
   margin-top: auto;
 }
 
+/* Conteneur principal – espace blanc (padding) à gauche et à droite */
+.site-container {
+  max-width:650px;       /* ou la largeur de votre choix */
+  margin: 0 auto;          /* centre horizontalement */
+  padding: 0 1rem;         /* 1rem d’espace à gauche + droite */
+}
+
 footer {
   background-color: var(--color-cord);
   color: white;
@@ -203,12 +210,13 @@ footer {
    ========================================================= */
 
 .hero-banner {
-  width: 100%;
-  max-width: 1500px;
-  margin: 1rem auto;             /* sits under the header */
-  height: 400px;
-  background: url("Images/Boats.jpeg") center/cover no-repeat;
-  border-radius: 8px;
+  width: 100vw;        /* toute la largeur de la fenêtre */
+  height: 400px;       /* ou la hauteur que vous voulez */
+  /* recentre le bloc sur l’écran */
+  margin-left: 50%;
+  transform: translateX(-50%);
+  /* image en fond centrée et recadrée (cover) */
+  background: url("Images/Boats.jpeg") no-repeat center/cover;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 .hero-video,
