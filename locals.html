@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery</title>
+    <title>Our Local Customers</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="Images/favicon-shrimp-wave.ico" />
   </head>
   <body>
-    <!-- NAVIGATION -->
+     <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-container">
         <div class="burger" id="burger-toggle">&#9776;</div>
         <nav id="nav-links">
           <a href="index.html#about">About us</a>
-          <a href="index.html#products">Products</a>
-          <a href="locals.html">Local customers</a>
+          <a href="products.html">Our products</a>
+          <a href="locals.html">Our Local customers</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
           <select id="lang-select" aria-label="Language">
@@ -33,57 +33,27 @@
         <h1 class="site-title">Easdale Seafoods Ltd</h1>
       </div>
     </div>
-    <!-- HERO -->
-    <div id="text-block">
-      <h1>Discover where we work, what we catch, and how we live — in images</h1> 
-      <!-- WRAPPED CONTENT -->
-      <div class="site-container">
-  <main>
-    <section class="gallery-section">
-      <div class="container">
-        <h2>Gallery</h2>
-        <p>Moments from the West Coast — land, sea, and work.</p>
+<!-- LOCAL CUSTOMERS -->
+        <section class="content-block" id="Local costumers">
+          <div class="text-block">
+    <h2>Local Customers</h2>
+    <p>At Easdale Seafoods, we’ve always believed that the strongest partnerships are rooted in place — in shared landscapes, seasons, and values.</p>
+    <p>For over 30 years, we’ve worked hand-in-hand with local restaurants who, like us, honour quality, simplicity, and integrity. Our shellfish is caught daily by small creel boats from the clear waters around Easdale, and delivered directly to kitchens just minutes from our harbour.</p>
+    <p>We’re proud to supply two of the finest establishments on the Isle of Seil:</p>
+    <ul>
+      <li><strong>Tigh an Truish Inn</strong> — An iconic 2AA Rosette restaurant beside the historic Bridge Over the Atlantic, known for its refined, seasonal cuisine, and featured on <em>Masterchef: The Professionals</em>.</li>
+      <li><strong>Oyster Bar, Ellenabeich</strong> — A welcoming family-run restaurant offering fresh shellfish and locally farmed produce in one of the most scenic spots on the west coast.</li>
+    </ul>
+    <p>These partnerships are built on trust, quality, and a shared respect for what the land and sea provide.</p>
+  </div>
+          <div class="media-block">
+            <img src="Images/boatsbalvicar.jpeg" />
+          </div>
+        </section>
+  </body>
 
-        <div class="gallery-grid with-captions">
-          <figure>
-            <img src="Images/boatsbalvicar.jpeg" alt="Boats in Balvicar" />
-            <figcaption>Boats in Balvicar</figcaption>
-          </figure>
-          <figure>
-            <img src="Images/Boats.jpeg" alt="Creel boats on the water" />
-            <figcaption>Boats on the Water</figcaption>
-          </figure>
-          <figure>
-            <img src="Images/liveprawns.jpeg" alt="Live Langoustines" />
-            <figcaption>XXL Live Langoustines</figcaption>
-          </figure>
-          <figure>
-            <img src="Images/factorydrone.jpeg" alt="Seafood Factory (Drone View)" />
-            <figcaption>Factory from Above</figcaption>
-          </figure>
-          <figure>
-            <img src="Images/casiers1.jpeg" alt="Creels stacked on dock" />
-            <figcaption>Creels – Dockside</figcaption>
-          </figure>
-          <figure>
-            <img src="Images/casiers2.jpeg" alt="Creels – close-up" />
-            <figcaption>Creels – Close-up</figcaption>
-          </figure>
-          <figure>
-            <img src="Images/easdaleisland.jpeg" alt="Easdale Island" />
-            <figcaption>Easdale Island</figcaption>
-          </figure>
-        </div>
-
-        <div class="text-block center" style="margin-top: 2rem;">
-          <a href="index.html" class="button">← Back to Home</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-
-  <footer class="footer-grid">
+<!-- FOOTER -->
+      <footer class="footer-grid">
         <div class="footer-col">
           <h4>Easdale Seafoods Ltd</h4>
           <p>Balvicar, Isle of Seil<br />OBAN, Argyll, Scotland PA34 4T</p>
@@ -113,7 +83,7 @@
         <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
       </div>
     </div>
-    <script>
+<script>
       const burger = document.getElementById('burger-toggle');
       const navLinks = document.getElementById('nav-links');
       burger.addEventListener('click', () => {
@@ -138,5 +108,5 @@
         observer.observe(block);
       });
     </script>
-</body>
+  </body>
 </html>

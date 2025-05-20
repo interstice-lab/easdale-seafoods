@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Easdale Seafoods</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="Images/favicon-shrimp-wave.ico">
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon-shrimp-wave.ico" />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-container">
         <div class="burger" id="burger-toggle">&#9776;</div>
         <nav id="nav-links">
           <a href="index.html#about">About us</a>
-          <a href="index.html#products">Our products</a>
+          <a href="index.html#products">Products</a>
+          <a href="locals.html">Local customers</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
           <select id="lang-select" aria-label="Language">
@@ -24,141 +26,167 @@
         </nav>
       </div>
     </header>
-   <div class="brand-container"> 
-    <div class="brand">
-          <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale">
-          <h1 class="site-title">Easdale Seafoods Ltd</h1>
+    <!-- BRAND -->
+    <div class="brand-container">
+      <div class="brand">
+        <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale" />
+        <h1 class="site-title">Easdale Seafoods Ltd</h1>
+      </div>
     </div>
-    </div> 
+
+    <!-- HERO -->
     <div id="flex-container">
       <h1>Live Shellfish from the West coast of Scotland</h1>
       <!-- Bandeau full-width : en dehors de votre conteneur central -->
-  <section class="hero-banner"></section>
-     <div class="site-container">
-      <section class="content-block" id="about">
-        <div class="text-block">
-          <h2>About Us</h2>
-          <p>Easdale Seafoods is a small, family-run business based on the West Coast of Scotland. Since 1990, we have specialised in the export of live shellfish — with a focus on quality, sustainability, and trust.</p>
-          <p>We source exclusively from local 'creel' boats operating in the clear waters surrounding Easdale, ensuring gentle handling and top-grade freshness at every stage of the process.</p>
-          <p>Our products are delivered to wholesalers, chefs, and distributors across Europe and beyond — with the care and consistency only a close-knit team can provide.</p>
-          <a href="contact.html" class="button">Contact us</a>
-        </div>
-        <div class="media-block">
-          <video src="videos/EasdaleIsland.mp4" controls muted playsinline class="hero-video"></video>
-        </div>
-      </section>
+      <section class="hero-banner"></section>
+      <!-- WRAPPED CONTENT -->
+      <div class="site-container">
+        <!-- ABOUT -->
+        <section class="content-block" id="about">
+          <div class="text-block">
+            <h2>About Us</h2>
+            <p>
+              Easdale Seafoods is a small, family-run business based on the West Coast of Scotland.
+              Since 1990, we have specialised in the export of live shellfish — with a focus on
+              quality, sustainability, and trust.
+            </p>
+            <p>
+              We source exclusively from local 'creel' boats operating in the clear waters
+              surrounding Easdale, ensuring gentle handling and top-grade freshness at every stage
+              of the process.
+            </p>
+            <p>
+              Our products are delivered to wholesalers, chefs, and distributors across Europe and
+              beyond — with the care and consistency only a close-knit team can provide.
+            </p>
+            <a href="contact.html" class="button">Contact us</a>
+          </div>
+          <div class="media-block">
+            <video
+              src="videos/EasdaleIsland.mp4"
+              controls
+              muted
+              playsinline
+              class="hero-video"
+            ></video>
+          </div>
+        </section>
+        <!-- PRODUCTS -->
+        <div class="product-grid">
+          <div class="product-card">
+            <div class="img-container">
+              <img src="Images/liveprawns.jpeg" alt="Langoustines" />
+            </div>
+            <div class="card-body">
+              <h3>Langoustines</h3>
+            </div>
+          </div>
 
-     <div class="product-grid">
-      <div class="product-card">
-        <div class="img-container">
-          <img src="Images/liveprawns.jpeg" alt="Langoustines">
-        </div>
-        <div class="card-body">
-          <h3>Langoustines</h3>
-        </div>
-      </div>
+          <div class="product-card">
+            <div class="img-container">
+              <img src="Images/Couteaux.jpg" alt="Razor Clams" />
+            </div>
+            <div class="card-body">
+              <h3>Razor Clams</h3>
+            </div>
+          </div>
 
-      <div class="product-card">
-        <div class="img-container">
-          <img src="Images/Couteaux.jpg" alt="Razor Clams">
+          <div class="product-card">
+            <div class="img-container">
+              <img src="Images/lobsters.jpeg" alt="Lobsters" />
+            </div>
+            <div class="card-body">
+              <h3>Lobsters</h3>
+            </div>
+          </div>
         </div>
-        <div class="card-body">
-          <h3>Razor Clams</h3>
-        </div>
+        <!-- LOCAL CUSTOMERS -->
+        <section class="content-block" id="Local costumers">
+          <div class="text-block">
+            <h2>Local Customers</h2>
+            <p>Easdale Seafoods supplies local costumers.</p>
+            <p>XXX.</p>
+            <p>YYY.</p>
+            <a href="locals.html" class="button">See more</a>
+          </div>
+          <div class="media-block">
+            <img src="Images/boatsbalvicar.jpeg" />
+          </div>
+        </section>
+        <!--  GALLERY -->
+        <section id="gallery" class="content-block">
+          <div class="media-block">
+            <a href="gallery.html">
+              <img src="Images/boatsbalvicar.jpeg" alt="View Gallery" class="gallery-cover" />
+            </a>
+          </div>
+          <div class="text-block">
+            <h2>Gallery</h2>
+            <p>Discover where we work, what we catch, and how we live — in images.</p>
+            <a href="gallery.html" class="button">View Full Gallery</a>
+          </div>
+        </section>
       </div>
-
-      <div class="product-card">
-        <div class="img-container">
-          <img src="Images/lobsters.jpeg" alt="Lobsters">
-        </div>
-        <div class="card-body">
-          <h3>Lobsters</h3>
-        </div>
-      </div>
-     </div>
-
-     <section class="content-block" id="Local costumers">
-        <div class="text-block">
-          <h2>Local Costumers</h2>
-          <p>Easdale Seafoods supplies local costumers.</p>
-          <p>XXX.</p>
-          <p>YYY.</p>
-          <a href="local.html" class="button">See more</a>
-        </div>
-        <div class="media-block">
-          <img src="Images/boatsbalvicar.jpeg">
-        </div>
-      </section>
-
-      <section id="gallery" class="content-block">
-      <div class="media-block">
-        <a href="gallery.html">
-          <img src="Images/boatsbalvicar.jpeg" alt="View Gallery" class="gallery-cover">
-        </a>
-      </div>
-      <div class="text-block">
-        <h2>Gallery</h2>
-        <p>Discover where we work, what we catch, and how we live — in images.</p>
-        <a href="gallery.html" class="button">View Full Gallery</a>
-      </div>
-     </section>
-     </div>
+      <!-- IMAGE / Video FOOTER -->
       <section class="hero-video-footer">
         <video src="videos/Landscape.mp4" autoplay muted loop playsinline></video>
       </section>
-
+      <!-- FOOTER -->
       <footer class="footer-grid">
-      <div class="footer-col">
-        <h4>Easdale Seafoods Ltd</h4>
-        <p>Balvicar, Isle of Seil<br>OBAN, Argyll, Scotland PA34 4T</p>
-        <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Our Products</h4>
-        <ul>
-          <li>Live Langoustines</li>
-          <li>Razor Clams</li>
-          <li>Lobsters</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Links</h4>
-        <ul>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#products">Products</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="#">Legal notice</a></li>
-        </ul>
-      </div>
-    </footer>
+        <div class="footer-col">
+          <h4>Easdale Seafoods Ltd</h4>
+          <p>Balvicar, Isle of Seil<br />OBAN, Argyll, Scotland PA34 4T</p>
+          <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
+        </div>
+        <div class="footer-col">
+          <h4>Our Products</h4>
+          <ul>
+            <li>Live Langoustines</li>
+            <li>Razor Clams</li>
+            <li>Lobsters</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#products">Products</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Legal notice</a></li>
+          </ul>
+        </div>
+      </footer>
 
-    <div class="footer-credits">
-      <small>© Easdale Seafoods Ltd – 2025 · Web design by BDF Consulting Ltd</small>
+      <div class="footer-credits">
+        <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
+      </div>
     </div>
-  </div>
 
     <script>
-      const burger = document.getElementById("burger-toggle");
-      const navLinks = document.getElementById("nav-links");
-      burger.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
+      const burger = document.getElementById('burger-toggle');
+      const navLinks = document.getElementById('nav-links');
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
       });
     </script>
 
     <script>
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
 
-      document.querySelectorAll('.content-block').forEach(block => {
+      document.querySelectorAll('.content-block').forEach((block) => {
         observer.observe(block);
       });
     </script>
-</body>
+  </body>
 </html>
