@@ -574,7 +574,7 @@ footer {
     width: 96px;
   }
 }
-
+/*=====================768 px ====================*/
 @media (max-width: 768px) {
   #nav-links {
     display: none;
@@ -648,8 +648,17 @@ footer {
   .media-block {
     width: 100%;
   }
+  .product-grid {
+    grid-template-columns: 1fr;
+    max-width: 80%;        /*si 100% > prend toute la largeur dispo*/
+    margin: 2rem auto 0;   /* recentre sous mobile */
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
-
+/*=====================480 px ====================*/
 @media (max-width: 480px) {
   body {
     font-size: 0.9rem;
@@ -674,4 +683,5 @@ footer {
     font-size: 1rem;
     text-align: left;
   }
+ 
 }
