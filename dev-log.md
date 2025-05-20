@@ -72,7 +72,7 @@ The goal: rebuild everything from scratch while respecting the client’s identi
 * The goal is not only to showcase a redesign but also to prove my ability to think, build, and iterate.
 * This `devlog.md` is a mirror of the process, not just a list of technical tasks.
 
-## 🔁 2025-05-20 – CSS Refactor + Media Folder Cleanup
+## 🔁 2025-05-19 – CSS Refactor + Media Folder Cleanup
 
 **What was done:**
 - ♻️ Full reorganization of `style.css`:
@@ -118,3 +118,21 @@ The goal: rebuild everything from scratch while respecting the client’s identi
 - Ensures consistent header, form, and footer design across the site
 - Lays groundwork for future enhancements like form handling and accessibility
 
+## 🔁 2025-05-20 – Navbar & Gallery Responsiveness
+
+**What was done:**
+- 🛠️ **Navbar refactor**    
+  - Increased vertical `padding` on `.navbar` to give more height and prevent the burger icon from overflowing  
+  - Centered the burger icon  and kept it pinned to the right edge  
+- 📱 **Mobile‐first branding**  
+  - Extracted logo + site title into a standalone mobile header block (`.mobile-branding`) displayed above the nav on small viewports  
+  - Tuned logo sizing and text alignment for `<768px` and `<480px` breakpoints  
+- 🖼️ **Gallery layout adjustment**  
+  - Switched the homepage preview back to a two-column “text + image” pattern (with alternating reverse layout on every other block)  
+  - Updated CSS so that on mobile the image always stacks _below_ its text, preserving the intended reading order  
+- 🎨 **CSS cleanup & reorganizing**  
+  - Grouped all header/nav rules into their own section, moved gallery styles into a `.gallery-section` block  
+  - Simplified media‐query logic for stacking (`.content-block`) and product cards  
+  - Removed obsolete overrides that were conflicting with the new `flex-direction: column` on small screens  
+
+ 

@@ -42,7 +42,7 @@ img {
 }
 
 #img-logo {
-  width: 150px;
+  width: 250px;
   height: auto;
   vertical-align: middle;
   margin-right: 0.5rem;
@@ -79,13 +79,17 @@ img {
 .navbar {
   background-color: var(--color-background);
   border-bottom: 1px solid #ccc;
-  padding: 0.5rem 1rem;
+  padding: 1rem 1rem;
   position: sticky;
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
 
 .nav-container {
+ max-width: 1200px;
+  margin: 0 auto;           /* centré horizontalement */
+  padding: 0 1rem;           /* petits espaces latéraux */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -111,8 +115,12 @@ img {
 }
 
 .burger {
+  margin-left: auto;
+  align-self: center;
   display: none;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
+  line-height: 1;
+  padding: 0.5rem;
   cursor: pointer;
 }
 
@@ -147,12 +155,11 @@ footer {
    🌊 HERO BANNER / VIDEO
    ========================================================= */
 .hero-banner {
-  background-image: url("Images/Boats.jpeg");
-  background-size: cover;
-  background-position: center;
-  width: 100vw;
+  width: 100%;              /* plein conteneur, pas plein viewport */
+  max-width: 1200px;
+  margin: 0 auto;
   height: 400px;
-  margin-left: calc(-50vw + 50%);
+  background: url("Images/Boats.jpeg") center/cover no-repeat;
 }
 
 .hero-video,
@@ -576,12 +583,27 @@ footer {
 }
 /*=====================768 px ====================*/
 @media (max-width: 768px) {
+
+  .brand {
+    justify-content: center;
+    width: 100%;
+  }
+  #img-logo {
+    width: 72px;            /* plus petit logo en mobile */
+    margin: 0;
+  }
+  .site-title {
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0;
+  }
+
   #nav-links {
     display: none;
     flex-direction: column;
     background-color: var(--color-background);
     position: absolute;
-    top: 60px;
+    top: 17px;
     right: 0;
     padding: 1rem;
     border-left: 1px solid #ccc;
@@ -605,7 +627,33 @@ footer {
   #nav-links.show {
     display: flex;
   }
-
+  .mobile-branding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    background: var(--color-background);
+  }
+  /* taille et espacement du logo */
+  #mobile-logo {
+    width: 72px;
+    margin-bottom: 0.5rem;
+  }
+  /* style du titre mobile */
+  .mobile-title {
+    font-size: 1.2rem;
+    color: var(--color-text-dark);
+    margin: 0;
+  }
+  /* on peut aussi recentrer le burger au-dessus */
+  .nav-container {
+    justify-content: center;
+    position: relative;
+  }
+  #burger-toggle {
+    position: absolute;
+    right: 1rem;
+  }
   .burger {
     display: block;
   }
@@ -657,6 +705,15 @@ footer {
     max-width: 100%;
     height: auto;
   }
+ .content-block {
+    flex-direction: column-reverse !important;
+  }
+.content-block.reverse .media-block,
+  .content-block.reverse .text-block {
+    width: 80%;
+    margin: 1rem auto;
+  }
+
 }
 /*=====================480 px ====================*/
 @media (max-width: 480px) {

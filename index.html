@@ -11,10 +11,7 @@
 <body>
     <header class="navbar">
       <div class="nav-container">
-        <div class="brand">
-          <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale">
-          <h1 class="site-title">Easdale Seafoods Ltd</h1>
-        </div>
+        <div class="burger" id="burger-toggle">&#9776;</div>
         <nav id="nav-links">
           <a href="index.html#about">About us</a>
           <a href="index.html#products">Our products</a>
@@ -25,10 +22,13 @@
             <option value="fr">FR</option>
           </select>
         </nav>
-        <div class="burger" id="burger-toggle">&#9776;</div>
       </div>
     </header>
-
+    
+    <div class="brand">
+          <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale">
+          <h1 class="site-title">Easdale Seafoods Ltd</h1>
+        </div>
     <div id="flex-container">
       <h1>Live Shellfish from the West coast of Scotland</h1>
       <div class="hero-banner"></div>
@@ -75,21 +75,31 @@
       </div>
     </div>
 
-
-      <section id="gallery" class="content-block column">
-        <div class="container">
-          <div class="text-block center">
-            <h2>Gallery</h2>
-            <p>Discover where we work, what we catch, and how we live — in images.</p>
-            <a href="gallery.html" class="button">View Full Gallery</a>
-          </div>
-          <div class="gallery-preview">
-            <a href="gallery.html">
-              <img src="Images/boatsbalvicar.jpeg" alt="View Gallery" class="gallery-cover">
-            </a>
-          </div>
+    <section class="content-block" id="Local costumers">
+        <div class="text-block">
+          <h2>Local Costumers</h2>
+          <p>Easdale Seafoods supplies local costumers.</p>
+          <p>XXX.</p>
+          <p>YYY.</p>
+          <a href="local.html" class="button">See more</a>
+        </div>
+        <div class="media-block">
+          <img src="Images/boatsbalvicar.jpeg">
         </div>
       </section>
+
+      <section id="gallery" class="content-block">
+      <div class="media-block">
+        <a href="gallery.html">
+          <img src="Images/boatsbalvicar.jpeg" alt="View Gallery" class="gallery-cover">
+        </a>
+      </div>
+      <div class="text-block">
+        <h2>Gallery</h2>
+        <p>Discover where we work, what we catch, and how we live — in images.</p>
+        <a href="gallery.html" class="button">View Full Gallery</a>
+      </div>
+    </section>
 
       <section class="hero-video-footer">
         <video src="videos/Landscape.mp4" autoplay muted loop playsinline></video>
