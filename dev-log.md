@@ -188,3 +188,35 @@ Why it matters:
 Users on phones and tablets will now see edge-to-edge banners and properly centered content without accidentally swiping side to side.
 
 Sets a solid CSS foundation for future tweaks and keeps our design consistent across all devices.
+
+## 🔁 2025-05-21 – Navigation Fix, New Page & Layout Harmonisation
+
+🆕 Products Page Added
+
+On index.html > section Product
+Wrapped each card in an <a> to make the entire card clickable, with target="\_self"
+
+🖼️ Gallery Overhaul
+
+Converted gallery.html into a true mosaic layout: responsive grid of images with captions
+
+Updated CSS so the gallery stacks on mobile (single-column) and expands on desktop
+
+🌐 Navbar Enhancements
+
+Refactored header/navigation CSS: added subtle box-shadow, hover underline animation, and improved spacing
+
+Fixed mobile “burger” menu so it only appears under 768 px and desktop links return above that breakpoint
+
+Centered and even-spaced menu items on desktop for better visual balance
+
+🎨 CSS Corrections & Cleanup
+
+Consolidated common styles (buttons, typography, containers)
+
+Adjusted .hero-banner and .hero-video-footer to reliably overflow full viewport width on all breakpoints
+
+Tuned product-grid padding/gaps so cards never “crush” against the viewport edges on narrow screens
+
+Why It Matters:
+Ensures a polished, consistent look across all pages; fixes critical navigation and layout bugs; makes product and gallery sections fully interactive and responsive.

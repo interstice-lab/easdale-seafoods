@@ -89,9 +89,11 @@ video {
 .navbar {
   background-color: var(--color-background);
   border-bottom: 1px solid #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* légère ombre portée */
   position: sticky;
   top: 0;
   z-index: 1000;
+  padding: 0.5rem 0;
 }
 .nav-container {
   position: relative;
@@ -99,7 +101,7 @@ video {
   margin: 0 auto;
   padding: 1rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-evenly; /*flex-end> a droite ou space-evenly pour centrer*/
   align-items: center;
 }
 #nav-links {
@@ -117,6 +119,8 @@ video {
   z-index: 1000;
 }
 #nav-links a {
+  position: relative; /* fait du <a> le conteneur de l’underline */
+  white-space: nowrap; /* empêche “About us” de passer à la ligne */
   text-decoration: none;
   color: var(--color-text-dark);
   font-weight: 500;
@@ -127,10 +131,47 @@ video {
 #nav-links .active {
   font-weight: bold;
 }
+/* effet souligné au hover */
+#nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: var(--color-shrimp);
+  transition: width 0.25s ease-in-out;
+}
+#nav-links a:hover::after {
+  background: var(--color-shrimp);
+}
+#nav-links a.active::after {
+  background: var(--color-blue-light);
+}
+#nav-links a:hover::after,
+#nav-links a.active::after {
+  width: 100%;
+}
+
+/* style du select langue */
+#lang-select {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: white;
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+  transition: border-color 0.2s ease;
+}
+#lang-select:focus {
+  outline: none;
+  border-color: var(--color-shrimp);
+}
 #nav-links.show {
   display: flex;
 }
 .burger {
+  color: var(--color-text-dark);
   display: none;
   font-size: 2rem;
   cursor: pointer;
@@ -166,6 +207,13 @@ video {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+.title-center {
+  display: flex;
+  justify-content: center; /* centre horizontalement */
+  align-items: center; /* centre verticalement si la div a une hauteur */
+  gap: 0.5rem;
+  text-align: center; /* au cas où, pour le contenu textuel */
 }
 .site-container {
   max-width: 900px;
@@ -217,6 +265,14 @@ video {
 }
 body.index-page .site-container {
   max-width: 1000px;
+}
+.media-block a {
+  color: var(--color-shrimp);
+  text-decoration: none;
+  font-weight: 500;
+}
+.media-block a:hover {
+  text-decoration: underline;
 }
 /* =========================================================
    🦐 PRODUCTS GRID
@@ -275,7 +331,6 @@ body.index-page .site-container {
   object-fit: cover;
   aspect-ratio: 16 / 9;
 }
-
 .video-wrapper video {
   text-align: center;
   padding: 2rem 0;
@@ -287,6 +342,19 @@ body.index-page .site-container {
 }
 .video-wrapper h3 {
   margin-bottom: 1rem;
+}
+
+.iframe-container {
+  width: 100%;
+  max-width: 100%; /* mobile : 100% */
+  aspect-ratio: 16 / 9; /* ou padding-bottom hack si tu préfères */
+  margin: 2rem auto;
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* =========================================================
@@ -349,6 +417,47 @@ body.index-page .site-container {
   border-radius: 2px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   cursor: pointer;
+}
+
+/* =========================================================
+   📷 GALLERY MOSAIC
+   ========================================================= */
+.gallery-grid {
+  display: grid;
+  /* as many 200px columns as fit, each at least 1 fr wide */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  /* make all rows the same height */
+  grid-auto-rows: 200px;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+
+/* reset figure margins & make it fill its cell */
+.gallery-grid figure {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* stretch the image to fill & crop */
+.gallery-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* optional: overlay the caption at the bottom */
+.gallery-grid figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.5rem;
+  background: rgba(11, 60, 93, 0.8);
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 /* =========================================================
@@ -452,6 +561,9 @@ body.index-page .site-container {
     gap: 1.5rem;
   }
 }
+.iframe-container {
+  max-width: 60%; /* max de la largeur sur desktop */
+}
 @media (max-width: 480px) {
   body {
     font-size: 0.9rem;
@@ -461,5 +573,9 @@ body.index-page .site-container {
   }
   #img-logo {
     width: 120px;
+  }
+  .title-center h1 {
+    font-size: 1.5rem;
+    padding: 0 1rem;
   }
 }

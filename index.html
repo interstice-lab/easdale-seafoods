@@ -6,7 +6,7 @@
     <title>Easdale Seafoods</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="Images/favicon-shrimp-wave.ico" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
   </head>
   <body>
     <!-- NAVIGATION -->
@@ -15,8 +15,8 @@
         <div class="burger" id="burger-toggle">&#9776;</div>
         <nav id="nav-links">
           <a href="index.html#about">About us</a>
-          <a href="index.html#products">Products</a>
-          <a href="locals.html">Local customers</a>
+          <a href="products.html">Products</a>
+          <a href="locals.html">Locals</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
           <select id="lang-select" aria-label="Language">
@@ -36,7 +36,9 @@
 
     <!-- HERO -->
     <div id="flex-container">
-      <h1>Live Shellfish from the West coast of Scotland</h1>
+      <div class="title-center">
+        <h1>Live Shellfish from the West coast of Scotland</h1>
+      </div>
       <!-- Bandeau full-width : en dehors de votre conteneur central -->
       <section class="hero-banner"></section>
       <!-- WRAPPED CONTENT -->
@@ -72,26 +74,34 @@
           </div>
         </section>
         <!-- PRODUCTS -->
+         <section class="content-block" id="products">
+         <div class="text-block">
+            <h2>Our Products</h2>
         <div class="product-grid">
           <div class="product-card">
+            <a href="products.html" target="_self" class="product-link">
             <div class="img-container">
               <img src="Images/liveprawns.jpeg" alt="Langoustines" />
             </div>
             <div class="card-body">
               <h3>Langoustines</h3>
             </div>
+            </a>
           </div>
 
           <div class="product-card">
+             <a href="products.html" target="_self" class="product-link">
             <div class="img-container">
               <img src="Images/Couteaux.jpg" alt="Razor Clams" />
             </div>
             <div class="card-body">
               <h3>Razor Clams</h3>
             </div>
+            </a>
           </div>
 
           <div class="product-card">
+             <a href="products.html" target="_self" class="product-link">
             <div class="img-container">
               <img src="Images/lobsters.jpeg" alt="Lobsters" />
             </div>
@@ -99,11 +109,14 @@
               <h3>Lobsters</h3>
             </div>
           </div>
+          </a>
         </div>
+        </section>
         <!-- LOCAL CUSTOMERS -->
+         
         <section class="content-block" id="Local costumers">
           <div class="text-block">
-            <h2>Local Customers</h2>
+            <h2>Locals</h2>
             <p>
               At Easdale Seafoods, we’ve always believed that the strongest partnerships are rooted
               in place — in shared landscapes, seasons, and values.
@@ -118,6 +131,7 @@
             <img src="Images/easdaleisland.jpeg" />
           </div>
         </section>
+        
         <!--  GALLERY -->
         <section id="gallery" class="content-block">
           <div class="media-block">
