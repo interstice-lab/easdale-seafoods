@@ -87,35 +87,52 @@ video {
    🌐 HEADER & NAVIGATION
    ========================================================= */
 .navbar {
+  max-height: 100px;
+  overflow: hidden;
   background-color: var(--color-background);
   border-bottom: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08); /* légère ombre portée */
   position: sticky;
   top: 0;
-  z-index: 1000;
-  padding: 0.5rem 0;
+  z-index: 10000;
+  padding: 0;
 }
+/* make brand + nav + burger sit in one row */
 .nav-container {
-  position: relative;
   max-width: 1200px;
+  height: 100%;
+  align-items: center; /* vertical centering */
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
   display: flex;
-  justify-content: space-evenly; /*flex-end> a droite ou space-evenly pour centrer*/
   align-items: center;
+  justify-content: space-around; /* brand left, nav center, burger right */
 }
+/* Brand sizing */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#img-logo {
+  width: 140px; /* tweak smaller for harmony */
+  height: auto;
+}
+.site-title {
+  font-size: 1.4rem; /* matches logo height */
+  margin: 0;
+  color: var(--color-text-dark);
+}
+/* Desktop nav */
 #nav-links {
-  display: none;
-  position: absolute;
-  top: 100%; /* drop-down just below the header */
-  right: 1rem; /* align to the right */
+  display: flex;
+  position: static;
+  align-items: center;
   background-color: var(--color-background);
   border: 1px solid #ccc;
   border-radius: 4px;
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  flex-direction: column;
-  gap: 0.5rem;
   z-index: 1000;
 }
 #nav-links a {
@@ -126,7 +143,7 @@ video {
   font-weight: 500;
   display: block;
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.75rem;
 }
 #nav-links .active {
   font-weight: bold;
@@ -176,28 +193,6 @@ video {
   font-size: 2rem;
   cursor: pointer;
   margin-left: auto;
-}
-
-/* =========================================================
-   🌟 BRANDING (logo + site-title separate from nav)
-   ========================================================= */
-.brand-container {
-  max-width: 1200px;
-  margin: 1rem auto;
-  text-align: center;
-}
-.brand-container .brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-#img-logo {
-  width: 200px;
-  border-radius: 6px;
-}
-.brand-container .site-title {
-  font-size: 2.5rem;
-  color: var(--color-text-dark);
 }
 
 /* =========================================================
@@ -516,16 +511,15 @@ body.index-page .site-container {
   #nav-links {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 75%;
     right: 1rem;
-    background-color: var(--color-background);
+    flex-direction: column;
+    background: var(--color-background);
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 1rem;
+    gap: 0.75rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    gap: 0.5rem;
-    z-index: 1000;
   }
 
   #nav-links.show {
