@@ -315,6 +315,95 @@ body.index-page .site-container {
 }
 
 /* =========================================================
+   ✨ PRODUCT PAGES – gallery, spacing & separators
+   ========================================================= */
+
+/* 1. Give each product block plenty of breathing room + subtle divider */
+.product-section {
+  padding: 4rem 1rem;
+  position: relative;
+}
+.product-section:not(:last-of-type) {
+  border-bottom: 2px solid var(--color-blue-light);
+}
+
+/* 2. Tuck the header/title under some space */
+.product-section > header {
+  margin-bottom: 2rem;
+}
+
+/* 3. Turn your media-gallery into a neat grid */
+.product-section .media-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.product-section .media-gallery figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 4. Center & constrain all text sections for readability */
+.product-section .product-overview,
+.product-section .product-details,
+.product-section .product-usage {
+  max-width: 800px;
+  margin: 0 auto 2.5rem;
+}
+
+/* 5. Give your definition lists some breathing room */
+.product-section dl.characteristics {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 2rem;
+  margin-bottom: 2rem;
+}
+
+/* 6. Style the “How to Enjoy” list */
+.product-section .product-usage ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+/* 7. Footer button alignment */
+.product-section footer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* also style the lone header figure */
+.product-section > header figure {
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  max-width: 400px;   /* match your others */
+  margin-left: auto;  /* center it */
+  margin-right: auto;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Stack media items full width */
+  .product-section .media-gallery {
+    grid-template-columns: 1fr;
+  }
+  /* Narrow text sections */
+  .product-section .product-overview,
+  .product-section .product-details,
+  .product-section .product-usage {
+    padding: 0 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+
+
+/* =========================================================
    📽️ VIDEO WRAPPER - FOOTER
    ========================================================= */
 
@@ -544,11 +633,14 @@ body.index-page .site-container {
   .site-container {
     padding: 0 1rem;
   }
+   /* Stack and center all content blocks */          
   .content-block,
   .content-block.reverse {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
   }
   .content-block .text-block,
   .content-block .media-block {
@@ -579,5 +671,46 @@ body.index-page .site-container {
   .title-center h1 {
     font-size: 1.5rem;
     padding: 0 1rem;
+  }
+
+/* Center everything nicely on small screens */
+
+  /* Make sure the main wrappers don’t overflow */
+  html, body, #flex-container, .site-container {
+    padding: 0 1rem;
+    margin: 0 auto;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* Center the hero title */
+  .title-center {
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Stack and center all content blocks */
+  .content-block,
+  .content-block.reverse {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+  .content-block .text-block,
+  .content-block .media-block {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Ensure full-width banners & videos stay centered */
+  .hero-banner,
+  .hero-video-footer,
+  .hero-video-footer video {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    transform: none;
   }
 }
