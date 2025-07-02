@@ -43,7 +43,9 @@
           </select>
         </nav>
         <!-- BURGER (mobile only) -->
-        <div class="burger" id="burger-toggle">&#9776;</div>
+        <button id="burger-toggle" class="burger" aria-label="Toggle menu">
+  &#9776;
+</button>
       </div>
     </header>
 
@@ -281,6 +283,8 @@
       const navLinks = document.getElementById('nav-links');
       burger.addEventListener('click', () => {
         navLinks.classList.toggle('show');
+        const expanded = burger.getAttribute("aria-expanded") === "true";
+  burger.setAttribute("aria-expanded", String(!expanded));
       });
     </script>
 

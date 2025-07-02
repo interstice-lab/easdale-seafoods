@@ -113,7 +113,9 @@ video {
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-around; /* brand left, nav center, burger right */
+  justify-content: space-between; 
+  position: relative;
+  z-index: 10000;
 }
 /* Brand sizing */
 .brand {
@@ -133,14 +135,11 @@ video {
 /* Desktop nav */
 #nav-links {
   display: flex;
-  position: static;
   align-items: center;
   background-color: var(--color-background);
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  border: none;
+  padding: 0;
+  box-shadow: none;
 }
 #nav-links a {
   position: relative; /* fait du <a> le conteneur de l’underline */
@@ -176,7 +175,20 @@ video {
 #nav-links a.active::after {
   width: 100%;
 }
-
+#nav-links.show {
+  display: flex;
+}
+.burger {
+  display: none;
+  position: relative;
+  color: var(--color-text-dark);
+  font-size: 1.8rem;
+  cursor: pointer;
+  margin-left: auto;
+  border: none;
+  background: none;
+  z-index: 10001;
+}
 /* style du select langue */
 #lang-select {
   padding: 0.25rem 0.5rem;
@@ -191,16 +203,7 @@ video {
   outline: none;
   border-color: var(--color-shrimp);
 }
-#nav-links.show {
-  display: flex;
-}
-.burger {
-  color: var(--color-text-dark);
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  margin-left: auto;
-}
+
 
 /* =========================================================
    🧱 LAYOUT PRINCIPAL
@@ -238,8 +241,8 @@ video {
 .hero-banner {
   position: relative;
   width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: auto;
+  transform: none;
   height: 400px;
   background-size: cover;
   background-position: center;
@@ -625,31 +628,48 @@ display: block;
 
 /* ≤ 780px – tablettes et petits écrans */
 @media (max-width: 780px) {
-  /* — Nav mobile : burger + menu caché/déroulé */
-  .nav-container {
-    position: relative;
-    z-index: 1000; /* au-dessus du reste du contenu */
+ .navbar {
+    overflow: visible; /* permet au menu absolu de dépasser */
   }
+  /* — Nav mobile : burger + menu caché/déroulé */
   #nav-links {
     display: none;
     position: absolute;
     top: 100%;
     right: 1rem;
-    flex-direction: column;
-    background: #fff;
-    padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    z-index: 1001; /* au-dessus de la nav-container */
+    /* … */
   }
   #nav-links.show {
     display: flex;
+    animation: slideDown 0.3s ease-out forwards;
   }
+}
+
+  /* uniquement sur l’état .show, tu remplaces transition par keyframes */
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to   { transform: translateY(   0); opacity: 1; }
+}
+
+@media (max-width: 780px) {
+  #nav-links.show {
+    animation: slideDown 0.3s ease-out forwards;
+    /* et tu peux alors virer max-height & transition si tu veux */
+  }
+}
+
   .burger {
     display: block;
-    position: relative;
-    z-index: 1002;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--color-text-dark);
+    cursor: pointer;
+    z-index: 10001;
   }
-
+  .nav-container {
+  flex-wrap: wrap;
+}
   /* — Layout : empiler les content-blocks */
   .content-block {
     flex-direction: column;
@@ -684,4 +704,5 @@ display: block;
   .title-center {
     padding: 0 1rem;
   }
+
 }
