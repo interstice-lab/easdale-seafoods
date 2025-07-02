@@ -237,7 +237,7 @@ video {
 /* règle par défaut (fallback) */
 .hero-banner {
   position: relative;
-  width: 100vw;
+  width: 100%;
   left: 50%;
   transform: translateX(-50%);
   height: 400px;
@@ -623,129 +623,58 @@ display: block;
    📱 RESPONSIVE DESIGN
    ========================================================= */
 
-/* DESKTOP NAV — always visible, horizontal */
-#nav-links {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  position: static; /* reset from absolute/mobile */
-  flex-direction: row; /* reset from column/mobile */
-  background: none; /* reset mobile background */
-  border: none; /* reset mobile border */
-  box-shadow: none; /* reset mobile shadow */
-}
-
-.burger {
-  display: none; /* hide burger on desktop */
-}
-/*==================768 px ======================*/
-@media (max-width: 768px) {
+/* ≤ 780px – tablettes et petits écrans */
+@media (max-width: 780px) {
+  /* — Nav mobile : burger + menu caché/déroulé */
   #nav-links {
     display: none;
     position: absolute;
-    top: 75%;
+    top: 100%;
     right: 1rem;
     flex-direction: column;
-    background: var(--color-background);
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    background: #fff;
     padding: 1rem;
-    gap: 0.75rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
-
   #nav-links.show {
     display: flex;
   }
-
   .burger {
     display: block;
-    font-size: 2rem;
-    cursor: pointer;
-    margin-left: auto;
   }
 
-  .site-container {
-    padding: 0 1rem;
-  }
-   /* Stack and center all content blocks */          
-  .content-block,
-  .content-block.reverse {
+  /* — Layout : empiler les content-blocks */
+  .content-block {
     flex-direction: column;
-    align-items: center;
     text-align: center;
     gap: 1.5rem;
-    padding: 1.5rem 0;
   }
-  .content-block .text-block,
-  .content-block .media-block {
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
+
+  /* — Produit : passer en une seule colonne */
   .product-grid {
-    grid-template-columns: 1fr; /* une seule colonne */
-    max-width: 100%; /* réduit la largeur max globale */
-    margin: 2rem auto;
-    padding: 0 1rem;
-    gap: 1.5rem;
+    grid-template-columns: 1fr;
   }
 }
-.iframe-container {
-  max-width: 60%; /* max de la largeur sur desktop */
-}
+
+/* ≤ 480px – mobiles compacts */
 @media (max-width: 480px) {
+  /* — Typo légèrement réduite pour mieux s’adapter */
   body {
     font-size: 0.9rem;
   }
-  h1.site-title {
-    font-size: 2rem;
-  }
+
+  /* — Logo un peu plus petit pour libérer de la place */
   #img-logo {
     width: 120px;
   }
-  .title-center h1 {
-    font-size: 1.5rem;
-    padding: 0 1rem;
+
+  /* — Hero : hauteur réduite pour ne pas écraser le contenu */
+  .hero-banner {
+    height: 250px;
   }
 
-/* Center everything nicely on small screens */
-
-  /* Make sure the main wrappers don’t overflow */
-  html, body, #flex-container, .site-container {
-    padding: 0 1rem;
-    margin: 0 auto;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-
-  /* Center the hero title */
+  /* — Centre des titres d’introduction */
   .title-center {
-    justify-content: center;
-    text-align: center;
-  }
-
-  /* Stack and center all content blocks */
-  .content-block,
-  .content-block.reverse {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-  }
-  .content-block .text-block,
-  .content-block .media-block {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  /* Ensure full-width banners & videos stay centered */
-  .hero-banner,
-  .hero-video-footer,
-  .hero-video-footer video {
-    position: relative;
-    width: 100%;
-    margin: 0 auto;
-    transform: none;
+    padding: 0 1rem;
   }
 }
