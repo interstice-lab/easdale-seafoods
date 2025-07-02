@@ -626,6 +626,10 @@ display: block;
 /* ≤ 780px – tablettes et petits écrans */
 @media (max-width: 780px) {
   /* — Nav mobile : burger + menu caché/déroulé */
+  .nav-container {
+    position: relative;
+    z-index: 1000; /* au-dessus du reste du contenu */
+  }
   #nav-links {
     display: none;
     position: absolute;
@@ -635,12 +639,15 @@ display: block;
     background: #fff;
     padding: 1rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1001; /* au-dessus de la nav-container */
   }
   #nav-links.show {
     display: flex;
   }
   .burger {
     display: block;
+    position: relative;
+    z-index: 1002;
   }
 
   /* — Layout : empiler les content-blocks */
