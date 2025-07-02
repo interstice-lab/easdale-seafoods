@@ -633,30 +633,39 @@ display: block;
   }
   /* — Nav mobile : burger + menu caché/déroulé */
   #nav-links {
-    display: none;
+    display: flex;               /* ou block, selon ton besoin */
+    flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: 100%;                   /* juste sous la navbar */
     right: 1rem;
-    /* … */
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    pointer-events: none;        /* empêche les clics quand caché */
+    z-index: 10000;
   }
   #nav-links.show {
-    display: flex;
-    animation: slideDown 0.3s ease-out forwards;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 
   /* uniquement sur l’état .show, tu remplaces transition par keyframes */
 @keyframes slideDown {
-  from { transform: translateY(-20px); opacity: 0; }
-  to   { transform: translateY(   0); opacity: 1; }
+  from { transform: translateY(-100%); opacity: 0; }
+  to   { transform: translateY(   0 ); opacity: 1; }
 }
-
 @media (max-width: 780px) {
+  #nav-links {
+    display: none;
+  }
   #nav-links.show {
-    animation: slideDown 0.3s ease-out forwards;
-    /* et tu peux alors virer max-height & transition si tu veux */
+    display: flex;
+    animation: slideDown 0.4s ease-out forwards;
   }
 }
+
 
   .burger {
     display: block;
@@ -681,7 +690,6 @@ display: block;
   .product-grid {
     grid-template-columns: 1fr;
   }
-}
 
 /* ≤ 480px – mobiles compacts */
 @media (max-width: 480px) {
