@@ -540,11 +540,9 @@ body.index-page .site-container {
     cursor: pointer;
     margin-left: auto;
   }
-  #flex-container,
+
   .site-container {
     padding: 0 1rem;
-    box-sizing: border-box;
-    overflow-x: hidden;   /* empêche tout débordement horizontal */
   }
   .content-block,
   .content-block.reverse {
@@ -568,33 +566,18 @@ body.index-page .site-container {
 .iframe-container {
   max-width: 60%; /* max de la largeur sur desktop */
 }
-
-/*==================768 px ======================*/
-
 @media (max-width: 480px) {
-  body { font-size: 0.9rem; }
-  h1.site-title { font-size: 2rem; }
-  #img-logo { width: 120px; }
+  body {
+    font-size: 0.9rem;
+  }
+  h1.site-title {
+    font-size: 2rem;
+  }
+  #img-logo {
+    width: 120px;
+  }
   .title-center h1 {
     font-size: 1.5rem;
     padding: 0 1rem;
-  }
-  .hero-banner {
-    position: relative;
-    width: 100%;
-    margin-left: 0;
-    transform: none;
-  }
-  #flex-container,
-  .site-container {
-    padding: 0 1rem;
-    box-sizing: border-box;
-    overflow-x: hidden;
-  }
-  .hero-video-footer,
-  .hero-video-footer video {
-    width: 100%;
-    margin: 0 auto;
-    max-width: none;
   }
 }
