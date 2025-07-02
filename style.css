@@ -566,6 +566,8 @@ body.index-page .site-container {
 .iframe-container {
   max-width: 60%; /* max de la largeur sur desktop */
 }
+
+/*==================480 px ======================*/
 @media (max-width: 480px) {
   body {
     font-size: 0.9rem;
@@ -579,5 +581,30 @@ body.index-page .site-container {
   .title-center h1 {
     font-size: 1.5rem;
     padding: 0 1rem;
+  }
+}
+@media (max-width: 480px) {
+  /* 1. Annule le hack vw/translate sur le hero-banner */
+  .hero-banner {
+    position: relative;
+    width: 100%;      /* s’étire exactement à la largeur du viewport */
+    margin-left: 0;   /* plus de translation négative */
+    transform: none;
+  }
+
+  /* 2. Assure-toi que tout est centré dans le conteneur principal */
+  #flex-container,
+  .site-container {
+    padding: 0 1rem;      /* garde un padding latéral */
+    box-sizing: border-box;
+    overflow-x: hidden;   /* empêche tout débordement horizontal */
+  }
+
+  /* 3. Si besoin : réduis la largeur max des vidéos ou images full-width */
+  .hero-video-footer,
+  .hero-video-footer video {
+    width: 100%;
+    max-width: none;
+    margin: 0 auto;
   }
 }
