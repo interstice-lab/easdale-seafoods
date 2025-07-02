@@ -3,20 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Locals</title>
+    <title>Our Local Partners – Easdale Seafoods</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="Images/favicon-shrimp-wave.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Images/favicon1.ico"
+    />
   </head>
-  <body>
-     <!-- NAVIGATION -->
+  <body class="locals-page">
+    <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-container">
-        <div class="burger" id="burger-toggle">&#9776;</div>
+        <!-- BRAND -->
+        <div class="brand">
+          <a href="index.html">
+            <img
+              id="img-logo"
+              src="Images/Logo-detoure.png"
+              alt="Easdale Seafoods logo"
+            />
+          </a>
+          <h1 class="site-title">Easdale Seafoods</h1>
+        </div>
+        <!-- NAV LINKS -->
         <nav id="nav-links">
           <a href="index.html#about">About us</a>
-          <a href="products.html">Our products</a>
-          <a href="locals.html">Locals</a>
+          <a href="products.html">Products</a>
+          <a href="locals.html#locals">Locals</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
           <select id="lang-select" aria-label="Language">
@@ -24,97 +42,171 @@
             <option value="fr">FR</option>
           </select>
         </nav>
+        <!-- BURGER (mobile only) -->
+        <div class="burger" id="burger-toggle">&#9776;</div>
       </div>
     </header>
-    <!-- BRAND -->
-    <div class="brand-container">
-      <div class="brand">
-        <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale" />
-        <h1 class="site-title">Easdale Seafoods Ltd</h1>
-      </div>
-    </div>
-<!-- LOCAL CUSTOMERS -->
-        <section class="content-block" id="Local costumers">
-          <div class="text-block">
-    <h2>Local Customers</h2>
-    <p>At Easdale Seafoods, we’ve always believed that the strongest partnerships are rooted in place — in shared landscapes, seasons, and values.</p>
-    <p>For over 30 years, we’ve worked hand-in-hand with local restaurants who, like us, honour quality, simplicity, and integrity. Our shellfish is caught daily by small creel boats from the clear waters around Easdale, and delivered directly to kitchens just minutes from our harbour.</p>
-    <p>We’re proud to supply two of the finest establishments on the Isle of Seil:</p>
-    <ul>
-      <li><strong>Tigh an Truish Inn</strong> — An iconic 2AA Rosette restaurant beside the historic Bridge Over the Atlantic, known for its refined, seasonal cuisine, and featured on <em>Masterchef: The Professionals</em>.</li>
-      <a href="https://tighantruish.co.uk" target="_blank" rel="noopener">
-      Visit Tigh an Truish website &rarr;
-       </a>
-      <li><strong>Oyster Bar, Ellenabeich</strong> — A welcoming family-run restaurant offering fresh shellfish and locally farmed produce in one of the most scenic spots on the west coast.</li>
-      <div class="iframe-container">
-      <iframe
-  src="https://oysterbareasdale.com/embed"
-  width="600" height="400"
-  allowfullscreen
-  frameborder="0"
-></iframe>
-</div>
-    </ul>
-    <p>These partnerships are built on trust, quality, and a shared respect for what the land and sea provide.</p>
-  </div>
-        </section>
-  </body>
+ <!-- HERO BANNER -->
+      <section class="hero-banner"></section>
 
-<!-- FOOTER -->
-      <footer class="footer-grid">
-        <div class="footer-col">
-          <h4>Easdale Seafoods Ltd</h4>
-          <p>Balvicar, Isle of Seil<br />OBAN, Argyll, Scotland PA34 4T</p>
-          <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
-        </div>
-        <div class="footer-col">
-          <h4>Our Products</h4>
-          <ul>
-            <li>Live Langoustines</li>
-            <li>Razor Clams</li>
-            <li>Lobsters</li>
+      <div class="title-center">
+        
+      </div>
+    <main class="site-container">
+      <h1 class="page-title">Our Local Partners</h1>
+
+      <!-- LOCAL PARTNERS SECTION -->
+      <section id="locals" class="content-block" aria-labelledby="locals-heading">
+        <div class="text-block">
+          <h2 id="locals-heading">Our Local Partners</h2>
+          <p>
+            At <strong>Easdale Seafoods</strong>, we believe the strongest
+            partnerships spring from shared landscapes, seasons, and values.
+          </p>
+          <p>
+            For over <time datetime="1990">30 years</time>, we’ve collaborated
+            with local restaurants who honour quality, simplicity, and integrity.
+            Our shellfish is caught daily by small creel boats in the clear
+            waters surrounding Easdale and delivered straight to their kitchens.
+          </p>
+
+          <ul class="partner-list">
+            <!-- Partner: Tigh an Truish Inn -->
+            <li class="partner-item">
+              <article>
+                <figure>
+                  <a
+                    href="https://tighantruish.co.uk"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <img
+                      src="Images/tigh-an-truish.png"
+                      alt="Tigh an Truish Inn exterior"
+                      loading="lazy"
+                    />
+                  </a>
+                  <figcaption>Tigh an Truish Inn</figcaption>
+                </figure>
+                <h3>Tigh an Truish Inn</h3>
+                <p>
+                  An iconic 2AA Rosette restaurant beside the historic Bridge
+                  Over the Atlantic. Renowned for refined, seasonal cuisine
+                  and featured on <em>MasterChef: The Professionals</em>.
+                </p>
+                <a
+                  href="https://tighantruish.co.uk"
+                  target="_blank"
+                  rel="noopener"
+                  class="button"
+                  >Visit Website →</a
+                >
+              </article>
+            </li>
+
+            <hr class="partner-separator" />
+
+            <!-- Partner: Oyster Bar -->
+            <li class="partner-item">
+              <article>
+                <figure>
+                  <a
+                    href="https://oysterbareasdale.com"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <img
+                      src="Images/oyster-bar.jpg"
+                      alt="Oyster Bar, Ellenabeich exterior"
+                      loading="lazy"
+                    />
+                  </a>
+                  <figcaption>Oyster Bar, Ellenabeich</figcaption>
+                </figure>
+                <h3>Oyster Bar, Ellenabeich</h3>
+                <p>
+                  A warm, family-run spot offering fresh shellfish and locally
+                  farmed produce in one of Scotland’s most scenic west-coast
+                  villages.
+                </p>
+                <a
+                  href="https://oysterbareasdale.com"
+                  target="_blank"
+                  rel="noopener"
+                  class="button"
+                  >Visit Website →</a
+                >
+              </article>
+            </li>
           </ul>
         </div>
-        <div class="footer-col">
-          <h4>Links</h4>
-          <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#products">Products</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Legal notice</a></li>
-          </ul>
-        </div>
-      </footer>
 
-      <div class="footer-credits">
-        <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-grid">
+      <div class="footer-col">
+        <h4>Easdale Seafoods Ltd</h4>
+        <p>
+          Balvicar, Isle of Seil<br />
+          Oban, Argyll, Scotland PA34 4T
+        </p>
+        <p>
+          Email:
+          <a href="mailto:info@easdalseafoods.co.uk"
+            >info@easdalseafoods.co.uk</a
+          >
+        </p>
       </div>
+      <div class="footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li>Live Langoustines</li>
+          <li>Razor Clams</li>
+          <li>Lobsters</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Legal notice</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-credits">
+      <small
+        >© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small
+      >
     </div>
-<script>
-      const burger = document.getElementById('burger-toggle');
-      const navLinks = document.getElementById('nav-links');
-      burger.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
+
+    <!-- SCRIPTS -->
+    <script>
+      const burger = document.getElementById("burger-toggle");
+      const navLinks = document.getElementById("nav-links");
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
       });
     </script>
-
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+              entry.target.classList.add("visible");
               observer.unobserve(entry.target);
             }
           });
         },
         { threshold: 0.1 }
       );
-
-      document.querySelectorAll('.content-block').forEach((block) => {
-        observer.observe(block);
-      });
+      document.querySelectorAll(".content-block").forEach((block) =>
+        observer.observe(block)
+      );
     </script>
   </body>
 </html>

@@ -102,6 +102,7 @@ video {
   top: 0;
   z-index: 10000;
   padding: 0;
+  margin-bottom: 1rem; /* ajuste la valeur à ton goût */
 }
 /* make brand + nav + burger sit in one row */
 .nav-container {
@@ -233,18 +234,45 @@ video {
 /* =========================================================
    🌊 HERO BANNER / SECTION
    ========================================================= */
+/* règle par défaut (fallback) */
 .hero-banner {
   position: relative;
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
   height: 400px;
-  background: url('Images/olga-boat-in-bay.jpeg') center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .page-title {
   text-align: center;
   margin-top: 2rem;
+}
+
+/* page d’accueil */
+.index-page .hero-banner {
+  background-image: url("Images/olga-boat-in-bay.jpeg");
+}
+
+/* page produits */
+.products-page .hero-banner {
+  background-image: url("Images/Boats.jpeg");
+}
+
+/* page gallery */
+.gallery-page .hero-banner {
+  background-image: url("Images/boatsbalvicar.jpeg");
+}
+
+/* page locals */
+.locals-page .hero-banner {
+  background-image: url("Images/olga-boat-in-bay.jpeg");
+}
+
+/* page contact */
+.contact-page .hero-banner {
+  background-image: url("Images/factorydrone.jpeg");
 }
 
 /* =========================================================
@@ -515,13 +543,20 @@ body.index-page .site-container {
    📷 GALLERY MOSAIC
    ========================================================= */
 .gallery-grid {
-  display: grid;
-  /* as many 200px columns as fit, each at least 1 fr wide */
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  /* make all rows the same height */
-  grid-auto-rows: 200px;
-  gap: 1rem;
   padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  /* on supprime grid-auto-rows */
+    /* make all rows the same height */
+  grid-auto-rows: auto;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.gallery-item img {
+display: block;
+  width: 100%;
+  height: auto;
+  object-fit: initial;  /* ou tu peux carrément enlever object-fit */
 }
 
 /* reset figure margins & make it fill its cell */
@@ -534,7 +569,7 @@ body.index-page .site-container {
 /* stretch the image to fill & crop */
 .gallery-grid img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   display: block;
 }

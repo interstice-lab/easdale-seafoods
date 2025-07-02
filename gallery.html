@@ -3,20 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery</title>
+    <title>Gallery – Easdale Seafoods</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="Images/favicon-shrimp-wave.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Images/favicon1.ico"
+    />
   </head>
-  <body>
+  <body class="gallery-page">
     <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-container">
-        <div class="burger" id="burger-toggle">&#9776;</div>
+        <!-- BRAND -->
+        <div class="brand">
+          <a href="index.html">
+            <img
+              id="img-logo"
+              src="Images/Logo-detoure.png"
+              alt="Easdale Seafoods logo"
+            />
+          </a>
+          <h1 class="site-title">Easdale Seafoods</h1>
+        </div>
+        <!-- NAV LINKS -->
         <nav id="nav-links">
           <a href="index.html#about">About us</a>
-          <a href="index.html#products">Products</a>
-          <a href="locals.html">Local customers</a>
+          <a href="products.html">Products</a>
+          <a href="locals.html#locals">Locals</a>
           <a href="gallery.html">Gallery</a>
           <a href="contact.html">Contact</a>
           <select id="lang-select" aria-label="Language">
@@ -24,128 +42,152 @@
             <option value="fr">FR</option>
           </select>
         </nav>
+        <!-- BURGER (mobile only) -->
+        <div class="burger" id="burger-toggle">&#9776;</div>
       </div>
     </header>
-    <!-- BRAND -->
-    <div class="brand-container">
-      <div class="brand">
-        <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale" />
-        <h1 class="site-title">Easdale Seafoods Ltd</h1>
+ <!-- HERO BANNER -->
+      <section class="hero-banner"></section>
+
+      <div class="title-center">
+        
       </div>
-    </div>
-    <!-- HERO -->
-    <div class="title-center">
-      <h1>Discover where we work, what we catch, and how we live — in images</h1>
-    </div>
-    <div class="media-block">
-            <video
-              src="videos/olga-boat-fishing-bad-weather.mp4"
-              controls
-              muted
-              playsinline
-              class="hero-video"
-            ></video>
-          </div>
-    <!-- WRAPPED CONTENT -->
-    <div class="site-container">
-      <main>
-        <section class="gallery-section">
-          <div class="container">
-            <h2>Gallery</h2>
-            <p>Moments from the West Coast — land, sea, and work.</p>
+    <!-- MAIN CONTENT -->
+    <main class="site-container">
+      <h1 class="page-title">Gallery</h1>
+      <p class="intro">
+        Discover where we work, what we catch, and how we live — in images.
+      </p>
 
-            <div class="gallery-grid with-captions">
-              <figure>
-                <img src="Images/boatsbalvicar.jpeg" alt="Boats in Balvicar" />
-                <figcaption>Boats in Balvicar</figcaption>
-              </figure>
-              <figure>
-                <img src="Images/Boats.jpeg" alt="Creel boats on the water" />
-                <figcaption>Boats on the Water</figcaption>
-              </figure>
-              <figure>
-                <img src="Images/liveprawns.jpeg" alt="Live Langoustines" />
-                <figcaption>XXL Live Langoustines</figcaption>
-              </figure>
-              <figure>
-                <img src="Images/factorydrone.jpeg" alt="Seafood Factory (Drone View)" />
-                <figcaption>Factory from Above</figcaption>
-              </figure>
-              <figure>
-                <img src="Images/casiers1.jpeg" alt="Creels stacked on dock" />
-                <figcaption>Creels – Dockside</figcaption>
-              </figure>
-              <figure>
-                <img src="Images/casiers2.jpeg" alt="Creels – close-up" />
-                <figcaption>Creels – Close-up</figcaption>
-              </figure>
-              <figure>
-                <img src="Images/easdaleisland.jpeg" alt="Easdale Island" />
-                <figcaption>Easdale Island</figcaption>
-              </figure>
-            </div>
+      <section class="gallery-grid" aria-label="Easdale Seafoods photo gallery">
+        <!-- Example gallery item -->
+        <figure class="gallery-item">
+          <picture>
+            <source
+              srcset="Images/casiers1.jpeg 480w, Images/casiers1.jpeg 800w"
+              sizes="(max-width: 600px) 100vw, 300px"
+              type="image/jpeg"
+            />
+            <img
+              src="Images/casiers1.jpeg"
+              alt="Lobster pots stacked on shore"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>Lobster pots on the shore</figcaption>
+        </figure>
 
-            <div class="text-block center" style="margin-top: 2rem">
-              <a href="index.html" class="button">← Back to Home</a>
-            </div>
-          </div>
-        </section>
-      </main>
+        <!-- Repeat gallery-item for each image -->
+        <figure class="gallery-item">
+          <picture>
+            <source
+              srcset="Images/boats.jpeg 480w, Images/boats.jpeg 800w"
+              sizes="(max-width: 600px) 100vw, 300px"
+              type="image/jpeg"
+            />
+            <img
+              src="Images/Boats.jpeg"
+              alt="Diver harvesting razor clams"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>Diver harvesting razor clams</figcaption>
+        </figure>
 
-      <footer class="footer-grid">
-        <div class="footer-col">
-          <h4>Easdale Seafoods Ltd</h4>
-          <p>Balvicar, Isle of Seil<br />OBAN, Argyll, Scotland PA34 4T</p>
-          <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
-        </div>
-        <div class="footer-col">
-          <h4>Our Products</h4>
-          <ul>
-            <li>Live Langoustines</li>
-            <li>Razor Clams</li>
-            <li>Lobsters</li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Links</h4>
-          <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#products">Products</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Legal notice</a></li>
-          </ul>
-        </div>
-      </footer>
+        <figure class="gallery-item">
+          <picture>
+            <source
+              srcset="Images/olga-boat-in-bay.jpeg 480w, Images/olga-boat-in-bay.jpeg 800w"
+              sizes="(max-width: 600px) 100vw, 300px"
+              type="image/jpeg"
+            />
+            <img
+              src="Images/olga-boat-in-bay.jpeg"
+              alt="Fishing boat Olga in harbour"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>Fishing boat Olga in Balvicar harbour</figcaption>
+        </figure>
 
-      <div class="footer-credits">
-        <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
+        <figure class="gallery-item">
+          <picture>
+            <source
+              srcset="Images/liveprawns.jpeg 480w, Images/liveprawns.jpeg 800w"
+              sizes="(max-width: 600px) 100vw, 300px"
+              type="image/jpeg"
+            />
+            <img
+              src="Images/liveprawns.jpeg"
+              alt="Easdale Island shoreline"
+              loading="lazy"
+            />
+          </picture>
+          <figcaption>Easdale Island shoreline at sunset</figcaption>
+        </figure>
+
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-grid">
+      <div class="footer-col">
+        <h4>Easdale Seafoods Ltd</h4>
+        <p>
+          Balvicar, Isle of Seil<br />
+          Oban, Argyll, Scotland PA34 4T
+        </p>
+        <p>
+          Email:
+          <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a>
+        </p>
       </div>
+      <div class="footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li>Live Langoustines</li>
+          <li>Razor Clams</li>
+          <li>Lobsters</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="locals.html#locals">Locals</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Legal notice</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-credits">
+      <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
     </div>
+
+    <!-- SCRIPTS -->
     <script>
-      const burger = document.getElementById('burger-toggle');
-      const navLinks = document.getElementById('nav-links');
-      burger.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
+      const burger = document.getElementById("burger-toggle");
+      const navLinks = document.getElementById("nav-links");
+      burger.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
       });
     </script>
-
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
+              entry.target.classList.add("visible");
               observer.unobserve(entry.target);
             }
           });
         },
         { threshold: 0.1 }
       );
-
-      document.querySelectorAll('.content-block').forEach((block) => {
-        observer.observe(block);
-      });
+      document
+        .querySelectorAll(".gallery-item")
+        .forEach((item) => observer.observe(item));
     </script>
   </body>
 </html>

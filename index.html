@@ -5,205 +5,275 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Easdale Seafoods</title>
     <link rel="stylesheet" href="style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-    <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Images/favicon1.ico"
+    />
   </head>
-  <body>
+  <body class="index-page">
     <!-- NAVIGATION -->
     <header class="navbar">
-  <div class="nav-container">
-    <!-- BRAND -->
-    <div class="brand">
-      <img id="img-logo" src="Images/Logo-detoure.png" alt="Logo Easdale" />
-      <h1 class="site-title">Easdale Seafoods</h1>
-    </div>
+      <div class="nav-container">
+        <!-- BRAND -->
+        <div class="brand">
+          <a href="index.html">
+            <img
+              id="img-logo"
+              src="Images/Logo-detoure.png"
+              alt="Easdale Seafoods logo"
+            />
+          </a>
+          <h1 class="site-title">Easdale Seafoods</h1>
+        </div>
+        <!-- NAV LINKS -->
+        <nav id="nav-links">
+          <a href="index.html#about">About us</a>
+          <a href="products.html">Products</a>
+          <a href="locals.html">Locals</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+          <select id="lang-select" aria-label="Language">
+            <option value="en">EN</option>
+            <option value="fr">FR</option>
+          </select>
+        </nav>
+        <!-- BURGER (mobile only) -->
+        <div class="burger" id="burger-toggle">&#9776;</div>
+      </div>
+    </header>
 
-    <!-- NAV LINKS -->
-    <nav id="nav-links">
-      <a href="index.html#about">About us</a>
-      <a href="products.html">Products</a>
-      <a href="locals.html">Locals</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="contact.html">Contact</a>
-      <select id="lang-select" aria-label="Language">
-        <option value="en">EN</option>
-        <option value="fr">FR</option>
-      </select>
-    </nav>
-
-    <!-- BURGER (mobile only) -->
-    <div class="burger" id="burger-toggle">&#9776;</div>
-  </div>
-</header>
-    
-    </div>
-
-    <!-- HERO -->
     <div id="flex-container">
-      
-      <!-- Bandeau full-width : en dehors de votre conteneur central -->
+      <!-- HERO BANNER -->
       <section class="hero-banner"></section>
 
       <div class="title-center">
-        <h1>Live Shellfish from the West coast of Scotland</h1>
+        <h1>Live Shellfish from the West Coast of Scotland</h1>
       </div>
-      <!-- WRAPPED CONTENT -->
+
       <div class="site-container">
         <!-- ABOUT -->
         <section class="content-block" id="about">
           <div class="text-block">
             <h2>About Us</h2>
-            </header>
-  <article class="text-block">
-    <p><strong>Easdale Seafoods</strong> is a small, family-run business based on the West Coast of Scotland.</p>
-    <p>Since <time datetime="1990">1990</time>, we have specialised in the export of live shellfish — with a focus on <em>quality</em>, <em>sustainability</em> and <em>trust</em>.</p>
-    <p>We source exclusively from local <strong>“creel” boats</strong> operating in the clear waters surrounding Easdale, ensuring gentle handling and top-grade freshness at every stage.</p>
-    <p>Our products are delivered to wholesalers, chefs and distributors across Europe and beyond — with the care and consistency only a close-knit team can provide.</p>
-    <a href="contact.html" class="button" aria-label="Contact Easdale Seafoods">Contact us</a>
-  </article>
-    
-<div class="media-block">
-  <video
-    class="hero-video"
-    autoplay
-    muted
-    loop
-    playsinline
-    controls
-    preload="metadata"
-    title="OLGA at pier unloading live prawns"
-    aria-label="Olga Boat in bay"
-  >
-    <source src="videos/olga-boat-loop.mp4" type="video/mp4">
-    <!-- Fallback texte si le navigateur ne supporte pas la vidéo -->
-    Your browser doesn’t support HTML5 video.
-  </video>
-</div>
-
+            <p>
+              <strong>Easdale Seafoods</strong> is a small, family-run business
+              based on the West Coast of Scotland.
+            </p>
+            <p>
+              Since <time datetime="1990">1990</time>, we have specialised in
+              the export of live shellfish — with a focus on
+              <em>quality</em>, <em>sustainability</em> and <em>trust</em>.
+            </p>
+            <p>
+              We source exclusively from local <strong>“creel” boats</strong>,
+              ensuring gentle handling and top-grade freshness at every stage.
+            </p>
+            <p>
+              Our products are delivered to wholesalers, chefs and distributors
+              around the world — reflecting the care and consistency only a
+              close-knit team can provide.
+            </p>
+            <a
+              href="contact.html"
+              class="button"
+              aria-label="Contact Easdale Seafoods"
+              >Contact us</a
+            >
+          </div>
+          <div class="media-block">
+            <video
+              class="hero-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+              title="OLGA at pier unloading live prawns"
+              aria-label="Olga boat in bay"
+            >
+              <source
+                src="videos/olga-boat-loop.mp4"
+                type="video/mp4"
+              />
+              Your browser doesn’t support HTML5 video.
+            </video>
+          </div>
         </section>
+
         <!-- PRODUCTS -->
-         <section class="content-block" id="products">
-         <div class="text-block">
+        <section class="content-block" id="products">
+          <div class="text-block">
             <h2>Our Products</h2>
-        <div class="product-grid">
-          <div class="product-card">
-            <a href="products.html" target="_self" class="product-link">
-            <div class="img-container">
-              <img src="Images/liveprawns.jpeg" alt="Langoustines" />
+            <div class="product-grid">
+              <div class="product-card">
+                <a
+                  href="products.html"
+                  target="_self"
+                  class="product-link"
+                  aria-label="View all products"
+                >
+                  <div class="img-container">
+                    <img
+                      src="Images/liveprawns.jpeg"
+                      alt="Live Langoustines"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h3>Langoustines</h3>
+                  </div>
+                </a>
+              </div>
+              <div class="product-card">
+                <a
+                  href="products.html"
+                  target="_self"
+                  class="product-link"
+                >
+                  <div class="img-container">
+                    <img
+                      src="Images/Couteaux.jpg"
+                      alt="Razor Clams"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h3>Razor Clams</h3>
+                  </div>
+                </a>
+              </div>
+              <div class="product-card">
+                <a
+                  href="products.html"
+                  target="_self"
+                  class="product-link"
+                >
+                  <div class="img-container">
+                    <img
+                      src="Images/lobsters.jpeg"
+                      alt="Live Lobsters"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="card-body">
+                    <h3>Lobsters</h3>
+                  </div>
+                </a>
+              </div>
             </div>
-            <div class="card-body">
-              <h3>Langoustines</h3>
-            </div>
-            </a>
           </div>
-
-          <div class="product-card">
-             <a href="products.html" target="_self" class="product-link">
-            <div class="img-container">
-              <img src="Images/Couteaux.jpg" alt="Razor Clams" />
-            </div>
-            <div class="card-body">
-              <h3>Razor Clams</h3>
-            </div>
-            </a>
-          </div>
-
-          <div class="product-card">
-             <a href="products.html" target="_self" class="product-link">
-            <div class="img-container">
-              <img src="Images/lobsters.jpeg" alt="Lobsters" />
-            </div>
-            <div class="card-body">
-              <h3>Lobsters</h3>
-            </div>
-          </div>
-          </a>
-        </div>
         </section>
-        
-        <!-- LOCAL CUSTOMERS -->
-         
+
+        <!-- LOCAL PARTNERS -->
         <section
-  class="content-block"
-  id="Our local Partners"
-  aria-labelledby="local-partners-heading"
->
-  <h2 id="local-partners-heading">Our Local Partners</h2>
+          class="content-block"
+          id="locals-teaser"
+          aria-labelledby="local-partners-heading"
+        >
+          <div class="text-block">
+            <h2 id="local-partners-heading">Our Local Partners</h2>
+            <p>
+              At <strong>Easdale Seafoods</strong>, we’ve always believed that the
+              strongest partnerships are rooted in place — in shared
+              landscapes, seasons, and values.
+            </p>
+            <p>
+              For over <time datetime="1990">30 years</time>, we’ve worked
+              hand-in-hand with local restaurants who, like us, honour
+              <strong>quality</strong>, <strong>simplicity</strong>, and
+              <strong>integrity</strong>.
+            </p>
+            <a href="locals.html" class="button">See more</a>
+          </div>
+          <div class="media-block">
+            <img
+              src="Images/easdaleisland.jpeg"
+              alt="View of Easdale Island from Balvicar harbour"
+              loading="lazy"
+            />
+            <figcaption>Easdale Island from Balvicar harbour</figcaption>
+          </div>
+        </section>
 
-  <article class="text-block">
-    <p>
-      At <strong>Easdale Seafoods</strong>, we’ve always believed that the strongest
-      partnerships are rooted in place — in shared landscapes, seasons, and values.
-    </p>
-    <p>
-      For over <time datetime="1990">30 years</time>, we’ve worked hand-in-hand with
-      local restaurants who, like us, honour <strong>quality</strong>,
-      <strong>simplicity</strong>, and <strong>integrity</strong>.
-    </p>
-    <p>
-      <a href="locals.html" class="button">See more</a>
-    </p>
-  </article>
-
-  <figure class="media-block">
-    <img
-      src="Images/easdaleisland.jpeg"
-      alt="View of Easdale Island"
-      loading="lazy"
-    />
-    <figcaption>Easdale Island from Balvicar harbour</figcaption>
-  </figure>
-</section>
-
-        
-        <!--  GALLERY -->
+        <!-- GALLERY TEASER -->
         <section id="gallery" class="content-block">
           <div class="media-block">
-            <a href="gallery.html">
-              <img src="Images/casiers1.jpeg" alt="View Gallery" class="gallery-cover" />
+            <a href="gallery.html" aria-label="View full gallery">
+              <img
+                src="Images/casiers1.jpeg"
+                alt="Gallery preview: lobster pots"
+                class="gallery-cover"
+                loading="lazy"
+              />
             </a>
           </div>
           <div class="text-block">
             <h2>Gallery</h2>
-            <p>Discover where we work, what we catch, and how we live — in images.</p>
+            <p>
+              Discover where we work, what we catch, and how we live — in
+              images.
+            </p>
             <a href="gallery.html" class="button">View Full Gallery</a>
           </div>
         </section>
       </div>
-      <!-- IMAGE / Video FOOTER -->
-      <section class="hero-video-footer">
-        <video src="videos/Landscape.mp4" autoplay muted loop playsinline></video>
-      </section>
-      <!-- FOOTER -->
-      <footer class="footer-grid">
-        <div class="footer-col">
-          <h4>Easdale Seafoods Ltd</h4>
-          <p>Balvicar, Isle of Seil<br />OBAN, Argyll, Scotland PA34 4T</p>
-          <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
-        </div>
-        <div class="footer-col">
-          <h4>Our Products</h4>
-          <ul>
-            <li>Live Langoustines</li>
-            <li>Razor Clams</li>
-            <li>Lobsters</li>
-          </ul>
-        </div>
-        <div class="footer-col">
-          <h4>Links</h4>
-          <ul>
-            <li><a href="index.html#about">About</a></li>
-            <li><a href="index.html#products">Products</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#">Legal notice</a></li>
-          </ul>
-        </div>
-      </footer>
+    </div>
 
-      <div class="footer-credits">
-        <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
+    <!-- VIDEO FOOTER -->
+    <section class="hero-video-footer">
+      <video
+        src="videos/Landscape.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+      ></video>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-grid">
+      <div class="footer-col">
+        <h4>Easdale Seafoods Ltd</h4>
+        <p>
+          Balvicar, Isle of Seil<br />
+          OBAN, Argyll, Scotland PA34 4T
+        </p>
+        <p>
+          Email:
+          <a href="mailto:info@easdalseafoods.co.uk"
+            >info@easdalseafoods.co.uk</a
+          >
+        </p>
       </div>
+      <div class="footer-col">
+        <h4>Our Products</h4>
+        <ul>
+          <li>Live Langoustines</li>
+          <li>Razor Clams</li>
+          <li>Lobsters</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Links</h4>
+        <ul>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#products">Products</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Legal notice</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-credits">
+      <small
+        >© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small
+      >
     </div>
 
     <script>
@@ -226,7 +296,6 @@
         },
         { threshold: 0.1 }
       );
-
       document.querySelectorAll('.content-block').forEach((block) => {
         observer.observe(block);
       });
