@@ -40,42 +40,46 @@
 
     <!-- HERO -->
     <div id="flex-container">
+      
+      <!-- Bandeau full-width : en dehors de votre conteneur central -->
+      <section class="hero-banner"></section>
+
       <div class="title-center">
         <h1>Live Shellfish from the West coast of Scotland</h1>
       </div>
-      <!-- Bandeau full-width : en dehors de votre conteneur central -->
-      <section class="hero-banner"></section>
       <!-- WRAPPED CONTENT -->
       <div class="site-container">
         <!-- ABOUT -->
         <section class="content-block" id="about">
           <div class="text-block">
             <h2>About Us</h2>
-            <p>
-              Easdale Seafoods is a small, family-run business based on the West Coast of Scotland.
-              Since 1990, we have specialised in the export of live shellfish — with a focus on
-              quality, sustainability, and trust.
-            </p>
-            <p>
-              We source exclusively from local 'creel' boats operating in the clear waters
-              surrounding Easdale, ensuring gentle handling and top-grade freshness at every stage
-              of the process.
-            </p>
-            <p>
-              Our products are delivered to wholesalers, chefs, and distributors across Europe and
-              beyond — with the care and consistency only a close-knit team can provide.
-            </p>
-            <a href="contact.html" class="button">Contact us</a>
-          </div>
-          <div class="media-block">
-            <video
-              src="videos/olga-boat-loop.mp4"
-              controls
-              muted
-              playsinline
-              class="hero-video"
-            ></video>
-          </div>
+            </header>
+  <article class="text-block">
+    <p><strong>Easdale Seafoods</strong> is a small, family-run business based on the West Coast of Scotland.</p>
+    <p>Since <time datetime="1990">1990</time>, we have specialised in the export of live shellfish — with a focus on <em>quality</em>, <em>sustainability</em> and <em>trust</em>.</p>
+    <p>We source exclusively from local <strong>“creel” boats</strong> operating in the clear waters surrounding Easdale, ensuring gentle handling and top-grade freshness at every stage.</p>
+    <p>Our products are delivered to wholesalers, chefs and distributors across Europe and beyond — with the care and consistency only a close-knit team can provide.</p>
+    <a href="contact.html" class="button" aria-label="Contact Easdale Seafoods">Contact us</a>
+  </article>
+    
+<div class="media-block">
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    controls
+    preload="metadata"
+    title="OLGA at pier unloading live prawns"
+    aria-label="Olga Boat in bay"
+  >
+    <source src="videos/olga-boat-loop.mp4" type="video/mp4">
+    <!-- Fallback texte si le navigateur ne supporte pas la vidéo -->
+    Your browser doesn’t support HTML5 video.
+  </video>
+</div>
+
         </section>
         <!-- PRODUCTS -->
          <section class="content-block" id="products">
@@ -116,6 +120,7 @@
           </a>
         </div>
         </section>
+        
         <!-- LOCAL CUSTOMERS -->
          
         <section class="content-block" id="Local costumers">
