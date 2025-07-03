@@ -187,7 +187,7 @@ video {
   margin-left: auto;
   border: none;
   background: none;
-  z-index: 10001;
+  z-index: 1000;
 }
 /* style du select langue */
 #lang-select {
@@ -255,27 +255,28 @@ video {
 
 /* page d’accueil */
 .index-page .hero-banner {
-  background-image: url("Images/olga-boat-in-bay.jpeg");
+  background-image: url("Images/easdale-island.JPG");
 }
 
 /* page produits */
 .products-page .hero-banner {
-  background-image: url("Images/Boats.jpeg");
+  background-image: url("Images/balvicar-bay.png");
 }
 
 /* page gallery */
 .gallery-page .hero-banner {
-  background-image: url("Images/boatsbalvicar.jpeg");
+  background-image: url("Images/olja-boat-in-bay.jpeg");
 }
 
 /* page locals */
 .locals-page .hero-banner {
-  background-image: url("Images/olga-boat-in-bay.jpeg");
+  background-image: url("Images/cuan-ferry.JPG");
 }
 
 /* page contact */
 .contact-page .hero-banner {
-  background-image: url("Images/factorydrone.jpeg");
+  background-image: url("Images/factory-from-above.JPG");
+  background-position: center bottom;
 }
 
 /* =========================================================
@@ -543,52 +544,99 @@ body.index-page .site-container {
 }
 
 /* =========================================================
-   📷 GALLERY MOSAIC
+   📷 GALLERY MOSAIC REFACTORED
    ========================================================= */
+
 .gallery-grid {
   padding: 0 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  /* on supprime grid-auto-rows */
-    /* make all rows the same height */
-  grid-auto-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   margin: 2rem 0;
 }
-.gallery-item img {
-display: block;
-  width: 100%;
-  height: auto;
-  object-fit: initial;  /* ou tu peux carrément enlever object-fit */
-}
 
-/* reset figure margins & make it fill its cell */
 .gallery-grid figure {
   margin: 0;
   position: relative;
   overflow: hidden;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: transform 0.3s ease;
 }
 
-/* stretch the image to fill & crop */
-.gallery-grid img {
+.gallery-grid img,
+.gallery-grid video {
   width: 100%;
   height: auto;
+  display: block;
   object-fit: cover;
+  border-radius: 6px 6px 0 0;
+  max-height: 500px;
+  cursor: pointer;
+}
+
+/* 🎥 Vidéos verticales */
+.gallery-grid .vertical-video video {
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  max-height: 600px;
+}
+
+.gallery-grid figcaption {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--color-text-dark);
+  background: #fefefe;
+}
+
+/* 🧾 Responsive YouTube Embed (force HD) */
+.iframe-container {
+  width: 100%;
+  max-width: 960px;
+  aspect-ratio: 16 / 9;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
   display: block;
 }
 
-/* optional: overlay the caption at the bottom */
-.gallery-grid figcaption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 0.5rem;
-  background: rgba(11, 60, 93, 0.8);
-  color: #fff;
-  font-size: 0.9rem;
-  text-align: center;
+/* Agrandissement image avec Lightbox (si activé) */
+.gallery-grid a {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px 6px 0 0;
 }
+
+.gallery-grid a img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid a:hover img {
+  transform: scale(1.03);
+}
+
+/* Optional: mobile override for vertical video */
+@media (max-width: 600px) {
+  .gallery-grid .vertical-video video {
+    aspect-ratio: auto;
+    max-height: none;
+  }
+}
+
 
 /* =========================================================
    🪢 FOOTER
@@ -626,10 +674,11 @@ display: block;
    📱 RESPONSIVE DESIGN
    ========================================================= */
 
-/* ≤ 780px – tablettes et petits écrans */
+/*------------------- ≤ 780px – tablettes et petits écrans---------------------- */
 @media (max-width: 780px) {
  .navbar {
-    overflow: visible; /* permet au menu absolu de dépasser */
+  max-height: none;  
+  overflow: visible; /* permet au menu absolu de dépasser */
   }
   /* — Nav mobile : burger + menu caché/déroulé */
   #nav-links {
@@ -649,26 +698,12 @@ display: block;
     opacity: 1;
     pointer-events: auto;
   }
-}
-
-  /* uniquement sur l’état .show, tu remplaces transition par keyframes */
-@keyframes slideDown {
-  from { transform: translateY(-100%); opacity: 0; }
-  to   { transform: translateY(   0 ); opacity: 1; }
-}
-@media (max-width: 780px) {
-  #nav-links {
-    display: none;
-  }
-  #nav-links.show {
-    display: flex;
-    animation: slideDown 0.4s ease-out forwards;
-  }
-}
-
 
   .burger {
     display: block;
+    position: absolute;
+    top: 2rem;            /* ajuste selon ton padding */
+    right: 1rem;
     font-size: 2rem;
     background: none;
     border: none;
@@ -676,9 +711,11 @@ display: block;
     cursor: pointer;
     z-index: 10001;
   }
+
   .nav-container {
-  flex-wrap: wrap;
-}
+  flex-wrap: nowrap;    /* tout reste sur la même ligne */
+    position: relative;   /* ancre les positionnements absolus */
+  }
   /* — Layout : empiler les content-blocks */
   .content-block {
     flex-direction: column;
@@ -690,8 +727,10 @@ display: block;
   .product-grid {
     grid-template-columns: 1fr;
   }
+}
 
-/* ≤ 480px – mobiles compacts */
+
+/*-------------------- ≤ 480px – mobiles compacts --------------*/
 @media (max-width: 480px) {
   /* — Typo légèrement réduite pour mieux s’adapter */
   body {

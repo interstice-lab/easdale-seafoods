@@ -14,12 +14,15 @@
       type="image/x-icon"
       href="Images/favicon1.ico"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
   </head>
   <body class="gallery-page">
     <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-container">
-        <!-- BRAND -->
         <div class="brand">
           <a href="index.html">
             <img
@@ -30,7 +33,6 @@
           </a>
           <h1 class="site-title">Easdale Seafoods</h1>
         </div>
-        <!-- NAV LINKS -->
         <nav id="nav-links">
           <a href="index.html#about">About us</a>
           <a href="products.html">Products</a>
@@ -42,88 +44,91 @@
             <option value="fr">FR</option>
           </select>
         </nav>
-        <!-- BURGER (mobile only) -->
         <div class="burger" id="burger-toggle">&#9776;</div>
       </div>
     </header>
- <!-- HERO BANNER -->
-      <section class="hero-banner"></section>
 
-      <div class="title-center">
-        
-      </div>
+    <section class="hero-banner"></section>
+    <div class="title-center"></div>
+
     <!-- MAIN CONTENT -->
     <main class="site-container">
       <h1 class="page-title">Gallery</h1>
       <p class="intro">
-        Discover where we work, what we catch, and how we live — in images.
+        Discover where we work, what we catch, and how we live — in images and videos.
       </p>
 
-      <section class="gallery-grid" aria-label="Easdale Seafoods photo gallery">
-        <!-- Example gallery item -->
-        <figure class="gallery-item">
-          <picture>
-            <source
-              srcset="Images/casiers1.jpeg 480w, Images/casiers1.jpeg 800w"
-              sizes="(max-width: 600px) 100vw, 300px"
-              type="image/jpeg"
-            />
-            <img
-              src="Images/casiers1.jpeg"
-              alt="Lobster pots stacked on shore"
-              loading="lazy"
-            />
-          </picture>
-          <figcaption>Lobster pots on the shore</figcaption>
-        </figure>
+      <!-- 🎥 YouTube intégrée (popup HD) -->
+      <div class="iframe-container">
+  <iframe
+    src="https://www.youtube.com/embed/bXlrFH7NC4c?vq=hd720"
+    title="YouTube video"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
 
-        <!-- Repeat gallery-item for each image -->
+
+      <!-- 🖼️ Galerie mixte images + vidéos -->
+      <section class="gallery-grid" aria-label="Easdale Seafoods gallery">
+
         <figure class="gallery-item">
-          <picture>
-            <source
-              srcset="Images/boats.jpeg 480w, Images/boats.jpeg 800w"
-              sizes="(max-width: 600px) 100vw, 300px"
-              type="image/jpeg"
-            />
-            <img
-              src="Images/Boats.jpeg"
-              alt="Diver harvesting razor clams"
-              loading="lazy"
-            />
-          </picture>
-          <figcaption>Diver harvesting razor clams</figcaption>
+          <a href="Images/casiers-pier.jpeg" class="glightbox" data-gallery="gallery" data-title="Creels in pier">
+            <img src="Images/casiers-pier.jpeg" alt="Creels in pier" loading="lazy" />
+          </a>
+          <figcaption>Creels in pier</figcaption>
         </figure>
 
         <figure class="gallery-item">
-          <picture>
-            <source
-              srcset="Images/olga-boat-in-bay.jpeg 480w, Images/olga-boat-in-bay.jpeg 800w"
-              sizes="(max-width: 600px) 100vw, 300px"
-              type="image/jpeg"
-            />
-            <img
-              src="Images/olga-boat-in-bay.jpeg"
-              alt="Fishing boat Olga in harbour"
-              loading="lazy"
-            />
-          </picture>
-          <figcaption>Fishing boat Olga in Balvicar harbour</figcaption>
+          <a href="Images/boats.jpeg" class="glightbox" data-gallery="gallery" data-title="Boats in bay">
+            <img src="Images/boats.jpeg" alt="Boats in bay" loading="lazy" />
+          </a>
+          <figcaption>Boats in bay</figcaption>
         </figure>
 
         <figure class="gallery-item">
-          <picture>
-            <source
-              srcset="Images/liveprawns.jpeg 480w, Images/liveprawns.jpeg 800w"
-              sizes="(max-width: 600px) 100vw, 300px"
-              type="image/jpeg"
-            />
-            <img
-              src="Images/liveprawns.jpeg"
-              alt="Easdale Island shoreline"
-              loading="lazy"
-            />
-          </picture>
-          <figcaption>Easdale Island shoreline at sunset</figcaption>
+          <a href="Images/olja-boat-in-bay.jpeg" class="glightbox" data-gallery="gallery" data-title="Fishing boat Olga">
+            <img src="Images/olja-boat-in-bay.jpeg" alt="Fishing boat Olga" loading="lazy" />
+          </a>
+          <figcaption>Fishing boat Olja in harbour</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <a href="Images/liveprawns.jpeg" class="glightbox" data-gallery="gallery" data-title="Live prawns">
+            <img src="Images/liveprawns.jpeg" alt="Live prawns" loading="lazy" />
+          </a>
+          <figcaption>Live prawns</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <a
+            href="videos/olja-boat-fishing-bad-weather.mp4"
+            class="glightbox"
+            data-gallery="gallery"
+            data-title="Olga unloading live prawns"
+            data-type="video"
+          >
+            <video muted preload="metadata" poster="Images/bad-weather.png">
+              <source src="videos/olja-boat-fishing-bad-weather.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>Olja unloading live prawns</figcaption>
+        </figure>
+
+        <figure class="gallery-item vertical-video">
+          <a
+            href="videos/liveprawns1.mp4"
+            class="glightbox"
+            data-gallery="gallery"
+            data-title="Shellfish grading process"
+            data-type="video"
+          >
+            <video muted preload="metadata" poster="Images/liveprawns.jpeg">
+              <source src="videos/liveprawns1.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>Shellfish grading process</figcaption>
         </figure>
 
       </section>
@@ -133,14 +138,8 @@
     <footer class="footer-grid">
       <div class="footer-col">
         <h4>Easdale Seafoods Ltd</h4>
-        <p>
-          Balvicar, Isle of Seil<br />
-          Oban, Argyll, Scotland PA34 4T
-        </p>
-        <p>
-          Email:
-          <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a>
-        </p>
+        <p>Balvicar, Isle of Seil<br />Oban, Argyll, Scotland PA34 4T</p>
+        <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
       </div>
       <div class="footer-col">
         <h4>Our Products</h4>
@@ -174,20 +173,22 @@
       });
     </script>
     <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll(".gallery-item").forEach((item) =>
+        observer.observe(item)
       );
-      document
-        .querySelectorAll(".gallery-item")
-        .forEach((item) => observer.observe(item));
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      const lightbox = GLightbox({ selector: ".glightbox" });
     </script>
   </body>
 </html>

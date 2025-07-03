@@ -1,0 +1,26 @@
+# Node/Vercel related (si un jour tu ajoutes build tools)
+node_modules/
+.vercel/
+.next/
+dist/
+build/
+
+# Videos HD – hébergées sur YouTube
+/videos/hd-files/
+
+# Mac / Windows system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VSCode
+.vscode/
+
+# Git backup / conflict
+*.orig
+*.swp
+
+# Archives / temporaires
+*.zip
+*.tar.gz
+*.log
