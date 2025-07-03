@@ -220,3 +220,54 @@ Tuned product-grid padding/gaps so cards never “crush” against the viewport 
 
 Why It Matters:
 Ensures a polished, consistent look across all pages; fixes critical navigation and layout bugs; makes product and gallery sections fully interactive and responsive.
+
+
+## 🔁 2025-07-03 – Gallery Refactor, Video Integration & Lightbox Testing
+
+**What was done:**
+
+🎥 Video Gallery Overhaul  
+- Embedded a YouTube iframe in `gallery.html`, with forced HD playback via `?vq=hd1080`.  
+- Ensured responsive behavior using a `.iframe-container` class with `aspect-ratio: 16/9`.  
+- Added fallback styling in CSS for visibility and consistency.
+
+📷 Image & Video Unification  
+- Updated the gallery section to mix images and `<video>` blocks inside a `.gallery-grid`.  
+- Extracted custom `poster` images from each video for a clean preview layout.  
+- Used `<figure>` + `<figcaption>` for both images and videos to keep captions consistent.
+
+💡 GLightbox Integration (later reverted)  
+- Briefly integrated GLightbox to allow fullscreen popup playback of videos and images.  
+- Removed it after testing due to display issues and reverted to inline playback with clean `poster` thumbnails.
+
+🧼 CSS Refactor for Media Grid  
+- Adjusted `object-fit`, `aspect-ratio`, and `max-height` for videos (horizontal and vertical).  
+- Added a media query override to fix vertical video overflow on small screens.  
+- Harmonised image/video card styles inside `.gallery-grid` with responsive captions.
+
+🧪 Debug & Testing  
+- Fixed broken hero banner background image: issue was a missing image file and a silent CSS fallback.  
+- Confirmed all pages load without layout shifts, including mobile.
+
+**Why it matters:**
+
+- Visual parity between images and videos strengthens brand presentation.  
+- Clean separation of concerns: layout vs. media logic vs. interactivity.  
+- Sets the foundation for future gallery filters, lightbox reintroduction, or CDN streaming.
+
+---
+
+## Next Steps
+
+- Resize `.mp4` videos to stay under 80 MB for GitHub hosting.  
+- Add a toggle or filter system to switch between "Images only" and "Videos only" in the gallery.  
+- Integrate GLightbox again once layout bugs are resolved or fallback logic is added.  
+- Begin README documentation for local setup, deployment, and usage.
+
+---
+
+## Personal Notes
+
+- Transitioning from static image galleries to a mixed media layout forced deep CSS reasoning.  
+- I'm beginning to anticipate layout collisions earlier and isolate breakpoints better.  
+- Using poster images radically improved perceived quality and reduced jarring visual jumps.
