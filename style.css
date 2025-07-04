@@ -313,6 +313,31 @@ body.index-page .site-container {
 .media-block a:hover {
   text-decoration: underline;
 }
+
+
+/* =========================================================
+   🦐 CLIENT PAGE - DIVIDER
+   ========================================================= */
+
+
+.section-divider {
+  width: 100%;
+  margin: 0;
+  line-height: 0;
+  background: none;
+  border: none;
+  display: block;
+  position: relative;
+}
+
+.section-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+
 /* =========================================================
    🦐 PRODUCTS GRID
    ========================================================= */
@@ -555,7 +580,7 @@ body.index-page .site-container {
 /* =========================================================
    📬 CONTACT FORM PAGE
    ========================================================= */
-   
+
 .contact-intro {
   text-align: center;
   max-width: 700px;
