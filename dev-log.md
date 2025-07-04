@@ -257,17 +257,80 @@ Ensures a polished, consistent look across all pages; fixes critical navigation 
 
 ---
 
-## Next Steps
+## 🛠️ 2025-07-04 – Finalizing Gallery FR + Global SEO + Responsive Product Layout
+Work completed:
+🌐 Multilingual structure
+🔧 Full creation of French HTML pages:
 
-- Resize `.mp4` videos to stay under 80 MB for GitHub hosting.  
-- Add a toggle or filter system to switch between "Images only" and "Videos only" in the gallery.  
-- Integrate GLightbox again once layout bugs are resolved or fallback logic is added.  
-- Begin README documentation for local setup, deployment, and usage.
+index-fr.html, products-fr.html, clients-fr.html, gallery-fr.html, contact-fr.html
 
----
+Manual translation of all content:
 
-## Personal Notes
+Natural French tone (not automated)
 
-- Transitioning from static image galleries to a mixed media layout forced deep CSS reasoning.  
-- I'm beginning to anticipate layout collisions earlier and isolate breakpoints better.  
-- Using poster images radically improved perceived quality and reduced jarring visual jumps.
+Rewriting of title, meta description, alt, and figcaption tags
+
+Consistent use of <html lang="fr"> + charset declarations
+
+Bi-directional language switcher implemented across all pages
+
+📷 Gallery refactor (EN & FR)
+Split into two sections: photos and videos
+
+Uniform square thumbnails (aspect-ratio 1:1)
+
+Clear captions + 🎥 icon for video items
+
+Native display on click via GLightbox
+
+Responsive behavior fully tested
+
+🎨 CSS & visual layout
+Gallery block refactored:
+
+Clean grid layout, hover effects, consistent visual rhythm
+
+Added SVG wave separators between content sections
+
+Product page layout improved:
+
+Balanced image/text blocks
+
+Better vertical spacing
+
+Enhanced readability and mobile flow
+
+🧾 SEO & meta tags
+Global integration of SEO tags (EN & FR):
+
+meta description
+
+og:title, og:type, og:image, og:description
+
+twitter:card, twitter:image
+
+Canonical <link>
+
+All external/internal links tested and verified
+
+Social preview rendering confirmed
+
+🧪 Testing
+GLightbox: tested for video playback, closing, keyboard nav, responsiveness
+
+Language switcher: functional on all pages
+
+Layout verified from 320px to 1200px
+
+Poster images, aspect-ratios, and fallback behavior validated
+
+Results:
+🔹 Fully bilingual site (EN/FR) with seamless navigation
+
+🔹 Refined, immersive gallery experience
+
+🔹 Technical SEO structure ready for indexing
+
+🔹 CSS now more structured, readable, and scalable
+
+🔹 Ready for deployment (GitHub Pages or Vercel)
