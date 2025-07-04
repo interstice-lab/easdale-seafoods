@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 🔍 SEO + Aperçu enrichi (Open Graph) -->
+    <meta name="description" content="Plongez dans notre quotidien entre mer et rivage, à travers des photos et vidéos de notre activité en Écosse." />
+    <link rel="canonical" href="https://www.easdaleseafoods.com/gallery-fr.html" />
+    <meta property="og:title" content="Galerie – Easdale Seafoods" />
+    <meta property="og:description" content="Bateaux de pêche, paysages de la côte ouest, produits frais — en images et en vidéos." />
+    <meta property="og:url" content="https://www.easdaleseafoods.com/gallery-fr.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- 🏷️ Titre de la page -->
+    <title>Galerie – Easdale Seafoods</title>
+
+    <!-- 🎨 Style -->
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+  </head>
+  <body class="gallery-page">
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="index-fr.html">
+            <img id="img-logo" src="Images/logo-detoure.png" alt="Logo Easdale Seafoods" />
+          </a>
+          <h1 class="site-title">Easdale Seafoods</h1>
+        </div>
+        <nav id="nav-links">
+          <a href="index-fr.html">Accueil</a>
+          <a href="products-fr.html">Produits</a>
+          <a href="clients.html">Nos Clients</a>
+          <a href="gallery-fr.html">Galerie</a>
+          <a href="contact-fr.html">Contact</a>
+          <select id="lang-select" aria-label="Langue">
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+          </select>
+        </nav>
+        <div class="burger" id="burger-toggle">☰</div>
+      </div>
+    </header>
+
+    <section class="hero-banner"></section>
+    <div class="title-center"></div>
+
+    <main class="site-container">
+      <h1 class="page-title">Galerie</h1>
+      <p class="intro">
+        Discover where we work, what we catch, and how we live — in images and videos.
+      </p>
+
+      <!-- YouTube -->
+      <div class="iframe-container">
+        <iframe
+          src="https://www.youtube.com/embed/bXlrFH7NC4c?vq=hd720"
+          title="YouTube video"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+
+      <h2 class="gallery-section-title">🖼️ Photo Gallery</h2>
+      <section class="gallery-grid photos-only" aria-label="Easdale Seafoods photos">
+        <figure class="gallery-item">
+          <a href="Images/casiers-pier.jpeg" class="glightbox" data-gallery="gallery" data-title="Creels in pier">
+            <img src="Images/casiers-pier.jpeg" alt="Creels in pier" loading="lazy" />
+          </a>
+          <figcaption>Creels in pier</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <a href="Images/boats.jpeg" class="glightbox" data-gallery="gallery" data-title="Boats in bay">
+            <img src="Images/boats.jpeg" alt="Boats in bay" loading="lazy" />
+          </a>
+          <figcaption>Boats in bay</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <a href="Images/olja-boat-in-bay.jpeg" class="glightbox" data-gallery="gallery" data-title="Fishing boat Olga">
+            <img src="Images/olja-boat-in-bay.jpeg" alt="Fishing boat Olga" loading="lazy" />
+          </a>
+          <figcaption>Fishing boat Olga in harbour</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <a href="Images/froach-gael-boat.webp" class="glightbox" data-gallery="gallery" data-title="Froach Gael Boat in rough see">
+            <img src="Images/froach-gael-boat.webp" alt="Froach Gael Boat in rough see" loading="lazy" />
+          </a>
+          <figcaption>Froach Gael Boat in rough see</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <a href="Images/cooked-prawn-tail.jpeg" class="glightbox" data-gallery="gallery" data-title="Prawn tail freshly cooked">
+            <img src="Images/cooked-prawn-tail.jpeg" alt="Prawn tail freshly cooked" loading="lazy" />
+          </a>
+          <figcaption>Prawn tail freshly cooked</figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <a href="Images/boat-balvicar.png" class="glightbox" data-gallery="gallery" data-title="Boats in Balvicar bay">
+            <img src="Images/boat-balvicar.png" alt="Boats in Balvicar bay" loading="lazy" />
+          </a>
+          <figcaption>Boats in Balvicar bay</figcaption>
+        </figure>
+      </section>
+
+      <div class="section-divider">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+          <path d="M0,50 C360,150 1080,-50 1440,50 L1440,100 L0,100 Z" fill="#e0f4ff"></path>
+        </svg>
+      </div>
+
+      <h2 class="gallery-section-title">🎥 Video Highlights</h2>
+      <section class="gallery-grid videos-only" aria-label="Easdale Seafoods videos">
+        <figure class="gallery-item video-label">
+          <a href="videos/liveprawns1.mp4" class="glightbox" data-gallery="gallery" data-title="Shellfish grading process" data-type="video">
+            <video muted preload="metadata" poster="Images/liveprawns.jpeg">
+              <source src="videos/liveprawns1.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>Shellfish grading process</figcaption>
+        </figure>
+
+        <figure class="gallery-item video-label">
+          <a href="videos/liveprawns2.mp4" class="glightbox" data-gallery="gallery" data-title="Live prawns – close-up" data-type="video">
+            <video muted preload="metadata" poster="Images/liveprawns.jpeg">
+              <source src="videos/liveprawns2.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>Live prawns – close-up</figcaption>
+        </figure>
+
+        <figure class="gallery-item video-label">
+          <a href="videos/olja-boat-close-up.mp4" class="glightbox" data-gallery="gallery" data-title="Boat close-up" data-type="video">
+            <video muted preload="metadata" poster="Images/olja-boat-in-bay.jpeg">
+              <source src="videos/olja-boat-close-up.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>Boat close-up</figcaption>
+        </figure>
+
+        <figure class="gallery-item video-label">
+          <a href="videos/olja-boat-loop.mp4" class="glightbox" data-gallery="gallery" data-title="Olga manoeuvring" data-type="video">
+            <video muted preload="metadata" poster="Images/olja-boat-in-bay.jpeg">
+              <source src="videos/olja-boat-loop.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>Olga manoeuvring</figcaption>
+        </figure>
+
+        <figure class="gallery-item video-label">
+          <a href="videos/olja-boat-top-view.mp4" class="glightbox" data-gallery="gallery" data-title="Top view – Olga" data-type="video">
+            <video muted preload="metadata" poster="Images/olja-boat-in-bay.jpeg">
+              <source src="videos/olja-boat-top-view.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>Top view – Olga</figcaption>
+        </figure>
+
+        <figure class="gallery-item video-label">
+          <a href="videos/video-packing-razors.mp4" class="glightbox" data-gallery="gallery" data-title="Packing razor clams" data-type="video">
+            <video muted preload="metadata" poster="Images/razor-clams.jpeg">
+              <source src="videos/video-packing-razors.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>Packing razor clams</figcaption>
+        </figure>
+
+        <figure class="gallery-item video-label">
+          <a href="videos/xxl-live-prawn.mp4" class="glightbox" data-gallery="gallery" data-title="XXL live prawn" data-type="video">
+            <video muted preload="metadata" poster="Images/liveprawns.jpeg">
+              <source src="videos/xxl-live-prawn.mp4" type="video/mp4" />
+            </video>
+          </a>
+          <figcaption>XXL live prawn</figcaption>
+        </figure>
+      </section>
+    </main>
+
+    <footer class="footer-grid">
+      <div class="footer-col">
+        <h4>Easdale Seafoods Ltd</h4>
+        <p>Balvicar, Isle of Seil<br />Oban, Argyll, Scotland PA34 4T</p>
+        <p>Email : <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Produits</h4>
+        <ul>
+          <li>Langoustines vivantes</li>
+          <li>Couteaux</li>
+          <li>Homards</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liens</h4>
+        <ul>
+          <li><a href="index-fr.html">Accueil</a></li>
+          <li><a href="products-fr.html">Produits</a></li>
+          <li><a href="contact-fr.html">Contact</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-credits">
+      <small>© Easdale Seafoods Ltd – 2025 · Site réalisé par BDF Consulting Ltd</small>
+    </div>
+<!-- JS -->
+<script>
+  const burger = document.getElementById('burger-toggle');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    const expanded = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!expanded));
+  });
+
+  // 🔄 Sélecteur de langue bi-directionnel
+  const langSelect = document.getElementById('lang-select');
+  langSelect.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    const currentPath = window.location.pathname;
+    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+    if (lang === 'en' && fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('-fr.html', '.html');
+    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('.html', '-fr.html');
+    }
+  });
+</script>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
+    observer.observe(el)
+  );
+</script>
+  </body>
+</html>

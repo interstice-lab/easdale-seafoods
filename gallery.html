@@ -1,33 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 🔍 SEO + Rich Preview (Open Graph) -->
-<meta name="description" content="Fresh Seafood Distribution from the West Coast of Scotland. 
-Langoustines, razor clams, and lobsters — shipped live across Europe.">
-<meta property="og:title" content="Easdale Seafoods – Fresh Scottish Seafood Distribution" />
-<meta property="og:description" content="We export live shellfish from creel boats off Scotland’s West Coast. Premium quality, traceable seafood — all year round." />
-<meta property="og:url" content="https://www.easdaleseafoods.com/" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
-<meta name="twitter:card" content="summary_large_image" />
-    <title>Gallery – Easdale Seafoods</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="Images/favicon1.ico"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
-    />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- 🔍 SEO + Rich Preview (Open Graph) -->
+
+  <!-- Meta description for search engines -->
+  <meta name="description" content="Explore our work, island life, and daily catches through a curated selection of photos and videos from the Scottish coast." />
+
+  <!-- Canonical URL: signals the preferred version of this page -->
+  <link rel="canonical" href="https://www.easdaleseafoods.com/gallery.html" />
+
+  <!-- Open Graph: link preview for social networks -->
+  <meta property="og:title" content="Gallery – Easdale Seafoods" />
+  <meta property="og:description" content="A visual dive into our fishing boats, coastal views, and the people behind Easdale Seafoods." />
+  <meta property="og:url" content="https://www.easdaleseafoods.com/gallery.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
+
+  <!-- Twitter card preview -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- 🏷️ Page title (browser tab) -->
+  <title>Gallery – Easdale Seafoods</title>
+
+  <!-- 🎨 Stylesheets and assets -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+</head>
+
   <body class="gallery-page">
     <!-- NAVIGATION -->
     <header class="navbar">
@@ -239,31 +242,46 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
       <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
     </div>
 
-    <!-- SCRIPTS -->
-    <script>
-      const burger = document.getElementById("burger-toggle");
-      const navLinks = document.getElementById("nav-links");
-      burger.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-      });
-    </script>
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+    <!-- JS -->
+<script>
+  const burger = document.getElementById('burger-toggle');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    const expanded = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!expanded));
+  });
 
-      document.querySelectorAll(".gallery-item").forEach((item) =>
-        observer.observe(item)
-      );
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-      const lightbox = GLightbox({ selector: ".glightbox" });
-    </script>
+  // 🔄 Sélecteur de langue bi-directionnel
+  const langSelect = document.getElementById('lang-select');
+  langSelect.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    const currentPath = window.location.pathname;
+    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+    if (lang === 'en' && fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('-fr.html', '.html');
+    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('.html', '-fr.html');
+    }
+  });
+</script>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
+    observer.observe(el)
+  );
+</script>
   </body>
 </html>
