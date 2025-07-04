@@ -2,38 +2,22 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Products – Easdale Seafoods</title>
     <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="Images/favicon1.ico"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
   </head>
   <body class="products-page">
     <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-container">
-        <!-- BRAND -->
         <div class="brand">
           <a href="index.html">
-            <img
-              id="img-logo"
-              src="Images/logo-detoure.png"
-              alt="Easdale Seafoods logo"
-            />
+            <img id="img-logo" src="Images/logo-detoure.png" alt="Easdale Seafoods logo" />
           </a>
           <h1 class="site-title">Easdale Seafoods</h1>
         </div>
-        <!-- NAV LINKS -->
         <nav id="nav-links">
           <a href="index.html#about">About us</a>
           <a href="products.html">Products</a>
@@ -45,27 +29,16 @@
             <option value="fr">FR</option>
           </select>
         </nav>
-        <!-- BURGER (mobile only) -->
         <div class="burger" id="burger-toggle">&#9776;</div>
       </div>
     </header>
- <!-- HERO BANNER -->
-      <section class="hero-banner"></section>
 
-      <div class="title-center">
-        
-      </div>
-    <!-- MAIN CONTENT -->
+    <section class="hero-banner"></section>
     <main class="site-container">
       <h1 class="page-title">Our Products</h1>
 
-      <!-- LIVE LANGOUSTINES -->
-      <section
-        id="langoustines"
-        class="product-section"
-        itemscope
-        itemtype="http://schema.org/Product"
-      >
+      <!-- 🦐 LANGOUSTINES -->
+      <section id="langoustines" class="product-section" itemscope itemtype="http://schema.org/Product">
         <header>
           <h2 itemprop="name" class="product-title">
             Live Langoustines
@@ -73,256 +46,127 @@
           </h2>
         </header>
 
-        <section
-          class="media-gallery"
-          aria-labelledby="langoustines-gallery"
-        >
-          <h3 id="langoustines-gallery" class="visually-hidden">
-            Langoustines gallery
-          </h3>
-          <picture>
-            <source
-              srcset="
-                Images/liveprawns-small.jpeg 480w,
-                Images/liveprawns.jpeg 800w
-              "
-              sizes="(max-width: 600px) 100vw, 600px"
-              type="image/jpeg"
-            />
-            <img
-              src="Images/liveprawns.jpeg"
-              alt="Fresh live langoustines in creel pots"
-              loading="lazy"
-              itemprop="image"
-            />
-          </picture>
-          <!-- Ajouter d'autres <figure> si besoin -->
-        </section>
-
-        <section
-          itemprop="description"
-          class="product-overview"
-        >
-          <h3 class="visually-hidden">Overview</h3>
-          <p>
-            Scottish live langoustines—also called Dublin Bay prawns—are prized
-            for their <strong itemprop="flavor">delicate sweet flavor</strong>
-            and <em itemprop="texture">tender, succulent texture</em>. Harvested
-            in creel pots off Scotland’s west coast, each is handled with care
-            from sea to table.
-          </p>
-        </section>
+        <div class="product-intro">
+          <div class="product-image">
+            <img src="Images/langoustines-vivantes-tube.jpeg" alt="Live langoustines in tubes" loading="lazy" itemprop="image" />
+          </div>
+          <div class="product-overview" itemprop="description">
+            <h3 class="section-subtitle">Overview</h3>
+            <p>
+              <strong>Scottish live langoustines</strong>—also called Dublin Bay prawns—are prized for their
+              <strong itemprop="flavor">delicate sweet flavor</strong> and
+              <em itemprop="texture">tender, succulent texture</em>. Harvested in creel pots off Scotland’s west coast,
+              each is handled with care from sea to table.
+            </p>
+          </div>
+        </div>
 
         <section class="product-details">
           <h3 class="visually-hidden">Key Characteristics</h3>
           <dl class="characteristics">
             <dt>Fishing Method</dt>
-            <dd>
-              Creel pots—an eco-friendly approach minimizing habitat impact.
-            </dd>
-
+            <dd>Creel pots—an eco-friendly approach minimizing habitat impact.</dd>
             <dt>Handling & Transport</dt>
-            <dd>
-              Stored in individual cells to protect from light, noise, and
-              temperature.
-            </dd>
-
+            <dd>Stored in individual cells to protect from light, noise, and temperature.</dd>
             <dt>Sizes</dt>
-            <dd>XL, L, M, S—warmer months yield smaller catches.</dd>
-
+            <dd>XXL, XL, L, M, S — Warmer months yield smaller catches.</dd>
             <dt>Availability</dt>
             <dd>Year-round, peaking Feb–Apr and quieter Sept–Nov.</dd>
-
             <dt>Culinary Uses</dt>
-            <dd>
-              Grill, boil, or add to pasta, risotto and salads.
-            </dd>
-
+            <dd>Grill, boil, or add to pasta, risotto and salads.</dd>
             <dt>Traceability</dt>
             <dd>Each box is linked to a specific boat for full provenance.</dd>
           </dl>
         </section>
 
         <footer>
-          <a
-            href="contact.html"
-            class="button"
-            itemprop="url"
-          >
-            Contact Us
-          </a>
+          <a href="contact.html" class="button" itemprop="url">Contact Us</a>
         </footer>
       </section>
 
-      <!-- LIVE RAZOR CLAMS -->
-      <section
-        id="razor-clams"
-        class="product-section reverse"
-        itemscope
-        itemtype="http://schema.org/Product"
-      >
+      <!-- 🔪 RAZOR CLAMS -->
+      <section id="razor-clams" class="product-section" itemscope itemtype="http://schema.org/Product">
         <header>
           <h2 itemprop="name" class="product-title">
-            Live Razor Clams
+            Razor Clams
             <small itemprop="alternateName">(Ensis siliqua)</small>
           </h2>
         </header>
 
-        <section
-          class="media-gallery"
-          aria-labelledby="razor-clams-gallery"
-        >
-          <h3 id="razor-clams-gallery" class="visually-hidden">
-            Razor clams gallery
-          </h3>
-          <picture>
-            <source
-              srcset="
-                Images/couteaux-small.jpg 480w,
-                Images/couteaux.jpg 800w
-              "
-              sizes="(max-width: 600px) 100vw, 600px"
-              type="image/jpeg"
-            />
-            <img
-              src="Images/couteaux.jpg"
-              alt="Razor clams on a sandy shore"
-              loading="lazy"
-              itemprop="image"
-            />
-          </picture>
-          <!-- Ajouter d'autres <figure> si besoin -->
-        </section>
-
-        <section
-          itemprop="description"
-          class="product-overview"
-        >
-          <h3 class="visually-hidden">Overview</h3>
-          <p>
-            Our razor clams—locally called “spoots”—are prized for their
-            <strong>sweet, delicate flavor</strong> and
-            <em>firm yet tender texture</em>. Hand-collected by divers and
-            graded ashore, each clam meets the highest standards of quality and
-            sustainability.
-          </p>
-        </section>
+        <div class="product-intro">
+          <div class="product-image">
+            <img src="Images/razor-clams.jpeg" alt="Fresh razor clams packed for delivery" loading="lazy" itemprop="image" />
+          </div>
+          <div class="product-overview" itemprop="description">
+            <h3 class="section-subtitle">Overview</h3>
+            <p>
+              Our razor clams—long, sweet, and briny—are hand-dug from Scotland’s clean sand beds.
+              Their unique shape and flavor make them a favourite for chefs across Europe.
+              Caught to order, shipped alive.
+            </p>
+          </div>
+        </div>
 
         <section class="product-details">
           <h3 class="visually-hidden">Key Characteristics</h3>
           <dl class="characteristics">
-            <dt>Species</dt>
-            <dd>Ensis siliqua, E. magnus, E. ensis</dd>
-
-            <dt>Habitat</dt>
-            <dd>Sandy & muddy sediments along UK coasts</dd>
-
-            <dt>Harvest Methods</dt>
-            <dd>Hand-dive, licensed dredges, and controlled electrofishing</dd>
-
-            <dt>Sustainability</dt>
-            <dd>Hand-harvested to minimize environmental impact</dd>
-
-            <dt>Nutritional Highlights</dt>
-            <dd>Rich in lean protein, B-vitamins, calcium, iron & phosphorus</dd>
-
+            <dt>Harvesting Method</dt>
+            <dd>Divers or hand-gathered—no mechanical dredging used.</dd>
+            <dt>Transport & Storage</dt>
+            <dd>Delivered live in insulated boxes with seawater gel packs.</dd>
+            <dt>Sizes</dt>
+            <dd>Large and Extra-Large — typically 12 to 15 cm.</dd>
+            <dt>Availability</dt>
+            <dd>Best from October to April, depending on tides and permits.</dd>
             <dt>Culinary Uses</dt>
-            <dd>
-              Steam, pan-fry, roast, or add to chowders and pasta dishes.
-            </dd>
+            <dd>Flash-seared, grilled, or served raw with citrus.</dd>
+            <dt>Traceability</dt>
+            <dd>Harvest date and zone recorded for each shipment.</dd>
           </dl>
         </section>
 
         <footer>
-          <a
-            href="contact.html"
-            class="button"
-            itemprop="url"
-          >
-            Contact Us
-          </a>
+          <a href="contact.html" class="button" itemprop="url">Contact Us</a>
         </footer>
       </section>
 
-      <!-- SCOTTISH LOBSTERS -->
-      <section
-        id="lobsters"
-        class="product-section"
-        itemscope
-        itemtype="http://schema.org/Product"
-      >
+      <!-- 🦞 LOBSTERS -->
+      <section id="lobsters" class="product-section" itemscope itemtype="http://schema.org/Product">
         <header>
-          <h2 itemprop="name" class="product-title">
-            Scottish Lobsters
-          </h2>
+          <h2 itemprop="name" class="product-title">Scottish Lobsters</h2>
         </header>
 
-        <section
-          class="media-gallery"
-          aria-labelledby="lobsters-gallery"
-        >
-          <h3 id="lobsters-gallery" class="visually-hidden">
-            Lobsters gallery
-          </h3>
-          <picture>
-            <source
-              srcset="
-                Images/lobsters-small.jpeg 480w,
-                Images/lobsters.jpeg 800w
-              "
-              sizes="(max-width: 600px) 100vw, 600px"
-              type="image/jpeg"
-            />
-            <img
-              src="Images/lobsters.jpeg"
-              alt="Fresh live Scottish lobsters"
-              loading="lazy"
-              itemprop="image"
-            />
-          </picture>
-        </section>
-
-        <section
-          itemprop="description"
-          class="product-overview"
-        >
-          <h3 class="visually-hidden">Overview</h3>
-          <p>
-            Harvested in Scotland’s pristine coastal waters, our lobsters boast
-            <strong itemprop="flavor">sweet, succulent meat</strong> and a
-            <em itemprop="texture">firm yet tender bite</em>, with subtle
-            oceanic notes.
-          </p>
-        </section>
+        <div class="product-intro">
+          <div class="product-image">
+            <img src="Images/packed-lobsters-ready-to-be-shipped.png" alt="Fresh live Scottish lobsters ready to be shipped" loading="lazy" itemprop="image" />
+          </div>
+          <div class="product-overview" itemprop="description">
+            <h3 class="section-subtitle">Overview</h3>
+            <p>
+              Harvested in Scotland’s pristine coastal waters, our lobsters boast
+              <strong itemprop="flavor">sweet, succulent meat</strong> and a
+              <em itemprop="texture">firm yet tender bite</em>, with subtle oceanic notes.
+            </p>
+          </div>
+        </div>
 
         <section class="product-details">
           <h3 class="visually-hidden">Key Characteristics</h3>
           <dl class="characteristics">
             <dt>Habitat</dt>
             <dd>Cold, clean waters on hard ground in shallow Scottish seas</dd>
-
             <dt>Sustainability</dt>
-            <dd>
-              Protected by minimum carapace length regulations
-            </dd>
-
+            <dd>Protected by minimum carapace length regulations</dd>
             <dt>Seasonality</dt>
             <dd>
               Best enjoyed in
-              <time datetime="2025-06">June</time>–
-              <time datetime="2025-07">July</time>
+              <time datetime="2025-06">June</time>–<time datetime="2025-07">July</time>
             </dd>
           </dl>
         </section>
 
         <footer>
-          <a
-            href="contact.html"
-            class="button"
-            itemprop="url"
-          >
-            Contact Us
-          </a>
+          <a href="contact.html" class="button" itemprop="url">Contact Us</a>
         </footer>
       </section>
     </main>
@@ -335,12 +179,7 @@
           Balvicar, Isle of Seil<br />
           OBAN, Argyll, Scotland PA34 4T
         </p>
-        <p>
-          Email:
-          <a href="mailto:info@easdalseafoods.co.uk"
-            >info@easdalseafoods.co.uk</a
-          >
-        </p>
+        <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
       </div>
       <div class="footer-col">
         <h4>Our Products</h4>
@@ -362,9 +201,7 @@
       </div>
     </footer>
     <div class="footer-credits">
-      <small
-        >© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small
-      >
+      <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
     </div>
 
     <!-- SCRIPTS -->
@@ -388,9 +225,7 @@
         },
         { threshold: 0.1 }
       );
-      document
-        .querySelectorAll('.product-section, .media-gallery')
-        .forEach((el) => observer.observe(el));
+      document.querySelectorAll('.product-section, .media-gallery').forEach((el) => observer.observe(el));
     </script>
   </body>
 </html>

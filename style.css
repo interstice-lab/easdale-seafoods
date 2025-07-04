@@ -256,27 +256,31 @@ video {
 /* page d’accueil */
 .index-page .hero-banner {
   background-image: url("Images/easdale-island.JPG");
+  background-position: center 40% ;
 }
 
 /* page produits */
 .products-page .hero-banner {
-  background-image: url("Images/balvicar-bay.png");
+  background-image: url("Images/easdale-island.JPG");
+  background-position: center 40% ;
 }
 
 /* page gallery */
 .gallery-page .hero-banner {
-  background-image: url("Images/olja-boat-in-bay.jpeg");
+  background-image: url("Images/easdale-island.JPG");
+  background-position: center 40% ;
 }
 
 /* page locals */
 .locals-page .hero-banner {
-  background-image: url("Images/cuan-ferry.JPG");
+  background-image: url("Images/easdale-island.JPG");
+  background-position: center 40% ;
 }
 
 /* page contact */
 .contact-page .hero-banner {
-  background-image: url("Images/factory-from-above.JPG");
-  background-position: center bottom;
+  background-image: url("Images/view-from-cuan-ferry\ \(1\).jpg");
+ /* background-position: center top;*/
 }
 
 /* =========================================================
@@ -345,6 +349,73 @@ body.index-page .site-container {
   font-size: 1.2rem;
   color: var(--color-text-dark);
 }
+
+
+/* ================================
+   🦐 PRODUCT PAGE LAYOUT
+   ================================ */
+
+.product-intro {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+   min-height: 10px; /* ← pour forcer une certaine hauteur */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 1.5rem;
+}
+
+.product-intro.reverse {
+  grid-template-columns: 1fr auto; /* Inversion pour Razor Clams si besoin */
+}
+
+.product-image {
+  max-width: 350px;
+}
+
+.product-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.product-overview::after {
+  content: '';
+  display: block;
+  flex-grow: 1;
+}
+
+
+.section-subtitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--color-text-dark);
+}
+
+/* ================================
+   📱 RESPONSIVE PRODUCTS
+   ================================ */
+@media (max-width: 768px) {
+  .product-intro,
+  .product-intro.reverse {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .product-image {
+    margin: 0 auto;
+  }
+
+  .product-overview {
+    margin-top: 1.5rem;
+  }
+}
+
+
 
 /* =========================================================
    ✨ PRODUCT PAGES – gallery, spacing & separators
@@ -484,6 +555,18 @@ body.index-page .site-container {
 /* =========================================================
    📬 CONTACT FORM PAGE
    ========================================================= */
+.contact-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
 .contact-hero {
   position: relative;
   height: 400px;
@@ -530,6 +613,25 @@ body.index-page .site-container {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-family: inherit;
+}
+.form-feedback {
+  margin-top: 1rem;
+  color: var(--color-shrimp);
+  font-weight: 600;
+}
+.map-container {
+  width: 100%;
+  max-width: 960px;
+  margin: 2rem auto;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 /* =========================================================
