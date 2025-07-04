@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Easdale Seafoods</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Images/favicon1.ico"
+    />
+  </head>
+  <body class="index-page">
+    <!-- NAVIGATION -->
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="index-fr.html">
+            <img
+              id="img-logo"
+              src="Images/logo-detoure.png"
+              alt="Logo Easdale Seafoods"
+            />
+          </a>
+          <h1 class="site-title">Easdale Seafoods</h1>
+        </div>
+        <nav id="nav-links">
+          <a href="index-fr.html#about">À propos</a>
+          <a href="products-fr.html">Produits</a>
+          <a href="locals-fr.html">Partenaires</a>
+          <a href="gallery.html">Galerie</a>
+          <a href="contact-fr.html">Contact</a>
+          <select id="lang-select" aria-label="Langue">
+            <option value="en">EN</option>
+            <option value="fr" selected>FR</option>
+          </select>
+        </nav>
+        <button id="burger-toggle" class="burger" aria-label="Menu mobile">
+          &#9776;
+        </button>
+      </div>
+    </header>
+
+    <div id="flex-container">
+      <!-- HERO BANNER -->
+      <section class="hero-banner"></section>
+
+      <div class="title-center">
+        <h1>Fruits de mer vivants de la côte ouest de l’Écosse</h1>
+      </div>
+
+      <div class="site-container">
+        <!-- À PROPOS -->
+        <section class="content-block" id="about">
+          <div class="text-block">
+            <h2>À propos</h2>
+            <p>
+              <strong>Easdale Seafoods</strong> est une entreprise familiale basée sur la côte ouest de l’Écosse.
+            </p>
+            <p>
+              Depuis <time datetime="1990">1990</time>, nous sommes spécialisés dans l’exportation de coquillages vivants, avec un engagement fort envers la <em>qualité</em>, la <em>durabilité</em> et la <em>confiance</em>.
+            </p>
+            <p>
+              Nos produits proviennent exclusivement de bateaux locaux utilisant des <strong>nasses “creel”</strong>, garantissant une manipulation douce et une fraîcheur optimale à chaque étape.
+            </p>
+            <p>
+              Nos clients : grossistes, chefs et distributeurs du monde entier — qui apprécient le soin et la constance qu’une petite équipe soudée peut offrir.
+            </p>
+            <a href="contact-fr.html" class="button" aria-label="Nous contacter">Nous contacter</a>
+          </div>
+          <div class="media-block">
+            <video
+              class="hero-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              preload="metadata"
+              title="Bateau OLGA au quai déchargeant des langoustines"
+              aria-label="Bateau Olga dans la baie"
+            >
+              <source src="videos/olja-boat-loop.mp4" type="video/mp4" />
+              Votre navigateur ne supporte pas la vidéo HTML5.
+            </video>
+          </div>
+        </section>
+
+        <!-- PRODUITS -->
+        <section class="content-block" id="products">
+          <div class="text-block">
+            <h2>Nos Produits</h2>
+            <div class="product-grid">
+              <div class="product-card">
+                <a href="products-fr.html" class="product-link">
+                  <div class="img-container">
+                    <img src="Images/liveprawns.jpeg" alt="Langoustines vivantes" loading="lazy" />
+                  </div>
+                  <div class="card-body">
+                    <h3>Langoustines</h3>
+                  </div>
+                </a>
+              </div>
+              <div class="product-card">
+                <a href="products-fr.html" class="product-link">
+                  <div class="img-container">
+                    <img src="Images/razor-clams.jpeg" alt="Couteaux de mer" loading="lazy" />
+                  </div>
+                  <div class="card-body">
+                    <h3>Couteaux</h3>
+                  </div>
+                </a>
+              </div>
+              <div class="product-card">
+                <a href="products-fr.html" class="product-link">
+                  <div class="img-container">
+                    <img src="Images/lobsters-freshly-caught.png" alt="Homards vivants" loading="lazy" />
+                  </div>
+                  <div class="card-body">
+                    <h3>Homards</h3>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PARTENAIRES LOCAUX -->
+        <section class="content-block" id="locals-teaser" aria-labelledby="local-partners-heading">
+          <div class="text-block">
+            <h2 id="local-partners-heading">Partenaires locaux</h2>
+            <p>
+              Chez <strong>Easdale Seafoods</strong>, nous croyons que les meilleures collaborations naissent d’un territoire commun — paysages, saisons, valeurs partagées.
+            </p>
+            <p>
+              Depuis plus de <time datetime="1990">30 ans</time>, nous travaillons main dans la main avec des restaurants locaux qui, comme nous, valorisent la <strong>qualité</strong>, la <strong>simplicité</strong> et <strong>l’intégrité</strong>.
+            </p>
+            <a href="locals-fr.html" class="button">Voir plus</a>
+          </div>
+          <div class="media-block">
+            <img src="Images/boat-balvicar.png" alt="Vue aérienne de Balvicar" loading="lazy" />
+            <figcaption>Vue de Balvicar depuis les airs</figcaption>
+          </div>
+        </section>
+
+        <!-- GALERIE -->
+        <section id="gallery" class="content-block">
+          <div class="media-block">
+            <a href="gallery.html" aria-label="Voir la galerie complète">
+              <img src="Images/razor-alone.jpg" alt="Aperçu de la galerie : couteau de mer" class="gallery-cover" loading="lazy" />
+            </a>
+          </div>
+          <div class="text-block">
+            <h2>Galerie</h2>
+            <p>
+              Découvrez notre environnement, notre métier et notre quotidien — en images.
+            </p>
+            <a href="gallery.html" class="button">Voir la galerie</a>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- VIDÉO EN BAS DE PAGE -->
+    <section class="hero-video-footer">
+      <video src="videos/Landscape.mp4" autoplay muted loop playsinline></video>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-grid">
+      <div class="footer-col">
+        <h4>Easdale Seafoods Ltd</h4>
+        <p>
+          Balvicar, Isle of Seil<br />
+          OBAN, Argyll, Écosse PA34 4T
+        </p>
+        <p>
+          Email :
+          <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos Produits</h4>
+        <ul>
+          <li>Langoustines vivantes</li>
+          <li>Couteaux de mer</li>
+          <li>Homards</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liens</h4>
+        <ul>
+          <li><a href="index-fr.html#about">À propos</a></li>
+          <li><a href="index-fr.html#products">Produits</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="contact-fr.html">Contact</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-credits">
+      <small>© Easdale Seafoods Ltd – 2025 · Site par BDF Consulting Ltd</small>
+    </div>
+
+    <!-- JS -->
+<script>
+  const burger = document.getElementById('burger-toggle');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    const expanded = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!expanded));
+  });
+
+  // 🔄 Sélecteur de langue bi-directionnel
+  const langSelect = document.getElementById('lang-select');
+  langSelect.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    const currentPath = window.location.pathname;
+    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+    if (lang === 'en' && fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('-fr.html', '.html');
+    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('.html', '-fr.html');
+    }
+  });
+</script>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
+    observer.observe(el)
+  );
+</script>
+</body>
+</html>

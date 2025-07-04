@@ -140,7 +140,7 @@
                 >
                   <div class="img-container">
                     <img
-                      src="Images/couteaux.jpg"
+                      src="Images/razor-clams.jpeg"
                       alt="Razor Clams"
                       loading="lazy"
                     />
@@ -158,7 +158,7 @@
                 >
                   <div class="img-container">
                     <img
-                      src="Images/lobsters.jpeg"
+                      src="Images/lobsters-freshly-caught.png"
                       alt="Live Lobsters"
                       loading="lazy"
                     />
@@ -278,31 +278,46 @@
       >
     </div>
 
-    <script>
-      const burger = document.getElementById('burger-toggle');
-      const navLinks = document.getElementById('nav-links');
-      burger.addEventListener('click', () => {
-        navLinks.classList.toggle('show');
-        const expanded = burger.getAttribute("aria-expanded") === "true";
-  burger.setAttribute("aria-expanded", String(!expanded));
-      });
-    </script>
+    <!-- JS -->
+<script>
+  const burger = document.getElementById('burger-toggle');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    const expanded = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!expanded));
+  });
 
-    <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      document.querySelectorAll('.content-block').forEach((block) => {
-        observer.observe(block);
+  // 🔄 Sélecteur de langue bi-directionnel
+  const langSelect = document.getElementById('lang-select');
+  langSelect.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    const currentPath = window.location.pathname;
+    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+
+    if (lang === 'en' && fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('-fr.html', '.html');
+    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('.html', '-fr.html');
+    }
+  });
+</script>
+
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
-    </script>
-  </body>
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
+    observer.observe(el)
+  );
+</script>
+</body>
 </html>

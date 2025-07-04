@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nos Produits – Easdale Seafoods</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+  </head>
+  <body class="products-page">
+    <!-- NAVIGATION -->
+    <header class="navbar">
+      <div class="nav-container">
+        <div class="brand">
+          <a href="index-fr.html">
+            <img id="img-logo" src="Images/logo-detoure.png" alt="Logo Easdale Seafoods" />
+          </a>
+          <h1 class="site-title">Easdale Seafoods</h1>
+        </div>
+        <nav id="nav-links">
+          <a href="index-fr.html#about">À propos</a>
+          <a href="products-fr.html">Produits</a>
+          <a href="locals-fr.html">Partenaires</a>
+          <a href="gallery.html">Galerie</a>
+          <a href="contact-fr.html">Contact</a>
+          <select id="lang-select" aria-label="Langue">
+            <option value="en">EN</option>
+            <option value="fr" selected>FR</option>
+          </select>
+        </nav>
+        <div class="burger" id="burger-toggle">&#9776;</div>
+      </div>
+    </header>
+
+    <section class="hero-banner"></section>
+    <main class="site-container">
+      <h1 class="page-title">Nos Produits</h1>
+
+      <!-- 🦐 LANGOUSTINES -->
+      <section id="langoustines" class="product-section" itemscope itemtype="http://schema.org/Product">
+        <header>
+          <h2 itemprop="name" class="product-title">
+            Langoustines vivantes
+            <small itemprop="alternateName">(Nephrops norvegicus)</small>
+          </h2>
+        </header>
+
+        <div class="product-intro">
+          <div class="product-image">
+            <img src="Images/langoustines-vivantes-tube.jpeg" alt="Langoustines en tube prêtes à l'expédition" loading="lazy" itemprop="image" />
+          </div>
+          <div class="product-overview" itemprop="description">
+            <h3 class="section-subtitle">Présentation</h3>
+            <p>
+              Nos <strong>langoustines écossaises vivantes</strong> — aussi appelées “prawns” ou langoustines de Dublin — sont réputées pour leur <strong itemprop="flavor">chair douce et sucrée</strong> et leur <em itemprop="texture">texture tendre et juteuse</em>.
+              Capturées en nasses (“creels”) au large de la côte ouest de l’Écosse, elles sont manipulées avec soin de la mer à l’assiette.
+            </p>
+          </div>
+        </div>
+
+        <section class="product-details">
+          <h3 class="visually-hidden">Caractéristiques principales</h3>
+          <dl class="characteristics">
+            <dt>Méthode de pêche</dt>
+            <dd>Nasses individuelles – méthode respectueuse des habitats marins.</dd>
+            <dt>Conditionnement</dt>
+            <dd>Stockées en compartiments pour éviter la lumière, le bruit et les chocs thermiques.</dd>
+            <dt>Tailles disponibles</dt>
+            <dd>XXL, XL, L, M, S – Les mois chauds offrent des prises plus petites.</dd>
+            <dt>Saisonnalité</dt>
+            <dd>Disponible toute l’année, pic en février–avril, période creuse en septembre–novembre.</dd>
+            <dt>Utilisation culinaire</dt>
+            <dd>À griller, pocher, ou intégrer à des plats de pâtes, risottos ou salades.</dd>
+            <dt>Traçabilité</dt>
+            <dd>Chaque caisse est liée à un bateau spécifique pour une provenance garantie.</dd>
+          </dl>
+        </section>
+
+        <footer>
+          <a href="contact-fr.html" class="button" itemprop="url">Nous contacter</a>
+        </footer>
+      </section>
+
+      <!-- 🔪 COUTEAUX -->
+      <section id="razor-clams" class="product-section" itemscope itemtype="http://schema.org/Product">
+        <header>
+          <h2 itemprop="name" class="product-title">
+            Couteaux de mer
+            <small itemprop="alternateName">(Ensis siliqua)</small>
+          </h2>
+        </header>
+
+        <div class="product-intro">
+          <div class="product-image">
+            <img src="Images/razor-clams.jpeg" alt="Couteaux de mer frais emballés pour livraison" loading="lazy" itemprop="image" />
+          </div>
+          <div class="product-overview" itemprop="description">
+            <h3 class="section-subtitle">Présentation</h3>
+            <p>
+              Nos couteaux — longs, sucrés, légèrement iodés — sont récoltés à la main dans les bancs de sable propres de la côte écossaise.
+              Leur forme unique et leur saveur raffinée en font un produit prisé par les chefs européens.
+              Pêchés sur commande, expédiés vivants.
+            </p>
+          </div>
+        </div>
+
+        <section class="product-details">
+          <h3 class="visually-hidden">Caractéristiques principales</h3>
+          <dl class="characteristics">
+            <dt>Récolte</dt>
+            <dd>Plongée ou cueillette manuelle — sans dragage mécanique.</dd>
+            <dt>Transport & conservation</dt>
+            <dd>Livrés vivants en caisses isothermes avec gels d’eau de mer.</dd>
+            <dt>Tailles disponibles</dt>
+            <dd>Grand et Très grand – entre 12 et 15 cm environ.</dd>
+            <dt>Saisonnalité</dt>
+            <dd>Meilleurs d’octobre à avril, selon les marées et permis.</dd>
+            <dt>Utilisation culinaire</dt>
+            <dd>Snackés, grillés, ou crus avec agrumes.</dd>
+            <dt>Traçabilité</dt>
+            <dd>Date et zone de récolte indiquées pour chaque lot.</dd>
+          </dl>
+        </section>
+
+        <footer>
+          <a href="contact-fr.html" class="button" itemprop="url">Nous contacter</a>
+        </footer>
+      </section>
+
+      <!-- 🦞 HOMARDS -->
+      <section id="lobsters" class="product-section" itemscope itemtype="http://schema.org/Product">
+        <header>
+          <h2 itemprop="name" class="product-title">Homards écossais</h2>
+        </header>
+
+        <div class="product-intro">
+          <div class="product-image">
+            <img src="Images/packed-lobsters-ready-to-be-shipped.png" alt="Homards écossais prêts à être expédiés" loading="lazy" itemprop="image" />
+          </div>
+          <div class="product-overview" itemprop="description">
+            <h3 class="section-subtitle">Présentation</h3>
+            <p>
+              Pêchés dans les eaux pures d’Écosse, nos homards offrent une chair <strong itemprop="flavor">sucrée, tendre</strong>, avec une <em itemprop="texture">mâche ferme et raffinée</em>, relevée de subtiles notes marines.
+            </p>
+          </div>
+        </div>
+
+        <section class="product-details">
+          <h3 class="visually-hidden">Caractéristiques principales</h3>
+          <dl class="characteristics">
+            <dt>Habitat</dt>
+            <dd>Fonds durs peu profonds, eaux froides et claires d’Écosse.</dd>
+            <dt>Durabilité</dt>
+            <dd>Pêche réglementée (longueur minimale de la carapace).</dd>
+            <dt>Saisonnalité</dt>
+            <dd>
+              Qualité optimale de
+              <time datetime="2025-06">juin</time> à <time datetime="2025-07">juillet</time>.
+            </dd>
+          </dl>
+        </section>
+
+        <footer>
+          <a href="contact-fr.html" class="button" itemprop="url">Nous contacter</a>
+        </footer>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-grid">
+      <div class="footer-col">
+        <h4>Easdale Seafoods Ltd</h4>
+        <p>
+          Balvicar, Isle of Seil<br />
+          OBAN, Argyll, Écosse PA34 4T
+        </p>
+        <p>Email : <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Nos Produits</h4>
+        <ul>
+          <li>Langoustines vivantes</li>
+          <li>Couteaux de mer</li>
+          <li>Homards</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Liens</h4>
+        <ul>
+          <li><a href="index-fr.html#about">À propos</a></li>
+          <li><a href="products-fr.html">Produits</a></li>
+          <li><a href="gallery.html">Galerie</a></li>
+          <li><a href="contact-fr.html">Contact</a></li>
+          <li><a href="#">Mentions légales</a></li>
+        </ul>
+      </div>
+    </footer>
+    <div class="footer-credits">
+      <small>© Easdale Seafoods Ltd – 2025 · Site par BDF Consulting Ltd</small>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+      const burger = document.getElementById('burger-toggle');
+      const navLinks = document.getElementById('nav-links');
+      burger.addEventListener('click', () => {
+        navLinks.classList.toggle('show');
+      });
+
+      document.getElementById('lang-select').addEventListener('change', (e) => {
+        const lang = e.target.value;
+        const path = window.location.pathname;
+        if (lang === 'en') {
+          window.location.href = path.replace('-fr.html', '.html');
+        }
+      });
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+      document.querySelectorAll('.product-section, .media-gallery').forEach((el) => observer.observe(el));
+    </script>
+  </body>
+</html>
