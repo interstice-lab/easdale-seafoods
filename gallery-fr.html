@@ -51,19 +51,24 @@
     <main class="site-container">
       <h1 class="page-title">Galerie</h1>
       <p class="intro">Découvrez où nous travaillons, ce que nous pêchons et comment nous vivons — en images et en vidéos.</p>
+  
+      <!-- 🎥 YouTube avec overlay et fallback iframe -->
+<div class="iframe-container" id="player-container">
+  <div id="player">
+    <!-- Fallback statique -->
+    <iframe
+      src="https://www.youtube-nocookie.com/embed/bXlrFH7NC4c?rel=0&modestbranding=1&vq=hd720"
+      title="YouTube video"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div id="video-overlay">Merci d’avoir regardé !</div>
+</div>
 
-      <!-- 🎥 YouTube -->
-      <div class="iframe-container">
-        <iframe
-          src="https://www.youtube.com/embed/bXlrFH7NC4c?rel=0&modestbranding=1&vq=hd720"
-          title="YouTube video"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen
-        ></iframe>
-      </div>
 
-<!-- 📷 Photo Gallery -->
+<!-- 📷 Photos -->
 <h2 class="gallery-section-title">📷 Galerie photo</h2>
 <section class="gallery-grid photos-only" aria-label="Photos Easdale Seafoods">
   <figure class="gallery-item">
@@ -254,5 +259,34 @@
         closeEffect: "fade",
       });
     </script>
+
+    <!-- 2. Charge l’API YouTube IFrame -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  let player;
+  function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      videoId: 'bXlrFH7NC4c',
+      host: 'https://www.youtube-nocookie.com',
+      playerVars: {
+        rel: 0,                // pas de suggestions d’autres chaînes
+        modestbranding: 1,     // pas de logo YouTube
+        vq: 'hd1080'           // qualité souhaitée
+      },
+      events: {
+        'onStateChange': onPlayerStateChange
+      }
+    });
+  }
+
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.ENDED) {
+      // Masquer le player
+      document.getElementById('player-container').classList.add('hidden');
+      // Afficher l’overlay
+      document.getElementById('video-overlay').style.display = 'flex';
+    }
+  }
+</script>
   </body>
 </html>
