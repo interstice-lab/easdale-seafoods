@@ -302,9 +302,7 @@ video {
 .content-block .media-block {
   flex: 1;
 }
-body.index-page .site-container {
-  max-width: 1000px;
-}
+
 .media-block a {
   color: var(--color-shrimp);
   text-decoration: none;
