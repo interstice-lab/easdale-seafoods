@@ -286,11 +286,7 @@ video {
 /* =========================================================
    🧩 CONTENT BLOCKS (About, Local Customers, Gallery)
    ========================================================= */
-body.index-page .site-container {
-  max-width: 100%;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+
 
 .content-block {
   display: flex;
@@ -306,7 +302,9 @@ body.index-page .site-container {
 .content-block .media-block {
   flex: 1;
 }
-
+body.index-page .site-container {
+  max-width: 1000px;
+}
 .media-block a {
   color: var(--color-shrimp);
   text-decoration: none;
@@ -840,12 +838,6 @@ body.index-page .site-container {
   flex-wrap: nowrap;    /* tout reste sur la même ligne */
     position: relative;   /* ancre les positionnements absolus */
   }
-
-@media (min-width: 768px) {
-  body.index-page .site-container {
-    max-width: 960px;
-  }
-
   /* — Layout : empiler les content-blocks */
   .content-block {
     flex-direction: column;
@@ -882,5 +874,4 @@ body.index-page .site-container {
     padding: 0 1rem;
   }
 
-}
 }
