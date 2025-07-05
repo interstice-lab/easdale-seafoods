@@ -24,35 +24,7 @@
   <!-- GLightbox CSS -->
   <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
-  <!-- Critical styles for the responsive YouTube player and UI -->
-  <style>
-    /* Player wrapper */
-    .iframe-container{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;}
-    #player{position:absolute;top:0;left:0;width:100%;height:100%;}
-    /* Transparent overlay that captures any click and redirects to playlist */
-    #click-layer{position:absolute;inset:0;z-index:2;display:block;}
-    /* Play / Pause button */
-    #toggle-play{
-      position:absolute;bottom:1rem;left:1rem;z-index:3;
-      width:3rem;height:3rem;border:none;border-radius:50%;
-      background:#ffffffcc;backdrop-filter:blur(4px);
-      display:grid;place-items:center;cursor:pointer;
-      transition:background .2s;
-    }
-    #toggle-play::before{ /* ► */
-      content:'';
-      display:block;
-      width:0;height:0;border-style:solid;
-      border-width:0.7rem 0 0.7rem 1.1rem;
-      border-color:transparent transparent transparent #000;
-      transform:translateX(1px);
-    }
-    #toggle-play.is-paused::before{ /* || */
-      width:1rem;height:1.3rem;border:none;
-      box-shadow:0 0 0 .25rem #000,0 0 0 .55rem transparent;
-    }
-    #toggle-play:hover{background:#fff;}
-  </style>
+
 </head>
 
 <body class="gallery-page">
