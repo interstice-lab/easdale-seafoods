@@ -286,7 +286,11 @@ video {
 /* =========================================================
    🧩 CONTENT BLOCKS (About, Local Customers, Gallery)
    ========================================================= */
-
+body.index-page .site-container {
+  max-width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 
 .content-block {
   display: flex;
@@ -836,6 +840,12 @@ video {
   flex-wrap: nowrap;    /* tout reste sur la même ligne */
     position: relative;   /* ancre les positionnements absolus */
   }
+
+@media (min-width: 768px) {
+  body.index-page .site-container {
+    max-width: 960px;
+  }
+
   /* — Layout : empiler les content-blocks */
   .content-block {
     flex-direction: column;
