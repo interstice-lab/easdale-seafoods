@@ -568,40 +568,52 @@ body.index-page .site-container {
 /* =========================================================
    🎥 YouTube Embed – comport. & overlay fin de vidéo
    ========================================================= */
-.iframe-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-}
+
+/* =========================================================
+   🎥 YouTube Embed – wrapper + overlay + bouton
+   ========================================================= */
+
+/* Wrapper responsif + calques */
+.iframe-container{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;}
 .iframe-container iframe,
-.iframe-container #player {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+#player{position:absolute;inset:0;width:100%;height:100%;}
+#click-layer{position:absolute;inset:0;z-index:2;display:block;}
+
+/* Overlay fin de vidéo */
+#video-overlay{
+  position:absolute;inset:0;display:none;
+  background:rgba(0,0,0,.6);color:#fff;font-size:1.5rem;
+  align-items:center;justify-content:center;text-align:center;
 }
-#player-container.hidden {
-  display: none !important;
+#video-overlay.is-visible{display:flex;}          /* alias .visible */
+
+/* Bouton Play / Pause */
+/* --- Play / Pause pill --- */
+#toggle-play{
+  position:absolute;bottom:1rem;left:1rem;z-index:3;
+  width:3.25rem;height:3.25rem;border-radius:50%;
+  backdrop-filter:blur(5px);
+  background:rgba(0,0,0,.35);          /* verre fumé */
+  display:grid;place-items:center;
+  transition:background .25s ease, transform .2s ease;
 }
-#video-overlay {
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  color: #fff;
-  font-size: 1.5rem;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+#toggle-play:hover{background:rgba(0,0,0,.55);transform:scale(1.06);}
+#toggle-play:active{transform:scale(.94);}
+
+/* ► icône */
+#toggle-play::before{
+  content:'';display:block;width:0;height:0;
+  border-style:solid;border-width:.8rem 0 .8rem 1.25rem;
+  border-color:transparent transparent transparent #fff;
+  transition:opacity .2s;
 }
-#video-overlay.visible {
-  display: flex;
+
+/* || icône (double barre) */
+#toggle-play.is-paused::before{
+  width:.4rem;height:1.4rem;border:none;background:#fff;
+  box-shadow:.6rem 0 0 #fff;
 }
+
 
 
 /* =========================================================

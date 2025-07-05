@@ -1,250 +1,283 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- 🔍 SEO + Rich Preview (Open Graph) -->
+  <!-- SEO -->
+  <meta name="description" content="Explore our work, island life, and daily catches through a curated selection of photos and videos from the Scottish coast.">
+  <link rel="canonical" href="https://www.easdaleseafoods.com/gallery.html">
+  <meta property="og:title" content="Gallery – Easdale Seafoods">
+  <meta property="og:description" content="A visual dive into our fishing boats, coastal views, and the people behind Easdale Seafoods.">
+  <meta property="og:url" content="https://www.easdaleseafoods.com/gallery.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Meta description for search engines -->
-  <meta name="description" content="Explore our work, island life, and daily catches through a curated selection of photos and videos from the Scottish coast." />
-
-  <!-- Canonical URL: signals the preferred version of this page -->
-  <link rel="canonical" href="https://www.easdaleseafoods.com/gallery.html" />
-
-  <!-- Open Graph: link preview for social networks -->
-  <meta property="og:title" content="Gallery – Easdale Seafoods" />
-  <meta property="og:description" content="A visual dive into our fishing boats, coastal views, and the people behind Easdale Seafoods." />
-  <meta property="og:url" content="https://www.easdaleseafoods.com/gallery.html" />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
-
-  <!-- Twitter card preview -->
-  <meta name="twitter:card" content="summary_large_image" />
-
-  <!-- 🏷️ Page title (browser tab) -->
   <title>Gallery – Easdale Seafoods</title>
 
-  <!-- 🎨 Stylesheets and assets -->
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-  <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+  <!-- Global styles and fonts -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="Images/favicon1.ico">
+
+  <!-- GLightbox CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Critical styles for the responsive YouTube player and UI -->
+  <style>
+    /* Player wrapper */
+    .iframe-container{position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;}
+    #player{position:absolute;top:0;left:0;width:100%;height:100%;}
+    /* Transparent overlay that captures any click and redirects to playlist */
+    #click-layer{position:absolute;inset:0;z-index:2;display:block;}
+    /* Play / Pause button */
+    #toggle-play{
+      position:absolute;bottom:1rem;left:1rem;z-index:3;
+      width:3rem;height:3rem;border:none;border-radius:50%;
+      background:#ffffffcc;backdrop-filter:blur(4px);
+      display:grid;place-items:center;cursor:pointer;
+      transition:background .2s;
+    }
+    #toggle-play::before{ /* ► */
+      content:'';
+      display:block;
+      width:0;height:0;border-style:solid;
+      border-width:0.7rem 0 0.7rem 1.1rem;
+      border-color:transparent transparent transparent #000;
+      transform:translateX(1px);
+    }
+    #toggle-play.is-paused::before{ /* || */
+      width:1rem;height:1.3rem;border:none;
+      box-shadow:0 0 0 .25rem #000,0 0 0 .55rem transparent;
+    }
+    #toggle-play:hover{background:#fff;}
+  </style>
 </head>
 
-  <body class="gallery-page">
-    <!-- NAVIGATION -->
-    <header class="navbar">
-      <div class="nav-container">
-        <div class="brand">
-          <a href="index.html">
-            <img
-              id="img-logo"
-              src="Images/logo-detoure.png"
-              alt="Easdale Seafoods logo"
-            />
-          </a>
-          <h1 class="site-title">Easdale Seafoods</h1>
-        </div>
-        <nav id="nav-links">
-          <a href="index.html">About us</a>
-          <a href="products.html">Products</a>
-          <a href="clients.html">Our clients</a>
-          <a href="gallery.html">Gallery</a>
-          <a href="contact.html">Contact</a>
-          <select id="lang-select" aria-label="Language">
-            <option value="en">EN</option>
-            <option value="fr">FR</option>
-          </select>
-        </nav>
-        <div class="burger" id="burger-toggle">&#9776;</div>
+<body class="gallery-page">
+  <!-- ========= NAVBAR ========= -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="index.html"><img id="img-logo" src="Images/logo-detoure.png" alt="Easdale Seafoods logo"></a>
+        <h1 class="site-title">Easdale Seafoods</h1>
       </div>
-    </header>
+      <nav id="nav-links">
+        <a href="index.html">About us</a>
+        <a href="products.html">Products</a>
+        <a href="clients.html">Our clients</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <select id="lang-select" aria-label="Language">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+      </nav>
+      <div class="burger" id="burger-toggle">&#9776;</div>
+    </div>
+  </header>
 
-    <section class="hero-banner"></section>
-    <div class="title-center"></div>
+  <section class="hero-banner"></section>
+  <div class="title-center"></div>
 
-    <!-- MAIN CONTENT -->
-    <main class="site-container">
-      <h1 class="page-title">Gallery</h1>
-      <p class="intro">
-        Discover where we work, what we catch, and how we live — in images and videos.
-      </p>
+  <!-- ========= MAIN ========= -->
+  <main class="site-container">
+    <h1 class="page-title">Gallery</h1>
+    <p class="intro">Discover where we work, what we catch, and how we live — in images and videos.</p>
 
-      <!-- 🎥 YouTube intégrée (popup HD) -->
-      <div class="iframe-container">
-  <iframe
-    src="https://www.youtube.com/embed/bXlrFH7NC4c?vq=hd720"
-    title="YouTube video"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
-</div>
+    <!-- YouTube player -->
+    <div class="iframe-container">
+      <div id="player"></div>
+      <a id="click-layer"
+         href="https://www.youtube.com/@EasdaleSeafoods"
+         target="_blank"
+         aria-label="Open Easdale Seafoods playlist in a new tab"></a>
+      <button id="toggle-play" aria-label="Pause video"></button>
+    </div>
 
-<!-- 🖼️ Easdale Seafoods Gallery -->
-<main class="site-container">
+    <!-- 📷 PHOTO SECTION -->
+    <h2 class="gallery-section-title">📷 Photo Gallery</h2>
+    <section class="gallery-grid photos-only" aria-label="Easdale Seafoods photos">
 
-  <!-- 📷 PHOTO SECTION -->
-  <h2 class="gallery-section-title">📷 Photo Gallery</h2>
-  <section class="gallery-grid photos-only" aria-label="Easdale Seafoods photos">
+      <figure class="gallery-item">
+        <a href="Images/view-from-cuan-ferry (2).jpg" class="glightbox" data-gallery="gallery" data-title="Creels on Cuan Ferry pier">
+          <img src="Images/view-from-cuan-ferry (2).jpg" alt="Creels on Cuan Ferry pier" loading="lazy">
+        </a>
+        <figcaption>Creels on Cuan Ferry pier</figcaption>
+      </figure>
 
-    <figure class="gallery-item">
-      <a href="Images/view-from-cuan-ferry (2).jpg" class="glightbox" data-gallery="gallery" data-title="Creels in pier">
-        <img src="Images/view-from-cuan-ferry (2).jpg" alt="Creels in pier" loading="lazy" />
-      </a>
-      <figcaption>Creels in Cuan Ferry pier</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Images/lobster-on-the-pier.jpeg" class="glightbox" data-gallery="gallery" data-title="Lobster on the pier">
+          <img src="Images/lobster-on-the-pier.jpeg" alt="Lobster on the pier" loading="lazy">
+        </a>
+        <figcaption>Lobster on the pier</figcaption>
+      </figure>
 
-    <figure class="gallery-item">
-      <a href="Images/boats.jpeg" class="glightbox" data-gallery="gallery" data-title="Sailing Boats in bay">
-        <img src="Images/boats.jpeg" alt="Boats in bay" loading="lazy" />
-      </a>
-      <figcaption>Sailing boats in Ardencaple bay</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Images/xl-live-langoustine.jpeg" class="glightbox" data-gallery="gallery" data-title="XL Live Langoustine">
+          <img src="Images/xl-live-langoustine.jpeg" alt="XL Live Langoustine" loading="lazy">
+        </a>
+        <figcaption>XL Live Langoustine</figcaption>
+      </figure>
 
-    <figure class="gallery-item">
-      <a href="Images/olja-boat-in-bay.jpeg" class="glightbox" data-gallery="gallery" data-title="Fishing boat Olga">
-        <img src="Images/olja-boat-in-bay.jpeg" alt="Fishing boat Olga" loading="lazy" />
-      </a>
-      <figcaption>Fishing boat Olja in harbour</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Images/boats.jpeg" class="glightbox" data-gallery="gallery" data-title="Sailing boats in Ardencaple bay">
+          <img src="Images/boats.jpeg" alt="Sailing boats in Ardencaple bay" loading="lazy">
+        </a>
+        <figcaption>Sailing boats in Ardencaple bay</figcaption>
+      </figure>
 
-    <figure class="gallery-item">
-      <a href="Images/froach-gael-boat.webp" class="glightbox" data-gallery="gallery" data-title="Froach Gael Boat in rough see">
-        <img src="Images/froach-gael-boat.webp" alt="Froach Gael Boat in rough see" loading="lazy" />
-      </a>
-      <figcaption>Froach Gael Boat in rough see</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Images/olja-boat-in-bay.jpeg" class="glightbox" data-gallery="gallery" data-title="Fishing boat Olja in harbour">
+          <img src="Images/olja-boat-in-bay.jpeg" alt="Fishing boat Olja in harbour" loading="lazy">
+        </a>
+        <figcaption>Fishing boat Olja in harbour</figcaption>
+      </figure>
 
-    <figure class="gallery-item">
-      <a href="Images/prawn-tails.jpeg" class="glightbox" data-gallery="gallery" data-title="Prawn tail freshly cooked">
-        <img src="Images/prawn-tails.jpeg" alt="Prawn tail ready to be cooked" loading="lazy" />
-      </a>
-      <figcaption>Prawn tails ready to be cooked</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Images/froach-gael-boat.webp" class="glightbox" data-gallery="gallery" data-title="Froach Gael Boat in rough sea">
+          <img src="Images/froach-gael-boat.webp" alt="Froach Gael Boat in rough sea" loading="lazy">
+        </a>
+        <figcaption>Froach Gael Boat in rough sea</figcaption>
+      </figure>
 
-    <figure class="gallery-item">
-      <a href="Images/boat-balvicar.png" class="glightbox" data-gallery="gallery" data-title="Boats in Balvicar bay">
-        <img src="Images/boat-balvicar.png" alt="Boats in Balvicar bay" loading="lazy" />
-      </a>
-      <figcaption>Boats in Balvicar bay</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Images/large-live-langoustine.jpeg" class="glightbox" data-gallery="gallery" data-title="Large live Langoustine">
+          <img src="Images/large-live-langoustine.jpeg" alt="Large live Langoustine" loading="lazy">
+        </a>
+        <figcaption>Large live Langoustine</figcaption>
+      </figure>
 
-    <figure class="gallery-item">
-      <a href="Images/couteaux.jpeg" class="glightbox" data-gallery="gallery" data-title="razor clams packed">
-        <img src="Images/couteaux.jpeg" alt="Boats in bay" loading="lazy" />
-      </a>
-      <figcaption>Razor clams packed</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Images/boat-balvicar.png" class="glightbox" data-gallery="gallery" data-title="Boats in Balvicar bay">
+          <img src="Images/boat-balvicar.png" alt="Boats in Balvicar bay" loading="lazy">
+        </a>
+        <figcaption>Boats in Balvicar bay</figcaption>
+      </figure>
 
-    <figure class="gallery-item">
-      <a href="Images/langoustines-vivantes-tube.jpeg" class="glightbox" data-gallery="gallery" data-title="Live prawns packed in tube">
-        <img src="Images/langoustines-vivantes-tube.jpeg" alt="Boats in bay" loading="lazy" />
-      </a>
-      <figcaption>Xl Live pranws packed in tube</figcaption>
-    </figure>
-    <figure class="gallery-item">
-      <a href="Images/easdale-island.JPG" class="glightbox" data-gallery="gallery" data-title="Easdale Island aerial view">
-        <img src="Images/easdale-island.JPG" alt="Boats in bay" loading="lazy" />
-      </a>
-      <figcaption>Easdale Island aerial view</figcaption>
-    </figure>
+      <figure class="gallery-item">
+        <a href="Images/couteaux.jpeg" class="glightbox" data-gallery="gallery" data-title="Razor clams packed">
+          <img src="Images/couteaux.jpeg" alt="Razor clams packed" loading="lazy">
+        </a>
+        <figcaption>Razor clams packed</figcaption>
+      </figure>
 
-  </section>
+      <figure class="gallery-item">
+        <a href="Images/langoustines-vivantes-tube.jpeg" class="glightbox" data-gallery="gallery" data-title="Live prawns packed in tube">
+          <img src="Images/langoustines-vivantes-tube.jpeg" alt="Live prawns packed in tube" loading="lazy">
+        </a>
+        <figcaption>XL Live prawns packed in tube</figcaption>
+      </figure>
 
-  <!-- WAVY DIVIDER -->
+      <figure class="gallery-item">
+        <a href="Images/easdale-island.JPG" class="glightbox" data-gallery="gallery" data-title="Easdale Island aerial view">
+          <img src="Images/easdale-island.JPG" alt="Easdale Island aerial view" loading="lazy">
+        </a>
+        <figcaption>Easdale Island aerial view</figcaption>
+      </figure>
+
+    </section>
+
+    <!-- DIVIDER -->
   <div class="section-divider">
     <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
       <path d="M0,50 C360,150 1080,-50 1440,50 L1440,100 L0,100 Z" fill="#e0f4ff"></path>
     </svg>
   </div>
 
-  <!-- 🎥 VIDEO SECTION -->
+  <!-- 🎥 Video Highlights -->
   <h2 class="gallery-section-title">🎥 Video Highlights</h2>
   <section class="gallery-grid videos-only" aria-label="Easdale Seafoods videos">
 
     <figure class="gallery-item video-label">
-      <a href="videos/xxl-live-prawn.mp4" class="glightbox" data-gallery="gallery" data-title="Live prawns – close-up" data-type="video">
+      <a href="videos/xxl-live-prawn.mp4" class="glightbox"
+         data-gallery="gallery" data-title="XXL Live prawns – close-up" data-type="video">
         <video muted preload="metadata" poster="Images/liveprawns.jpeg">
-          <source src="videos/xxl-live-prawn.mp4" type="video/mp4" />
+          <source src="videos/xxl-live-prawn.mp4" type="video/mp4">
         </video>
       </a>
-      <figcaption> XXL Live prawns – close-up</figcaption>
+      <figcaption>XXL Live prawns – close-up</figcaption>
     </figure>
 
     <figure class="gallery-item video-label">
-      <a href="videos/olja-boat-loop.mp4" class="glightbox" data-gallery="gallery" data-title="Olga manoeuvring" data-type="video">
+      <a href="videos/olja-boat-loop.mp4" class="glightbox"
+         data-gallery="gallery" data-title="Olja manoeuvring" data-type="video">
         <video muted preload="metadata" poster="Images/olja-boat-in-bay.jpeg">
-          <source src="videos/olja-boat-loop.mp4" type="video/mp4" />
+          <source src="videos/olja-boat-loop.mp4" type="video/mp4">
         </video>
       </a>
       <figcaption>Olja 360 video tour</figcaption>
     </figure>
 
     <figure class="gallery-item video-label">
-      <a href="videos/olja-boat-top-view.mp4" class="glightbox" data-gallery="gallery" data-title="Top view – Olga" data-type="video">
+      <a href="videos/olja-boat-top-view.mp4" class="glightbox"
+         data-gallery="gallery" data-title="Top view – Olja" data-type="video">
         <video muted preload="metadata" poster="Images/unloading-prawns.png">
-          <source src="videos/olja-boat-top-view.mp4" type="video/mp4" />
+          <source src="videos/olja-boat-top-view.mp4" type="video/mp4">
         </video>
       </a>
       <figcaption>Unloading prawns directly from the boat</figcaption>
     </figure>
 
     <figure class="gallery-item video-label">
-      <a href="videos/video-packing-razors.mp4" class="glightbox" data-gallery="gallery" data-title="Packing razor clams" data-type="video">
-        <video muted preload="metadata" poster="Images/razor-clams.jpeg">
-          <source src="videos/video-packing-razors.mp4" type="video/mp4" />
+      <a href="videos/video-packing-razors.mp4" class="glightbox"
+         data-gallery="gallery" data-title="Packing razor clams" data-type="video">
+        <video muted preload="metadata" poster="Images/couteaux.jpeg">
+          <source src="videos/video-packing-razors.mp4" type="video/mp4">
         </video>
       </a>
       <figcaption>Packing live razor clams</figcaption>
     </figure>
 
+  </section> <!-- /videos-only -->
 
-  </section>
-</main>
+</main> <!-- /site-container -->
 
+<!-- ========= FOOTER ========= -->
+<footer class="footer-grid">
+  <div class="footer-col">
+    <h4>Easdale Seafoods Ltd</h4>
+    <p>Balvicar, Isle of Seil<br>Oban, Argyll, Scotland PA34 4T</p>
+    <p>Email : <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
+  </div>
+  <div class="footer-col">
+    <h4>Our Products</h4>
+    <ul>
+      <li>Live Langoustines</li>
+      <li>Razor Clams</li>
+      <li>Lobsters</li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Links</h4>
+    <ul>
+      <li><a href="index.html">About</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="clients.html">Our Clients</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#">Legal notice</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-credits">
+  <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
+</div>
 
-    <!-- FOOTER -->
-    <footer class="footer-grid">
-      <div class="footer-col">
-        <h4>Easdale Seafoods Ltd</h4>
-        <p>Balvicar, Isle of Seil<br />Oban, Argyll, Scotland PA34 4T</p>
-        <p>Email: <a href="mailto:info@easdalseafoods.co.uk">info@easdalseafoods.co.uk</a></p>
-      </div>
-      <div class="footer-col">
-        <h4>Our Products</h4>
-        <ul>
-          <li>Live Langoustines</li>
-          <li>Razor Clams</li>
-          <li>Lobsters</li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Links</h4>
-        <ul>
-          <li><a href="index.html">About</a></li>
-          <li><a href="products.html">Products</a></li>
-          <li><a href="clients.html">Our Clients</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="#">Legal notice</a></li>
-        </ul>
-      </div>
-    </footer>
-    <div class="footer-credits">
-      <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
-    </div>
-
-    <!-- JS -->
+<!-- ========= JS ========= -->
+<!-- GLightbox -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  const burger = document.getElementById('burger-toggle');
-  const navLinks = document.getElementById('nav-links');
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    const expanded = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!expanded));
+  GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    closeButton: true,
+    zoomable: true,
+    openEffect: 'zoom',
+    closeEffect: 'fade'
   });
-
-  // 🔄 Sélecteur de langue bi-directionnel
+ // 🔄 Sélecteur de langue bi-directionnel
   const langSelect = document.getElementById('lang-select');
   langSelect.addEventListener('change', (e) => {
     const lang = e.target.value;
@@ -259,37 +292,65 @@
   });
 </script>
 
+<!-- YouTube IFrame API -->
+<script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
+  const QUALITY_MIN = 'hd720';                     // plancher souhaité
+  const LADDER      = ['highres','hd2160','hd1440','hd1080','hd720'];
+  const btn         = document.getElementById('toggle-play');
+  let   isPaused    = false;                       // état bouton
+
+  /* === helper : demande HD si YouTube a rétrogradé === */
+  function requestHD(player){
+    const q = player.getPlaybackQuality();
+    if (LADDER.indexOf(q) < LADDER.indexOf(QUALITY_MIN)){
+      player.setPlaybackQuality(QUALITY_MIN);
+    }
+  }
+
+  /* === callback API === */
+  function onYouTubeIframeAPIReady () {
+    const player = new YT.Player('player', {
+      host: 'https://www.youtube-nocookie.com',
+      videoId: 'bXlrFH7NC4c',
+      playerVars: {
+        autoplay: 1, mute: 1,
+        controls: 0, modestbranding: 1,
+        rel: 0,
+        loop: 1, playlist: 'bXlrFH7NC4c',
+        vq: QUALITY_MIN,                   // 1ʳᵉ demande
+        disablekb: 1, fs: 0, playsinline: 1
+      },
+      events: {
+        /* prêt : mute + demande HD immédiate + re-tentative 3 s après */
+        onReady:  e => {
+          e.target.mute();
+          requestHD(e.target);
+          setTimeout(()=>requestHD(e.target), 3000);
+        },
+        /* si YT retrograde : on redemande */
+        onPlaybackQualityChange: e => requestHD(e.target),
+        /* synchro bouton & relance HD chaque fois que ça rejoue */
+        onStateChange: e => {
+          if (e.data === YT.PlayerState.PLAYING){
+            isPaused = false; btn.classList.remove('is-paused');
+            requestHD(e.target);
+          }
+          if (e.data === YT.PlayerState.PAUSED){
+            isPaused = true;  btn.classList.add('is-paused');
+          }
         }
-      });
-    },
-    { threshold: 0.1 }
-  );
-  document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
-    observer.observe(el)
-  );
-</script>
-<!-- GLightbox Script -->
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
+      }
+    });
 
-<script>
-  const lightbox = GLightbox({
-    selector: '.glightbox',
-    touchNavigation: true,
-    loop: true,
-    closeButton: true,
-    zoomable: true,
-    openEffect: 'zoom',
-    closeEffect: 'fade',
-  });
+    /* toggle Play / Pause (n’empêche pas le lien overlay) */
+    btn.addEventListener('click', ev => {
+      ev.stopPropagation();
+      isPaused ? player.playVideo() : player.pauseVideo();
+    });
+  }
 </script>
 
-  </body>
+
+</body>
 </html>

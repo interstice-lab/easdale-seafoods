@@ -52,28 +52,15 @@
       <h1 class="page-title">Galerie</h1>
       <p class="intro">Découvrez où nous travaillons, ce que nous pêchons et comment nous vivons — en images et en vidéos.</p>
   
-      <!-- 🎥 YouTube avec overlay et fallback iframe -->
-<div class="iframe-container" id="player-container">
-  <div id="player">
-    <!-- Fallback statique -->
-   <iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed?listType=playlist
-       &list=PLvEHwJekuPxnw-m1fR2eKh5wwUcWF63p8
-       &rel=0
-       &loop=1
-       &modestbranding=1
-       &controls=1"
-  frameborder="0"
-  allow="autoplay; encrypted-media; loop"
-  allowfullscreen>
-</iframe>
-
-  </div>
-  <div id="video-overlay">Merci d’avoir regardé !</div>
-</div>
-
+  <!-- YouTube player -->
+    <div class="iframe-container">
+      <div id="player"></div>
+      <a id="click-layer"
+         href="https://www.youtube.com/@EasdaleSeafoods"
+         target="_blank"
+         aria-label="Open Easdale Seafoods playlist in a new tab"></a>
+      <button id="toggle-play" aria-label="Pause video"></button>
+    </div>
 
 <!-- 📷 Photos -->
 <h2 class="gallery-section-title">📷 Galerie photo</h2>
@@ -108,9 +95,9 @@
 
   <figure class="gallery-item">
     <a href="Images/prawn-tails.jpeg" class="glightbox" data-gallery="gallery" data-title="Queues de langoustines prêtes à cuire">
-      <img src="Images/prawn-tails.jpeg" alt="Queues de langoustines prêtes à cuire" loading="lazy" />
+      <img src="Images/large-live-langoustine.jpeg" alt="Queues de langoustines prêtes à cuire" loading="lazy" />
     </a>
-    <figcaption>Queues de langoustines prêtes à cuire</figcaption>
+    <figcaption>Langoustine vivante Large</figcaption>
   </figure>
 
   <figure class="gallery-item">
@@ -214,86 +201,93 @@
       <small>© Easdale Seafoods Ltd – 2025 · Site réalisé par BDF Consulting Ltd</small>
     </div>
 
-    <!-- JS -->
-    <script>
-      const burger = document.getElementById("burger-toggle");
-      const navLinks = document.getElementById("nav-links");
-      burger.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-        const expanded = burger.getAttribute("aria-expanded") === "true";
-        burger.setAttribute("aria-expanded", String(!expanded));
-      });
+    <!-- ========= JS ========= -->
+<!-- GLightbox -->
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+  GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    closeButton: true,
+    zoomable: true,
+    openEffect: 'zoom',
+    closeEffect: 'fade'
+  });
+ // 🔄 Sélecteur de langue bi-directionnel
+  const langSelect = document.getElementById('lang-select');
+  langSelect.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    const currentPath = window.location.pathname;
+    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
-      const langSelect = document.getElementById("lang-select");
-      langSelect.addEventListener("change", (e) => {
-        const lang = e.target.value;
-        const path = window.location.pathname;
-        const file = path.substring(path.lastIndexOf("/") + 1);
+    if (lang === 'en' && fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('-fr.html', '.html');
+    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('.html', '-fr.html');
+    }
+  });
+</script>
 
-        if (lang === "en" && file.includes("-fr.html")) {
-          window.location.href = file.replace("-fr.html", ".html");
-        } else if (lang === "fr" && !file.includes("-fr.html")) {
-          window.location.href = file.replace(".html", "-fr.html");
-        }
-      });
-    </script>
-
-    <script>
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
-
-      document.querySelectorAll(".gallery-item").forEach((item) =>
-        observer.observe(item)
-      );
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
-    <script>
-      const lightbox = GLightbox({
-        selector: ".glightbox",
-        touchNavigation: true,
-        loop: true,
-        closeButton: true,
-        zoomable: true,
-        openEffect: "zoom",
-        closeEffect: "fade",
-      });
-    </script>
-
-    <!-- 2. Charge l’API YouTube IFrame -->
+<!-- YouTube IFrame API -->
 <script src="https://www.youtube.com/iframe_api"></script>
 <script>
-  let player;
-  function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-      videoId: 'bXlrFH7NC4c',
-      host: 'https://www.youtube-nocookie.com',
-      playerVars: {
-        rel: 0,                // pas de suggestions d’autres chaînes
-        modestbranding: 1,     // pas de logo YouTube
-        vq: 'hd1080'           // qualité souhaitée
-      },
-      events: {
-        'onStateChange': onPlayerStateChange
-      }
-    });
-  }
+  const QUALITY_MIN = 'hd720';                     // plancher souhaité
+  const LADDER      = ['highres','hd2160','hd1440','hd1080','hd720'];
+  const btn         = document.getElementById('toggle-play');
+  let   isPaused    = false;                       // état bouton
 
-  function onPlayerStateChange(event) {
-    if (event.data === YT.PlayerState.ENDED) {
-      // Masquer le player
-      document.getElementById('player-container').classList.add('hidden');
-      // Afficher l’overlay
-      document.getElementById('video-overlay').style.display = 'flex';
+  /* === helper : demande HD si YouTube a rétrogradé === */
+  function requestHD(player){
+    const q = player.getPlaybackQuality();
+    if (LADDER.indexOf(q) < LADDER.indexOf(QUALITY_MIN)){
+      player.setPlaybackQuality(QUALITY_MIN);
     }
   }
+
+  /* === callback API === */
+  function onYouTubeIframeAPIReady () {
+    const player = new YT.Player('player', {
+      host: 'https://www.youtube-nocookie.com',
+      videoId: 'bXlrFH7NC4c',
+      playerVars: {
+        autoplay: 1, mute: 1,
+        controls: 0, modestbranding: 1,
+        rel: 0,
+        loop: 1, playlist: 'bXlrFH7NC4c',
+        vq: QUALITY_MIN,                   // 1ʳᵉ demande
+        disablekb: 1, fs: 0, playsinline: 1
+      },
+      events: {
+        /* prêt : mute + demande HD immédiate + re-tentative 3 s après */
+        onReady:  e => {
+          e.target.mute();
+          requestHD(e.target);
+          setTimeout(()=>requestHD(e.target), 3000);
+        },
+        /* si YT retrograde : on redemande */
+        onPlaybackQualityChange: e => requestHD(e.target),
+        /* synchro bouton & relance HD chaque fois que ça rejoue */
+        onStateChange: e => {
+          if (e.data === YT.PlayerState.PLAYING){
+            isPaused = false; btn.classList.remove('is-paused');
+            requestHD(e.target);
+          }
+          if (e.data === YT.PlayerState.PAUSED){
+            isPaused = true;  btn.classList.add('is-paused');
+          }
+        }
+      }
+    });
+
+    /* toggle Play / Pause (n’empêche pas le lien overlay) */
+    btn.addEventListener('click', ev => {
+      ev.stopPropagation();
+      isPaused ? player.playVideo() : player.pauseVideo();
+    });
+  }
 </script>
-  </body>
+
+
+</body>
 </html>
