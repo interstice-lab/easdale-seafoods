@@ -118,7 +118,17 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
               />
               Your browser doesn’t support HTML5 video.
             </video>
-          </div>
+           
+  <!-- YT wrapper (exact ⌀ du CSS déjà présent) 
+  <div class="iframe-container">
+    <div id="player-index"></div>       container du lecteur 
+    <a id="click-layer"
+       href="https://www.youtube.com/@EasdaleSeafoods"
+       target="_blank"
+       aria-label="Open Easdale Seafoods playlist in a new tab"></a>
+    <button id="toggle-play" aria-label="Pause video"></button>
+  </div> -->
+</div>
         </section>
 
         <!-- PRODUCTS -->
@@ -226,8 +236,8 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
           <div class="media-block">
             <a href="gallery.html" aria-label="View full gallery">
               <img
-                src="Images/easdale-island.JPG"
-                alt="Gallery preview: easdale easdale island"
+                src="Images/easdale-island-view-from-ellenabeich.JPG"
+                alt="Gallery preview: easdale easdale island view from ellenabeich"
                 class="gallery-cover"
                 loading="lazy"
               />
@@ -264,12 +274,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
           Balvicar, Isle of Seil<br />
           OBAN, Argyll, Scotland PA34 4T
         </p>
-        <p>
-          Email:
-          <a href="mailto:info@easdalseafoods.co.uk"
-            >info@easdalseafoods.co.uk</a
-          >
-        </p>
+     
       </div>
       <div class="footer-col">
         <h4>Our Products</h4>
@@ -337,5 +342,70 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
     observer.observe(el)
   );
 </script>
+
+<!-- juste avant </body> d’index.html -->
+<script src="https://www.youtube.com/iframe_api"></script>
+<script>
+  const QUALITY_MIN = 'hd720';
+  const LADDER      = ['highres','hd2160','hd1440','hd1080','hd720'];
+
+  /* Factory — instancie un lecteur + bouton play/pause */
+  function createYTPlayer({containerId, videoId, btnId}) {
+    const btn      = document.getElementById(btnId);
+    let   isPaused = false;
+
+    function requestHD(p){
+      const q = p.getPlaybackQuality();
+      if (LADDER.indexOf(q) < LADDER.indexOf(QUALITY_MIN)){
+        p.setPlaybackQuality(QUALITY_MIN);
+      }
+    }
+
+    const player = new YT.Player(containerId, {
+      host: 'https://www.youtube-nocookie.com',
+      videoId,
+      playerVars: {
+        autoplay: 1, mute: 1,
+        controls: 0, modestbranding: 1,
+        rel: 0, loop: 1, playlist: videoId,
+        vq: QUALITY_MIN, disablekb: 1, fs: 0, playsinline: 1
+      },
+      events: {
+        onReady: e => {
+          e.target.mute();
+          requestHD(e.target);
+          setTimeout(()=>requestHD(e.target), 3000);
+        },
+        onPlaybackQualityChange: e => requestHD(e.target),
+        onStateChange: e => {
+          if (e.data === YT.PlayerState.PLAYING){
+            isPaused = false; btn.classList.remove('is-paused'); requestHD(e.target);
+          }
+          if (e.data === YT.PlayerState.PAUSED){
+            isPaused = true;  btn.classList.add('is-paused');
+          }
+        }
+      }
+    });
+
+    /* Toggle play / pause */
+    btn.addEventListener('click', ev => {
+      ev.stopPropagation();
+      isPaused ? player.playVideo() : player.pauseVideo();
+    });
+  }
+
+  /* Appelée par l’API quand elle est prête */
+  function onYouTubeIframeAPIReady () {
+    /* page Index – nouvelle vidéo */
+    createYTPlayer({
+      containerId: 'player-index',   // id du <div>
+      videoId:     'wL3tpUhzQyY',    // ID de ta vidéo “MV-Sheena Grace…”
+      btnId:       'toggle-play'
+    });
+  }
+</script>
+
+
 </body>
 </html>
