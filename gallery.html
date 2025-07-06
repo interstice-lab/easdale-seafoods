@@ -101,17 +101,17 @@
       </figure>
 
       <figure class="gallery-item">
-        <a href="Images/olja-boat-in-bay.jpeg" class="glightbox" data-gallery="gallery" data-title="Fishing boat Olja in harbour">
-          <img src="Images/olja-boat-in-bay.jpeg" alt="Fishing boat Olja in harbour" loading="lazy">
+        <a href="Images/olja-boat-in-bay.jpeg" class="glightbox" data-gallery="gallery" data-title="MV-Olja in Tayvallich">
+          <img src="Images/olja-boat-in-bay.jpeg" alt="MV-Olja in Tayvallich" loading="lazy">
         </a>
-        <figcaption>Fishing boat Olja in harbour</figcaption>
+        <figcaption>MV-Olja in Tayvallich</figcaption>
       </figure>
 
       <figure class="gallery-item">
-        <a href="Images/froach-gael-boat.webp" class="glightbox" data-gallery="gallery" data-title="Froach Gael Boat in rough sea">
-          <img src="Images/froach-gael-boat.webp" alt="Froach Gael Boat in rough sea" loading="lazy">
+        <a href="Images/froach-gael-boat.webp" class="glightbox" data-gallery="gallery" data-title="MV-Froach Gael Boat in rough sea">
+          <img src="Images/froach-gael-boat.webp" alt="mV-Froach Gael Boat in rough sea" loading="lazy">
         </a>
-        <figcaption>Froach Gael Boat in rough sea</figcaption>
+        <figcaption>MV-Froach Gael Boat in rough weather</figcaption>
       </figure>
 
       <figure class="gallery-item">
@@ -162,6 +162,16 @@
   <h2 class="gallery-section-title">🎥 Video Highlights</h2>
   <section class="gallery-grid videos-only" aria-label="Easdale Seafoods videos">
 
+   <figure class="gallery-item video-label">
+      <a href="videos/olja-boat-fishing-bad-weather.mp4" class="glightbox"
+         data-gallery="gallery" data-title="MV-Olja fishing in bad weather" data-type="video">
+        <video muted preload="metadata" poster="Images/olja-bad-weather.png">
+          <source src="videos/olja-boat-fishing-bad-weather.mp4" type="video/mp4">
+        </video>
+      </a>
+      <figcaption>MV-Olja fishing in bad weather</figcaption>
+    </figure>
+
     <figure class="gallery-item video-label">
       <a href="videos/xxl-live-prawn.mp4" class="glightbox"
          data-gallery="gallery" data-title="XXL Live prawns – close-up" data-type="video">
@@ -174,17 +184,17 @@
 
     <figure class="gallery-item video-label">
       <a href="videos/olja-boat-loop.mp4" class="glightbox"
-         data-gallery="gallery" data-title="Olja manoeuvring" data-type="video">
+         data-gallery="gallery" data-title="MV-Olja 360 video tour" data-type="video">
         <video muted preload="metadata" poster="Images/olja-boat-in-bay.jpeg">
           <source src="videos/olja-boat-loop.mp4" type="video/mp4">
         </video>
       </a>
-      <figcaption>Olja 360 video tour</figcaption>
+      <figcaption>MV-Olja 360 video tour</figcaption>
     </figure>
 
     <figure class="gallery-item video-label">
       <a href="videos/olja-boat-top-view.mp4" class="glightbox"
-         data-gallery="gallery" data-title="Top view – Olja" data-type="video">
+         data-gallery="gallery" data-title="Unloading prawns directly from the boat" data-type="video">
         <video muted preload="metadata" poster="Images/unloading-prawns.png">
           <source src="videos/olja-boat-top-view.mp4" type="video/mp4">
         </video>
@@ -194,7 +204,7 @@
 
     <figure class="gallery-item video-label">
       <a href="videos/video-packing-razors.mp4" class="glightbox"
-         data-gallery="gallery" data-title="Packing razor clams" data-type="video">
+         data-gallery="gallery" data-title="Packing live razor clams" data-type="video">
         <video muted preload="metadata" poster="Images/couteaux.jpeg">
           <source src="videos/video-packing-razors.mp4" type="video/mp4">
         </video>
@@ -235,12 +245,13 @@
 <div class="footer-credits">
   <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
 </div>
-
 <!-- ========= JS ========= -->
+
 <!-- GLightbox -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  GLightbox({
+  /* — GLightbox init — */
+  const lightbox = GLightbox({
     selector: '.glightbox',
     touchNavigation: true,
     loop: true,
@@ -249,12 +260,24 @@
     openEffect: 'zoom',
     closeEffect: 'fade'
   });
- // 🔄 Sélecteur de langue bi-directionnel
+
+  /* — Burger menu — */
+  const burger   = document.getElementById('burger-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    const expanded = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!expanded));
+  });
+
+  /* — Language switcher — */
   const langSelect = document.getElementById('lang-select');
-  langSelect.addEventListener('change', (e) => {
-    const lang = e.target.value;
+
+  langSelect.addEventListener('change', e => {
+    const lang        = e.target.value;
     const currentPath = window.location.pathname;
-    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const fileName    = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
     if (lang === 'en' && fileName.includes('-fr.html')) {
       window.location.href = fileName.replace('-fr.html', '.html');
