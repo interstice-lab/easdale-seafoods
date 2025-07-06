@@ -16,7 +16,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
   <meta property="og:description" content="We export live shellfish from creel boats off Scotland’s West Coast. Premium quality, traceable seafood — all year round." />
   <meta property="og:url" content="https://www.easdaleseafoods.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
+  <meta property="og:image" content="https://www.easdaleseafoods.com/images/social-preview.png" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -138,7 +138,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
             <div class="product-grid">
               <div class="product-card">
                 <a
-                  href="products.html"
+                  href="products.html#langoustines"
                   target="_self"
                   class="product-link"
                   aria-label="View all products"
@@ -157,13 +157,13 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
               </div>
               <div class="product-card">
                 <a
-                  href="products.html"
+                  href="products.html#razor-clams"
                   target="_self"
                   class="product-link"
                 >
                   <div class="img-container">
                     <img
-                      src="Images/razor-clams.jpeg"
+                      src="Images/couteaux.jpeg"
                       alt="Razor Clams"
                       loading="lazy"
                     />
@@ -175,7 +175,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
               </div>
               <div class="product-card">
                 <a
-                  href="products.html"
+                  href="products.html#lobsters"
                   target="_self"
                   class="product-link"
                 >
@@ -279,19 +279,19 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
       <div class="footer-col">
         <h4>Our Products</h4>
         <ul>
-          <li>Live Langoustines</li>
-          <li>Razor Clams</li>
-          <li>Lobsters</li>
+          <li><a href="products.html#langoustines">Live Langoustine</a></li>
+          <li><a href="products.html#razor-clams">Razor Clams</a></li>
+          <li><a href="products.html#lobsters">Lobsters</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h4>Links</h4>
         <ul>
           <li><a href="index.html">About</a></li>
-          <li><a href="clients.html">Our clients</a>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="clients.html">Our clients</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="#">Legal notice</a></li>
         </ul>
       </div>
     </footer>
@@ -342,70 +342,5 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
     observer.observe(el)
   );
 </script>
-
-<!-- juste avant </body> d’index.html -->
-<script src="https://www.youtube.com/iframe_api"></script>
-<script>
-  const QUALITY_MIN = 'hd720';
-  const LADDER      = ['highres','hd2160','hd1440','hd1080','hd720'];
-
-  /* Factory — instancie un lecteur + bouton play/pause */
-  function createYTPlayer({containerId, videoId, btnId}) {
-    const btn      = document.getElementById(btnId);
-    let   isPaused = false;
-
-    function requestHD(p){
-      const q = p.getPlaybackQuality();
-      if (LADDER.indexOf(q) < LADDER.indexOf(QUALITY_MIN)){
-        p.setPlaybackQuality(QUALITY_MIN);
-      }
-    }
-
-    const player = new YT.Player(containerId, {
-      host: 'https://www.youtube-nocookie.com',
-      videoId,
-      playerVars: {
-        autoplay: 1, mute: 1,
-        controls: 0, modestbranding: 1,
-        rel: 0, loop: 1, playlist: videoId,
-        vq: QUALITY_MIN, disablekb: 1, fs: 0, playsinline: 1
-      },
-      events: {
-        onReady: e => {
-          e.target.mute();
-          requestHD(e.target);
-          setTimeout(()=>requestHD(e.target), 3000);
-        },
-        onPlaybackQualityChange: e => requestHD(e.target),
-        onStateChange: e => {
-          if (e.data === YT.PlayerState.PLAYING){
-            isPaused = false; btn.classList.remove('is-paused'); requestHD(e.target);
-          }
-          if (e.data === YT.PlayerState.PAUSED){
-            isPaused = true;  btn.classList.add('is-paused');
-          }
-        }
-      }
-    });
-
-    /* Toggle play / pause */
-    btn.addEventListener('click', ev => {
-      ev.stopPropagation();
-      isPaused ? player.playVideo() : player.pauseVideo();
-    });
-  }
-
-  /* Appelée par l’API quand elle est prête */
-  function onYouTubeIframeAPIReady () {
-    /* page Index – nouvelle vidéo */
-    createYTPlayer({
-      containerId: 'player-index',   // id du <div>
-      videoId:     'wL3tpUhzQyY',    // ID de ta vidéo “MV-Sheena Grace…”
-      btnId:       'toggle-play'
-    });
-  }
-</script>
-
-
 </body>
 </html>
