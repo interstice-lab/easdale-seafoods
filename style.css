@@ -8,7 +8,13 @@
   --color-background: #fefefe;
   --color-cord: #1f558c;
 }
-
+:root {
+  --container-max: 1000px;  /* ou 900px */
+}
+.site-container {
+  max-width: var(--container-max);
+  /* … */
+}
 /* =========================================================
    🔤 TYPOGRAPHIE & BASE GLOBALE
    ========================================================= */
@@ -218,10 +224,10 @@ video {
   justify-content: center; /* centre horizontalement */
   align-items: center; /* centre verticalement si la div a une hauteur */
   gap: 0.5rem;
+  padding: 1rem 1rem;
   text-align: center; /* au cas où, pour le contenu textuel */
 }
 .site-container {
-  max-width: 900px;
   margin: 0 auto;
   padding: 0 1rem;
   flex: 1;
@@ -250,7 +256,8 @@ video {
 }
 .page-title {
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  padding: 1rem 1rem;
 }
 
 /* page d’accueil */
@@ -287,14 +294,41 @@ video {
    🧩 CONTENT BLOCKS (About, Local Customers, Gallery)
    ========================================================= */
 
-
 .content-block {
   display: flex;
-  gap: 2rem;
-  padding: 2rem 0;
   align-items: center;
-  border-bottom: 1px solid #ccc;
+  gap: 2rem;
+
+  /* fix the typo: explicit units */
+  padding: 1rem 1rem;          
+
+  /* subtle card-style treatment */
+  background: var(--color-surface, #fff);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  /* optional accent bar on left */
+  border-left: 4px solid var(--color-primary, #1f558c);
+
+  /* keep your bottom divider if you like, but softened */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  /* stacking context for pseudo-elements if needed */
+  position: relative;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.content-block:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* if you prefer a separator only between blocks, replace border-bottom with: */
+.content-block + .content-block {
+  margin-top: 1.5rem;
+}
+
 .content-block.reverse {
   flex-direction: row-reverse;
 }
@@ -302,9 +336,9 @@ video {
 .content-block .media-block {
   flex: 1;
 }
-body.index-page .site-container {
-  max-width: 1000px;
-}
+/*body.index-page .site-container {
+  max-width: 900px;
+}*/
 .media-block a {
   color: var(--color-shrimp);
   text-decoration: none;
@@ -335,6 +369,37 @@ body.index-page .site-container {
   width: 100%;
   height: auto;
 }
+
+/*---WAVES----*/
+/*:root {
+  --wave-color: #4fb3e7;
+  --wave-speed: 8s;
+  --wave-height: 100px;
+}
+
+.wave-divider {
+  position: relative;
+  width: 100%;
+  height: var(--wave-height);
+  overflow: hidden;
+}
+
+.wave {
+  width: 200%; /* pour contenir 2 séquences (on montre 1, on translate vers l'autre) 
+  height: 100%;
+  display: block;
+}
+
+.wave-path {
+  fill: var(--wave-color);
+  animation: waveLoop var(--wave-speed) linear infinite;
+  transform: translateX(0);
+}
+
+/* 💫 Translate exactement d’une séquence visible 
+@keyframes waveLoop {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-600px); } */
 
 
 
@@ -375,6 +440,42 @@ body.index-page .site-container {
   color: var(--color-text-dark);
 }
 
+/* ── 1. Stronger shadow + hover lift for photos ─────────────────────── */
+.product-image img {
+  /* bump up the depth */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.product-image img:hover {
+  /* subtle scale and brighten on hover */
+  transform: scale(1.02);
+  filter: brightness(1.05);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* ── 2. Fade-in‐up animation for product blocks ────────────────────── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* apply to each section */
+.product-section {
+  opacity: 0;                                      /* start hidden */
+  animation: fadeInUp 0.6s ease-out forwards;      /* reveal on load */
+  /* optional: stagger multiple sections automatically */
+}
+.product-section:nth-of-type(1) { animation-delay: 0.2s; }
+.product-section:nth-of-type(2) { animation-delay: 0.4s; }
+.product-section:nth-of-type(3) { animation-delay: 0.6s; }
+
 
 /* ================================
    🦐 PRODUCT PAGE LAYOUT
@@ -413,13 +514,55 @@ body.index-page .site-container {
   flex-grow: 1;
 }
 
-
+.product-section .product-title a {
+  text-decoration: none;
+  border-bottom: none;
+}
 .section-subtitle {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 0.75rem;
   color: var(--color-text-dark);
 }
+
+/* ================================
+   ✨ Product-page Card-Style Override
+   ================================ */
+.products-page .product-section {
+  /* 1. Card layout */
+  background: var(--color-surface, #fff);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-left: 4px solid var(--color-primary, #0077cc);
+
+  /* 2. Spacing & flex */
+  display: flex;
+  flex-direction: column; /* vertical pour conserver l’ordre header → intro → détails */
+  gap: 1.5rem;
+  padding: 1.5rem;
+
+  /* 3. Transition hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* pour tout calque intérieur */
+  margin-bottom: 2rem; /* espace entre les cartes */
+}
+
+/* Hover lift */
+.products-page .product-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dernier bloc sans marge inférieure */
+.products-page .product-section:last-of-type {
+  margin-bottom: 0;
+}
+
+/* On retire l’ancien sélecteur de bord-bas si besoin */
+.products-page .product-section:not(:last-of-type) {
+  border-bottom: none !important;
+}
+
 
 /* ================================
    📱 RESPONSIVE PRODUCTS
@@ -448,7 +591,7 @@ body.index-page .site-container {
 
 /* 1. Give each product block plenty of breathing room + subtle divider */
 .product-section {
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
   position: relative;
 }
 .product-section:not(:last-of-type) {
@@ -685,6 +828,8 @@ body.index-page .site-container {
   margin: 2rem auto;
   aspect-ratio: 16 / 9;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;        /* coins arrondis si tu veux */
+  overflow: hidden;             /* masque tout débordement */
 }
 
 .map-container iframe {
@@ -693,6 +838,10 @@ body.index-page .site-container {
   border: 0;
   display: block;
 }
+.contact-page #contact {
+  margin-top: 2rem;  /* crée un gap entre le hero et le bloc de contact */
+}
+
 
 /* =========================================================
    📷 GALLERY PREVIEW
@@ -873,9 +1022,12 @@ body.index-page .site-container {
     position: relative;   /* ancre les positionnements absolus */
   }
   /* — Layout : empiler les content-blocks */
-  .content-block {
+   .content-block {
     flex-direction: column;
-    text-align: center;
+    /* 1/ étirer les enfants sur 100% */
+    align-items: stretch;  
+    /* 2/ recadrer le texte à gauche */
+    text-align: left;      
     gap: 1.5rem;
   }
 
@@ -884,7 +1036,11 @@ body.index-page .site-container {
     grid-template-columns: 1fr;
   }
 }
-
+  /* 3/ s’assurer que chaque bloc occupe toute la largeur */
+  .content-block .text-block,
+  .content-block .media-block {
+    width: 100%;
+  }
 
 /*-------------------- ≤ 480px – mobiles compacts --------------*/
 @media (max-width: 480px) {
