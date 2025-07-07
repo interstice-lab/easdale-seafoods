@@ -83,7 +83,9 @@
 </div>
 
         <div class="media-block">
-          <form class="contact-form" action="#" method="POST">
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/xrbkvnbl" method="POST">
+              <!-- honeypot anti-spam (champ caché) -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
             <div class="form-row">
               <label for="name">Name</label>
               <input
@@ -114,9 +116,11 @@
                 required
               ></textarea>
             </div>
+            
             <div class="form-row full">
               <button type="submit" class="button">Send Message</button>
             </div>
+
           </form>
         </div>
       </section>
@@ -202,5 +206,46 @@
     observer.observe(el)
   );
 </script>
+
+<script>
+  (function() {
+    const form = document.getElementById('contact-form');
+    const endpoint = form.action;  // "https://formspree.io/f/xrbkvnbl"
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();           // bloque l’envoi classique
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;    // désactive le bouton pour éviter les doubles envois
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        // Crée un FormData à partir du formulaire
+        const formData = new FormData(form);
+
+        // Envoi en POST via fetch()
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData,
+        });
+
+        if (res.ok) {
+          // succès → redirection vers ta propre page
+          window.location.href = '/thank-you.html';
+        } else {
+          // échec côté Formspree (400, 500…)
+          const json = await res.json();
+          throw new Error(json.error || 'Submission failed');
+        }
+      } catch (err) {
+        // Message d’erreur inline (ou alert)
+        alert('Oops, something went wrong:\n' + err.message);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      }
+    });
+  })();
+</script>
+
   </body>
 </html>

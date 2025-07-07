@@ -278,7 +278,7 @@ video {
   background-position: center 40% ;
 }
 
-/* page locals */
+/* page locals - will have to change name here to CLIENTS */
 .locals-page .hero-banner {
   background-image: url("Images/easdale-island.JPG");
   background-position: center 40% ;
@@ -286,6 +286,11 @@ video {
 
 /* page contact */
 .contact-page .hero-banner {
+  background-image: url("Images/view-from-cuan-ferry\ \(1\).jpg");
+ /* background-position: center top;*/
+}
+/* page thanks */
+.thank-you-page .hero-banner {
   background-image: url("Images/view-from-cuan-ferry\ \(1\).jpg");
  /* background-position: center top;*/
 }
@@ -841,6 +846,9 @@ video {
 .contact-page #contact {
   margin-top: 2rem;  /* crée un gap entre le hero et le bloc de contact */
 }
+
+
+
 
 
 /* =========================================================

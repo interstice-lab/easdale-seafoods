@@ -67,24 +67,46 @@
       </div>
 
       <div class="media-block">
-        <form class="contact-form" action="#" method="POST">
-          <div class="form-row">
-            <label for="name">Nom</label>
-            <input type="text" id="name" name="name" placeholder="Votre nom" required />
-          </div>
-          <div class="form-row">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="vous@exemple.com" required />
-          </div>
-          <div class="form-row full">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Comment pouvons-nous vous aider ?" required></textarea>
-          </div>
-          <div class="form-row full">
-            <button type="submit" class="button">Envoyer le message</button>
-          </div>
-        </form>
-      </div>
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/xrbkvnbl" method="POST">
+              <!-- honeypot anti-spam (champ caché) -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <div class="form-row">
+              <label for="name">Nom</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Votre nom"
+                required
+              />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="vous@example.com"
+                required
+              />
+            </div>
+            <div class="form-row full">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="Votre message."
+                required
+              ></textarea>
+            </div>
+            
+            <div class="form-row full">
+              <button type="submit" class="button">Envoyer</button>
+            </div>
+
+          </form>
+        </div>
     </section>
 
     <!-- GOOGLE MAP -->
@@ -123,47 +145,87 @@
     <small>© Easdale Seafoods Ltd – 2025 · Site réalisé par BDF Consulting Ltd</small>
   </div>
 
-  <!-- JS -->
-  <script>
-    const burger   = document.getElementById('burger-toggle');
-    const navLinks = document.getElementById('nav-links');
+   <!-- JS -->
+<script>
+  const burger = document.getElementById('burger-toggle');
+  const navLinks = document.getElementById('nav-links');
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    const expanded = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!expanded));
+  });
 
-    burger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-      const expanded = burger.getAttribute('aria-expanded') === 'true';
-      burger.setAttribute('aria-expanded', String(!expanded));
-    });
+  // 🔄 Sélecteur de langue bi-directionnel
+  const langSelect = document.getElementById('lang-select');
+  langSelect.addEventListener('change', (e) => {
+    const lang = e.target.value;
+    const currentPath = window.location.pathname;
+    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
-    // 🔄 Lang selector bi-directional
-    const langSelect = document.getElementById('lang-select');
-    langSelect.addEventListener('change', (e) => {
-      const lang        = e.target.value;
-      const currentPath = window.location.pathname;
-      const fileName    = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    if (lang === 'en' && fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('-fr.html', '.html');
+    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
+      window.location.href = fileName.replace('.html', '-fr.html');
+    }
+  });
+</script>
 
-      if (lang === 'en' && fileName.includes('-fr.html')) {
-        window.location.href = fileName.replace('-fr.html', '.html');
-      } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
-        window.location.href = fileName.replace('.html', '-fr.html');
+<script>
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
+  document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
+    observer.observe(el)
+  );
+</script>
+
+<script>
+  (function() {
+    const form = document.getElementById('contact-form');
+    const endpoint = form.action;  // "https://formspree.io/f/xrbkvnbl"
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();           // bloque l’envoi classique
+      const submitBtn = form.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;    // désactive le bouton pour éviter les doubles envois
+      submitBtn.textContent = 'Sending…';
+
+      try {
+        // Crée un FormData à partir du formulaire
+        const formData = new FormData(form);
+
+        // Envoi en POST via fetch()
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData,
+        });
+
+        if (res.ok) {
+          // succès → redirection vers ta propre page
+          window.location.href = '/thank-you.html';
+        } else {
+          // échec côté Formspree (400, 500…)
+          const json = await res.json();
+          throw new Error(json.error || 'Submission failed');
+        }
+      } catch (err) {
+        // Message d’erreur inline (ou alert)
+        alert('Oops, something went wrong:\n' + err.message);
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
       }
     });
-  </script>
+  })();
+</script>
 
-  <script>
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
-      observer.observe(el)
-    );
-  </script>
-</body>
+  </body>
 </html>

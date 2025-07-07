@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You – Easdale Seafoods</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+</head>
+<body class="thank-you-page">
+  <!-- NAVIGATION (copié de tes autres pages) -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <a href="index.html">
+          <img id="img-logo" src="Images/logo-detoure.png" alt="Easdale Seafoods logo" />
+        </a>
+        <h1 class="site-title">Easdale Seafoods</h1>
+      </div>
+      <nav id="nav-links">
+        <a href="index.html">About us</a>
+        <a href="products.html">Products</a>
+        <a href="clients.html">Our clients</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="contact.html">Contact</a>
+        <select id="lang-select" aria-label="Language">
+          <option value="en">EN</option>
+          <option value="fr">FR</option>
+        </select>
+      </nav>
+      <button id="burger-toggle" class="burger" aria-label="Toggle menu">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- HERO (vide, juste pour le design) -->
+  <section class="hero-banner"></section>
+
+  <!-- CONTENU PRINCIPAL -->
+  <main class="site-container">
+    <section id="thank-you" class="content-block">
+      <div class="text-block">
+        <h2>Thank you for your message!</h2>
+        <p>
+          We’ve received your inquiry and will get back to you shortly.
+        </p>
+        <a href="index.html" class="button">Return to Home</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (copié de tes autres pages) -->
+  <footer class="footer-grid">
+    <div class="footer-col">
+      <h4>Easdale Seafoods Ltd</h4>
+      <p>
+        Balvicar, Isle of Seil<br />
+        Oban, Argyll, Scotland PA34 4T
+      </p>
+    </div>
+    <div class="footer-col">
+      <h4>Our Products</h4>
+      <ul>
+        <li><a href="products.html#langoustines">Live Langoustine</a></li>
+        <li><a href="products.html#razor-clams">Razor Clams</a></li>
+        <li><a href="products.html#lobsters">Lobsters</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Links</h4>
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="clients.html">Our clients</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+  <div class="footer-credits">
+    <small>© Easdale Seafoods Ltd – 2025 · Website by BDF Consulting Ltd</small>
+  </div>
+
+  <!-- mini CSS spécifique -->
+  <style>
+    /* Centre et espace le bloc de remerciement */
+    .thank-you-page .content-block {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin: 2rem auto;
+      max-width: 600px;
+      border-left: none;     /* pas de barre colorée ici */
+      border-bottom: none;   /* règle supprimée */
+    }
+  </style>
+</body>
+</html>
