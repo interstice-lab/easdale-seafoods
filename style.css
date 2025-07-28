@@ -221,23 +221,18 @@ video {
 }
 .title-center {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;                /* permet le retour à la ligne */
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 1rem;
-  box-sizing: border-box;
-
-  /* on le confine à la même largeur que .site-container */
-  max-width: var(--container-max);
-  margin: 0 auto;
+  justify-content: center; /* centre horizontalement */
+  align-items: center; /* centre verticalement si la div a une hauteur */
+  gap: 0.5rem;
+  padding: 1rem 1rem;
+  text-align: center; /* au cas où, pour le contenu textuel */
 }
 .site-container {
-  margin: 0 auto;
-  padding: 0 1rem;
-  flex: 1;
-  box-sizing: border-box;
+  max-width: 1000px;       /* ou la largeur de ton design */
+  width: 100%;
+  margin: 0 auto;          /* centre horizontalement */
+  padding: 0 1rem;         /* espace gauche/droite */
+  overflow-x: hidden;      /* empêche le scroll horizontal */
 }
 .container {
   width: 100%;
