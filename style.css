@@ -221,11 +221,17 @@ video {
 }
 .title-center {
   display: flex;
-  justify-content: center; /* centre horizontalement */
-  align-items: center; /* centre verticalement si la div a une hauteur */
-  gap: 0.5rem;
-  padding: 1rem 1rem;
-  text-align: center; /* au cas où, pour le contenu textuel */
+  flex-direction: row;
+  flex-wrap: wrap;                /* permet le retour à la ligne */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+
+  /* on le confine à la même largeur que .site-container */
+  max-width: var(--container-max);
+  margin: 0 auto;
 }
 .site-container {
   margin: 0 auto;
