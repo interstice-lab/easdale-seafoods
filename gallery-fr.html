@@ -288,11 +288,14 @@
       <small>© Easdale Seafoods Ltd – 2025 · Site réalisé par BDF Consulting Ltd</small>
     </div>
 
-    <!-- ========= JS ========= -->
+    
+<!-- ========= JS ========= -->
+
 <!-- GLightbox -->
 <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
 <script>
-  GLightbox({
+  /* — GLightbox init — */
+  const lightbox = GLightbox({
     selector: '.glightbox',
     touchNavigation: true,
     loop: true,
@@ -301,12 +304,24 @@
     openEffect: 'zoom',
     closeEffect: 'fade'
   });
- // 🔄 Sélecteur de langue bi-directionnel
+
+  /* — Burger menu — */
+  const burger   = document.getElementById('burger-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+    const expanded = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', String(!expanded));
+  });
+
+  /* — Language switcher — */
   const langSelect = document.getElementById('lang-select');
-  langSelect.addEventListener('change', (e) => {
-    const lang = e.target.value;
+
+  langSelect.addEventListener('change', e => {
+    const lang        = e.target.value;
     const currentPath = window.location.pathname;
-    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+    const fileName    = currentPath.substring(currentPath.lastIndexOf('/') + 1);
 
     if (lang === 'en' && fileName.includes('-fr.html')) {
       window.location.href = fileName.replace('-fr.html', '.html');
