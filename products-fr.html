@@ -7,10 +7,8 @@
   <!-- 🔍 SEO + Rich Preview (Open Graph) -->
   <meta name="description" content="Langoustines vivantes, couteaux et homards — pêchés sur la côte ouest de l’Écosse et expédiés partout en Europe." />
 
-  <link rel="canonical" href="https://www.easdaleseafoods.com/products-fr.html" />
-
   <meta property="og:title" content="Nos Produits – Easdale Seafoods" />
-  <meta property="og:description" content="Nous exportons des crustacés vivants depuis l’île de Seil : langoustines, couteaux et homards écossais, traçables toute l’année." />
+  <meta property="og:description" content="Entreprise familiale sur l’île de Seil, en Écosse. Langoustines vivantes, couteaux et homards pour les professionnels et la clientèle locale." />
   <meta property="og:url" content="https://www.easdaleseafoods.com/products-fr.html" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
@@ -22,20 +20,26 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+  <link rel="canonical" href="https://www.easdaleseafoods.com/products-fr.html" />
+  <link rel="alternate" hreflang="en" href="https://www.easdaleseafoods.com/products.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.easdaleseafoods.com/products-fr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.easdaleseafoods.com/products.html" />
+  <script src="scripts/site.js" defer></script>
 </head>
 
 <body class="products-page">
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
   <!-- NAVIGATION -->
   <header class="navbar">
     <div class="nav-container">
       <div class="brand">
         <a href="index-fr.html">
-          <img id="img-logo" src="Images/logo-detoure.png" alt="Logo Easdale Seafoods" />
+          <img id="img-logo" src="assets/logo-trimmed.webp" alt="Logo Easdale Seafoods" width="320" height="125" decoding="async" />
         </a>
-        <h1 class="site-title">Easdale Seafoods</h1>
+        <p class="site-title">Easdale Seafoods</p>
       </div>
 
-      <nav id="nav-links">
+      <nav id="nav-links" aria-label="Navigation principale">
         <a href="index-fr.html">À propos</a>
         <a href="products-fr.html">Produits</a>
         <a href="clients-fr.html">Nos clients</a>
@@ -47,13 +51,13 @@
         </select>
       </nav>
 
-      <div class="burger" id="burger-toggle">&#9776;</div>
+      <button id="burger-toggle" class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-links" aria-expanded="false">&#9776;</button>
     </div>
   </header>
 
   <section class="hero-banner"></section>
 
-  <main class="site-container">
+  <main id="main-content" class="site-container">
     <h1 class="page-title">Nos Produits</h1>
 
     <!-- 🦐 LANGOUSTINES -->
@@ -67,7 +71,7 @@
 
       <div class="product-intro">
         <div class="product-image">
-          <img src="Images/langoustines-vivantes-tube.jpeg" alt="Langoustines en tube prêtes à l'expédition" loading="lazy" itemprop="image" />
+          <img src="assets/langoustines-vivantes-tube-960.webp" alt="Langoustines en tube prêtes à l'expédition" loading="lazy" itemprop="image" width="960" height="1280" decoding="async" srcset="assets/langoustines-vivantes-tube-480.webp 480w, assets/langoustines-vivantes-tube-960.webp 960w, assets/langoustines-vivantes-tube-1600.webp 1200w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </div>
         <div class="product-overview" itemprop="description">
           <h3 class="section-subtitle">Présentation</h3>
@@ -95,7 +99,7 @@
           <dd>Toute l’année.</dd>
 
           <dt>Traçabilité</dt>
-          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la tracabilité.</dd>
+          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la traçabilité.</dd>
         </dl>
       </section>
 
@@ -115,7 +119,7 @@
 
       <div class="product-intro">
         <div class="product-image">
-          <img src="Images/couteaux.jpeg" alt="Couteaux de mer frais emballés pour livraison" loading="lazy" itemprop="image" />
+          <img src="assets/couteaux-960.webp" alt="Couteaux de mer frais emballés pour livraison" loading="lazy" itemprop="image" width="960" height="1280" decoding="async" srcset="assets/couteaux-480.webp 480w, assets/couteaux-960.webp 960w, assets/couteaux-1600.webp 1200w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </div>
         <div class="product-overview" itemprop="description">
           <h3 class="section-subtitle">Présentation</h3>
@@ -143,7 +147,7 @@
           <dd>Toute l’année.</dd>
 
           <dt>Traçabilité</dt>
-          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la tracabilité.</dd>
+          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la traçabilité.</dd>
         </dl>
       </section>
 
@@ -156,14 +160,14 @@
     <section id="lobsters" class="product-section" itemscope itemtype="http://schema.org/Product">
       <header>
         <h2 itemprop="name" class="product-title">
-          Homards Européen 
+          Homards européens
           <small itemprop="alternateName">(Homarus gammarus)</small>
         </h2>
       </header>
 
       <div class="product-intro">
         <div class="product-image">
-          <img src="Images/packed-lobsters-ready-to-be-shipped.png" alt="Homards écossais prêts à être expédiés" loading="lazy" itemprop="image" />
+          <img src="assets/packed-lobsters-ready-to-be-shipped-960.webp" alt="Homards écossais prêts à être expédiés" loading="lazy" itemprop="image" width="960" height="960" decoding="async" srcset="assets/packed-lobsters-ready-to-be-shipped-480.webp 480w, assets/packed-lobsters-ready-to-be-shipped-960.webp 960w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </div>
         <div class="product-overview" itemprop="description">
           <h3 class="section-subtitle">Présentation</h3>
@@ -185,13 +189,13 @@
           <dd>Expédiées vivantes en caisses isothermes avec  gel packs d'eau de mer.</dd>
 
           <dt>Tailles</dt>
-          <dd>De 400 grs à 2 kg.</dd>
+          <dd>De 400 g à 2 kg.</dd>
 
           <dt>Disponibilité</dt>
           <dd>Toute l’année.</dd>
 
           <dt>Traçabilité</dt>
-          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la tracabilité.</dd>
+          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la traçabilité.</dd>
         </dl>
       </section>
 
@@ -207,9 +211,9 @@
       <h4>Easdale Seafoods Ltd</h4>
         <p>
           Balvicar, Isle of Seil<br />
-          Oban, Argyll, Scotland PA34 4T
+          Oban, Argyll, Scotland PA34 4TF
         </p>
-        <p>Phone: +44 1852 300295</p>
+        <p>Téléphone : <a href="tel:+441852300295">+44 1852 300295</a></p>
     </div>
 
     <div class="footer-col">
@@ -238,29 +242,6 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script>
-    const burger   = document.getElementById('burger-toggle');
-    const navLinks = document.getElementById('nav-links');
-    burger.addEventListener('click', () => navLinks.classList.toggle('show'));
 
-    document.getElementById('lang-select').addEventListener('change', (e) => {
-      if (e.target.value === 'en') {
-        window.location.href = window.location.pathname.replace('-fr.html', '.html');
-      }
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll('.product-section').forEach((el) => observer.observe(el));
-  </script>
 </body>
 </html>

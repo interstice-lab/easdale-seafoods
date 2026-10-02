@@ -6,10 +6,10 @@
 
   <!-- 🔍 SEO + Rich Preview (Open Graph) -->
   <meta name="description" content="Contactez Easdale Seafoods — nous sommes basés sur la côte ouest de l'Écosse et expédions des coquillages vivants premium à travers l'Europe." />
-  <link rel="canonical" href="https://www.easdaleseafoods.com/contact-fr.html" />
+
 
   <meta property="og:title" content="Contact – Easdale Seafoods" />
-  <meta property="og:description" content="Une question sur nos produits, la logistique ou les tarifs ? Contactez notre équipe — réponse sous un jour ouvrable." />
+  <meta property="og:description" content="Une question sur nos produits, la logistique ou les tarifs ? Contactez notre équipe pour préparer votre demande." />
   <meta property="og:url" content="https://www.easdaleseafoods.com/contact-fr.html" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
@@ -21,20 +21,26 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+  <link rel="canonical" href="https://www.easdaleseafoods.com/contact-fr.html" />
+  <link rel="alternate" hreflang="en" href="https://www.easdaleseafoods.com/contact.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.easdaleseafoods.com/contact-fr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.easdaleseafoods.com/contact.html" />
+  <script src="scripts/site.js" defer></script>
 </head>
 
 <body class="contact-page">
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
   <!-- NAVIGATION -->
   <header class="navbar">
     <div class="nav-container">
       <div class="brand">
         <a href="index-fr.html">
-          <img id="img-logo" src="Images/logo-detoure.png" alt="Logo Easdale Seafoods" />
+          <img id="img-logo" src="assets/logo-trimmed.webp" alt="Logo Easdale Seafoods" width="320" height="125" decoding="async" />
         </a>
-        <h1 class="site-title">Easdale Seafoods</h1>
+        <p class="site-title">Easdale Seafoods</p>
       </div>
 
-      <nav id="nav-links">
+      <nav id="nav-links" aria-label="Navigation principale">
         <a href="index-fr.html">Accueil</a>
         <a href="products-fr.html">Produits</a>
         <a href="clients-fr.html">Clients</a>
@@ -46,24 +52,25 @@
         </select>
       </nav>
 
-      <div class="burger" id="burger-toggle">&#9776;</div>
+      <button id="burger-toggle" class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-links" aria-expanded="false">&#9776;</button>
     </div>
   </header>
 
   <!-- HERO BANNER (empty, keeps parity with EN) -->
   <section class="hero-banner"></section>
 
-  <main class="site-container">
+  <main id="main-content" class="site-container">
     <!-- CONTACT FORM -->
     <section id="contact" class="content-block" aria-labelledby="contact-heading">
       <div class="text-block" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Nous contacter</h2>
+        <h1 id="contact-heading">Nous contacter</h1>
         <p>
           Questions sur les tarifs, la logistique ou un partenariat ?<br>
-          Écrivez-nous via le formulaire ci-dessous et nous vous répondrons sous un jour ouvrable.
+          Écrivez-nous via le formulaire ci-dessous. Nous vous répondrons dès que possible ; en période chargée, cela peut prendre plus d’un jour ouvré.
           <br>
           <strong class="nowrap">Note — nous ne traitons pas les commandes envoyées par e-mail.</strong>
         </p>
+        <p>Pour la France et l’Espagne, Bénédicte reçoit votre demande et vous répond. Pour le Royaume-Uni, les demandes locales et l’Asie, elle transmet au membre de l’équipe concerné. Vous pouvez aussi appeler le <a href="tel:+441852300295">bureau au +44 1852 300295</a> pour savoir qui contacter.</p>
       </div>
 
       <div class="media-block">
@@ -75,7 +82,7 @@
               <input
                 type="text"
                 id="name"
-                name="name"
+                name="name" autocomplete="name"
                 placeholder="Votre nom"
                 required
               />
@@ -85,11 +92,14 @@
               <input
                 type="email"
                 id="email"
-                name="email"
+                name="email" autocomplete="email"
                 placeholder="vous@example.com"
                 required
               />
             </div>
+            <div class="form-row"><label for="company">Entreprise (facultatif)</label><input id="company" name="company" type="text" autocomplete="organization" /></div>
+            <div class="form-row"><label for="destination">Pays de destination (facultatif)</label><input id="destination" name="destination" type="text" autocomplete="country-name" /></div>
+            <div class="form-row full"><label for="product">Produit recherché (facultatif)</label><select id="product" name="product"><option value="">Choisir un produit</option><option value="langoustines">Langoustines vivantes</option><option value="razor-clams">Couteaux</option><option value="lobsters">Homards</option><option value="other">Plusieurs produits / autre</option></select></div>
             <div class="form-row full">
               <label for="message">Message</label>
               <textarea
@@ -100,17 +110,18 @@
                 required
               ></textarea>
             </div>
-            
+
             <div class="form-row full">
               <button type="submit" class="button">Envoyer</button>
             </div>
 
+          <p id="form-feedback" class="form-feedback" role="status" aria-live="polite" tabindex="-1"></p>
           </form>
         </div>
     </section>
 
     <!-- GOOGLE MAP -->
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2214.3183693643605!2d-5.6071740000000005!3d56.2898169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4889628e4ffba0d3%3A0x486c7adba14462a3!2sEasdale%20Seafoods%20Ltd!5e0!3m2!1sen!2suk!4v1751620278311!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div class="map-container"><iframe title="Localisation d’Easdale Seafoods à Balvicar" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2214.3183693643605!2d-5.6071740000000005!3d56.2898169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4889628e4ffba0d3%3A0x486c7adba14462a3!2sEasdale%20Seafoods%20Ltd!5e0!3m2!1sen!2suk!4v1751620278311!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
   </main>
 
   <!-- FOOTER -->
@@ -119,9 +130,9 @@
        <h4>Easdale Seafoods Ltd</h4>
         <p>
           Balvicar, Isle of Seil<br />
-          Oban, Argyll, Scotland PA34 4T
+          Oban, Argyll, Scotland PA34 4TF
         </p>
-        <p>Phone: +44 1852 300295</p>
+        <p>Téléphone : <a href="tel:+441852300295">+44 1852 300295</a></p>
     </div>
 
     <div class="footer-col">
@@ -150,86 +161,6 @@
   </div>
 
    <!-- JS -->
-<script>
-  const burger = document.getElementById('burger-toggle');
-  const navLinks = document.getElementById('nav-links');
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    const expanded = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!expanded));
-  });
-
-  // 🔄 Sélecteur de langue bi-directionnel
-  const langSelect = document.getElementById('lang-select');
-  langSelect.addEventListener('change', (e) => {
-    const lang = e.target.value;
-    const currentPath = window.location.pathname;
-    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-
-    if (lang === 'en' && fileName.includes('-fr.html')) {
-      window.location.href = fileName.replace('-fr.html', '.html');
-    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
-      window.location.href = fileName.replace('.html', '-fr.html');
-    }
-  });
-</script>
-
-<script>
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-  document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
-    observer.observe(el)
-  );
-</script>
-
-<script>
-  (function() {
-    const form = document.getElementById('contact-form');
-    const endpoint = form.action;  // "https://formspree.io/f/xrbkvnbl"
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();           // bloque l’envoi classique
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;    // désactive le bouton pour éviter les doubles envois
-      submitBtn.textContent = 'Sending…';
-
-      try {
-        // Crée un FormData à partir du formulaire
-        const formData = new FormData(form);
-
-        // Envoi en POST via fetch()
-        const res = await fetch(endpoint, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json' },
-          body: formData,
-        });
-
-        if (res.ok) {
-          // succès → redirection vers ta propre page
-          window.location.href = '/thank-you.html';
-        } else {
-          // échec côté Formspree (400, 500…)
-          const json = await res.json();
-          throw new Error(json.error || 'Submission failed');
-        }
-      } catch (err) {
-        // Message d’erreur inline (ou alert)
-        alert('Oops, something went wrong:\n' + err.message);
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-      }
-    });
-  })();
-</script>
 
   </body>
 </html>

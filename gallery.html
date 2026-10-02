@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <meta name="description" content="Explore our work, island life, and daily catches through a curated selection of photos and videos from the Scottish coast.">
-  <link rel="canonical" href="https://www.easdaleseafoods.com/gallery.html">
+
   <meta property="og:title" content="Gallery – Easdale Seafoods">
   <meta property="og:description" content="A visual dive into our fishing boats, coastal views, and the people behind Easdale Seafoods.">
   <meta property="og:url" content="https://www.easdaleseafoods.com/gallery.html">
@@ -22,20 +22,27 @@
   <link rel="icon" type="image/x-icon" href="Images/favicon1.ico">
 
   <!-- GLightbox CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet">
 
-
+  <link rel="canonical" href="https://www.easdaleseafoods.com/gallery.html" />
+  <link rel="alternate" hreflang="en" href="https://www.easdaleseafoods.com/gallery.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.easdaleseafoods.com/gallery-fr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.easdaleseafoods.com/gallery.html" />
+  <script src="scripts/site.js" defer></script>
+  <link href="vendor/glightbox/glightbox.min.css" rel="stylesheet" />
+  <script src="vendor/glightbox/glightbox.min.js" defer></script>
+  <script src="scripts/gallery.js" defer></script>
 </head>
 
 <body class="gallery-page">
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <!-- ========= NAVBAR ========= -->
   <header class="navbar">
     <div class="nav-container">
       <div class="brand">
-        <a href="index.html"><img id="img-logo" src="Images/logo-detoure.png" alt="Easdale Seafoods logo"></a>
-        <h1 class="site-title">Easdale Seafoods</h1>
+        <a href="index.html"><img id="img-logo" src="assets/logo-trimmed.webp" alt="Easdale Seafoods logo" width="320" height="125" decoding="async" /></a>
+        <p class="site-title">Easdale Seafoods</p>
       </div>
-      <nav id="nav-links">
+      <nav id="nav-links" aria-label="Main navigation">
         <a href="index.html">About us</a>
         <a href="products.html">Products</a>
         <a href="clients.html">Our clients</a>
@@ -46,22 +53,23 @@
           <option value="fr">FR</option>
         </select>
       </nav>
-      <div class="burger" id="burger-toggle">&#9776;</div>
+      <button id="burger-toggle" class="burger" type="button" aria-label="Open menu" aria-controls="nav-links" aria-expanded="false">&#9776;</button>
     </div>
   </header>
 
   <section class="hero-banner"></section>
 
   <!-- ========= MAIN ========= -->
-  <main class="site-container">
+  <main id="main-content" class="site-container">
     <h1 class="page-title">Gallery</h1>
     <p class="intro">Discover where we work, what we catch, and how we live — in images and videos.</p>
 
     <!-- YouTube player -->
-    <div class="iframe-container">
-      <div id="player"></div>
-      
-      <button id="toggle-play" aria-label="Pause video"></button>
+    <div class="iframe-container youtube-facade">
+      <button type="button" class="youtube-launch" aria-label="Play the Easdale Island video">
+        <img src="assets/easdale-island-960.webp" width="960" height="720" alt="" loading="lazy" />
+        <span>▶ Play the Easdale Island video</span>
+      </button>
     </div>
 
     <!-- 📷 PHOTO SECTION -->
@@ -70,70 +78,70 @@
 
       <figure class="gallery-item">
         <a href="Images/view-from-cuan-ferry (2).jpg" class="glightbox" data-gallery="gallery" data-title="Creels on Cuan Ferry pier">
-          <img src="Images/view-from-cuan-ferry (2).jpg" alt="Creels on Cuan Ferry pier" loading="lazy">
+          <img src="assets/view-from-cuan-ferry-2-960.webp" alt="Creels on Cuan Ferry pier" loading="lazy" width="960" height="540" decoding="async" srcset="assets/view-from-cuan-ferry-2-480.webp 480w, assets/view-from-cuan-ferry-2-960.webp 960w, assets/view-from-cuan-ferry-2-1600.webp 1600w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>Creels on Cuan Ferry pier</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/lobster-on-the-pier.jpeg" class="glightbox" data-gallery="gallery" data-title="Lobster on the pier">
-          <img src="Images/lobster-on-the-pier.jpeg" alt="Lobster on the pier" loading="lazy">
+          <img src="assets/lobster-on-the-pier-960.webp" alt="Lobster on the pier" loading="lazy" width="900" height="1600" decoding="async" srcset="assets/lobster-on-the-pier-480.webp 480w, assets/lobster-on-the-pier-960.webp 900w, assets/lobster-on-the-pier-1600.webp 900w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>Lobster on the pier</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/xl-live-langoustine.jpeg" class="glightbox" data-gallery="gallery" data-title="XL Live Langoustine">
-          <img src="Images/xl-live-langoustine.jpeg" alt="XL Live Langoustine" loading="lazy">
+          <img src="assets/xl-live-langoustine-960.webp" alt="XL Live Langoustine" loading="lazy" width="960" height="1440" decoding="async" srcset="assets/xl-live-langoustine-480.webp 480w, assets/xl-live-langoustine-960.webp 960w, assets/xl-live-langoustine-1600.webp 1024w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>XL Live Langoustine</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/olja-boat-in-bay.jpeg" class="glightbox" data-gallery="gallery" data-title="MV-Olja in Tayvallich">
-          <img src="Images/olja-boat-in-bay.jpeg" alt="MV-Olja in Tayvallich" loading="lazy">
+          <img src="assets/olja-boat-in-bay-960.webp" alt="MV-Olja in Tayvallich" loading="lazy" width="960" height="504" decoding="async" srcset="assets/olja-boat-in-bay-480.webp 480w, assets/olja-boat-in-bay-960.webp 960w, assets/olja-boat-in-bay-1600.webp 1456w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>MV-Olja in Tayvallich</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/fraoch-geal-boat.webp" class="glightbox" data-gallery="gallery" data-title="MV-Fraoch Geal Boat at sea">
-          <img src="Images/fraoch-geal-boat.webp" alt="mV-Fraoch Geal Boat at sea" loading="lazy">
+          <img src="assets/fraoch-geal-boat-960.webp" alt="mV-Fraoch Geal Boat at sea" loading="lazy" width="575" height="1020" decoding="async" srcset="assets/fraoch-geal-boat-480.webp 480w, assets/fraoch-geal-boat-960.webp 575w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>MV-Fraoch Geal Boat at sea</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/large-live-langoustine.jpeg" class="glightbox" data-gallery="gallery" data-title="Large live Langoustine">
-          <img src="Images/large-live-langoustine.jpeg" alt="Large live Langoustine" loading="lazy">
+          <img src="assets/large-live-langoustine-960.webp" alt="Large live Langoustine" loading="lazy" width="960" height="539" decoding="async" srcset="assets/large-live-langoustine-480.webp 480w, assets/large-live-langoustine-960.webp 960w, assets/large-live-langoustine-1600.webp 1600w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>Large live Langoustine</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/boat-balvicar.png" class="glightbox" data-gallery="gallery" data-title="Boats in Balvicar bay">
-          <img src="Images/boat-balvicar.png" alt="Boats in Balvicar bay" loading="lazy">
+          <img src="assets/boat-balvicar-960.webp" alt="Boats in Balvicar bay" loading="lazy" width="960" height="469" decoding="async" srcset="assets/boat-balvicar-480.webp 480w, assets/boat-balvicar-960.webp 960w, assets/boat-balvicar-1600.webp 1600w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>Boats in Balvicar bay</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/couteaux.jpeg" class="glightbox" data-gallery="gallery" data-title="Razor clams packed">
-          <img src="Images/couteaux.jpeg" alt="Razor clams packed" loading="lazy">
+          <img src="assets/couteaux-960.webp" alt="Razor clams packed" loading="lazy" width="960" height="1280" decoding="async" srcset="assets/couteaux-480.webp 480w, assets/couteaux-960.webp 960w, assets/couteaux-1600.webp 1200w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>Razor clams packed</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/langoustines-vivantes-tube.jpeg" class="glightbox" data-gallery="gallery" data-title="Live prawns packed in tube">
-          <img src="Images/langoustines-vivantes-tube.jpeg" alt="Live prawns packed in tube" loading="lazy">
+          <img src="assets/langoustines-vivantes-tube-960.webp" alt="Live prawns packed in tube" loading="lazy" width="960" height="1280" decoding="async" srcset="assets/langoustines-vivantes-tube-480.webp 480w, assets/langoustines-vivantes-tube-960.webp 960w, assets/langoustines-vivantes-tube-1600.webp 1200w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>XL Live prawns packed in tube</figcaption>
       </figure>
 
       <figure class="gallery-item">
         <a href="Images/easdale-island.JPG" class="glightbox" data-gallery="gallery" data-title="Easdale Island aerial view">
-          <img src="Images/easdale-island.JPG" alt="Easdale Island aerial view" loading="lazy">
+          <img src="assets/easdale-island-960.webp" alt="Easdale Island aerial view" loading="lazy" width="960" height="720" decoding="async" srcset="assets/easdale-island-480.webp 480w, assets/easdale-island-960.webp 960w, assets/easdale-island-1600.webp 1600w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </a>
         <figcaption>Easdale Island aerial view</figcaption>
       </figure>
@@ -141,7 +149,7 @@
     </section>
 
 
-<!-- 🌊 Wave Divider Wrapper 
+<!-- 🌊 Wave Divider Wrapper
 <div class="wave-divider">
   <svg class="wave" viewBox="0 0 1200 100" preserveAspectRatio="none" aria-hidden="true">
     <g class="wave-path">
@@ -166,9 +174,7 @@
   <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
     <path d="M0,50 C360,150 1080,-50 1440,50 L1440,100 L0,100 Z" fill="#e0f4ff"></path>
   </svg>
-</div>                --------->   
-
-
+</div>                --------->
 
   <!-- 🎥 Video Highlights -->
   <h2 class="gallery-section-title">Video Highlights</h2>
@@ -176,50 +182,40 @@
 
    <figure class="gallery-item video-label">
       <a href="videos/olja-boat-fishing-bad-weather.mp4" class="glightbox"
-         data-gallery="gallery" data-title="MV-Olja fishing in bad weather" data-type="video">
-        <video muted preload="metadata" poster="Images/olja-bad-weather.png">
-          <source src="videos/olja-boat-fishing-bad-weather.mp4" type="video/mp4">
-        </video>
+         data-gallery="gallery" data-title="MV-Olja fishing in bad weather" data-type="video" aria-label="Play: MV-Olja fishing in bad weather">
+        <img src="assets/olja-bad-weather-480.webp" width="480" height="757" alt="" loading="lazy" decoding="async" />
       </a>
       <figcaption>MV-Olja fishing in bad weather</figcaption>
     </figure>
 
     <figure class="gallery-item video-label">
       <a href="videos/xxl-live-prawn.mp4" class="glightbox"
-         data-gallery="gallery" data-title="XXL Live prawns – close-up" data-type="video">
-        <video muted preload="metadata" poster="Images/liveprawns.jpeg">
-          <source src="videos/xxl-live-prawn.mp4" type="video/mp4">
-        </video>
+         data-gallery="gallery" data-title="XXL Live prawns – close-up" data-type="video" aria-label="Play: XXL Live prawns – close-up">
+        <img src="assets/liveprawns-480.webp" width="480" height="453" alt="" loading="lazy" decoding="async" />
       </a>
       <figcaption>XXL Live prawns – close-up</figcaption>
     </figure>
 
     <figure class="gallery-item video-label">
       <a href="videos/olja-boat-loop.mp4" class="glightbox"
-         data-gallery="gallery" data-title="MV-Olja 360 video tour" data-type="video">
-        <video muted preload="metadata" poster="Images/olja-boat-in-bay.jpeg">
-          <source src="videos/olja-boat-loop.mp4" type="video/mp4">
-        </video>
+         data-gallery="gallery" data-title="MV-Olja 360 video tour" data-type="video" aria-label="Play: MV-Olja 360 video tour">
+        <img src="assets/olja-boat-in-bay-480.webp" width="480" height="252" alt="" loading="lazy" decoding="async" />
       </a>
       <figcaption>MV-Olja 360 video tour</figcaption>
     </figure>
 
     <figure class="gallery-item video-label">
       <a href="videos/olja-boat-top-view.mp4" class="glightbox"
-         data-gallery="gallery" data-title="Unloading prawns directly from the boat" data-type="video">
-        <video muted preload="metadata" poster="Images/unloading-prawns.png">
-          <source src="videos/olja-boat-top-view.mp4" type="video/mp4">
-        </video>
+         data-gallery="gallery" data-title="Unloading prawns directly from the boat" data-type="video" aria-label="Play: Unloading prawns directly from the boat">
+        <img src="assets/unloading-prawns-480.webp" width="480" height="355" alt="" loading="lazy" decoding="async" />
       </a>
       <figcaption>Unloading prawns directly from the boat</figcaption>
     </figure>
 
     <figure class="gallery-item video-label">
       <a href="videos/video-packing-razors.mp4" class="glightbox"
-         data-gallery="gallery" data-title="Packing live razor clams" data-type="video">
-        <video muted preload="metadata" poster="Images/couteaux.jpeg">
-          <source src="videos/video-packing-razors.mp4" type="video/mp4">
-        </video>
+         data-gallery="gallery" data-title="Packing live razor clams" data-type="video" aria-label="Play: Packing live razor clams">
+        <img src="assets/couteaux-480.webp" width="480" height="640" alt="" loading="lazy" decoding="async" />
       </a>
       <figcaption>Packing live razor clams</figcaption>
     </figure>
@@ -249,9 +245,9 @@ More videos on our&nbsp;YouTube channel.
   <!-- bloc média (thumbnail ou logo) -->
   <div class="media-block">
     <!-- remplace l’image par la vignette/visuel que tu préfères -->
-    <img src="Images/logo.png"
+    <img src="assets/logo-960.webp"
          alt="Logo YouTube Easdale Seafoods"
-         loading="lazy">
+         loading="lazy" width="960" height="960" decoding="async" srcset="assets/logo-480.webp 480w, assets/logo-960.webp 960w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
   </div>
 </section>
 
@@ -263,9 +259,9 @@ More videos on our&nbsp;YouTube channel.
      <h4>Easdale Seafoods Ltd</h4>
         <p>
           Balvicar, Isle of Seil<br />
-          Oban, Argyll, Scotland PA34 4T
+          Oban, Argyll, Scotland PA34 4TF
         </p>
-        <p>Phone: +44 1852 300295</p>
+        <p>Phone: <a href="tel:+441852300295">+44 1852 300295</a></p>
   </div>
   <div class="footer-col">
     <h4>Our Products</h4>
@@ -292,104 +288,8 @@ More videos on our&nbsp;YouTube channel.
 <!-- ========= JS ========= -->
 
 <!-- GLightbox -->
-<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-<script>
-  /* — GLightbox init — */
-  const lightbox = GLightbox({
-    selector: '.glightbox',
-    touchNavigation: true,
-    loop: true,
-    closeButton: true,
-    zoomable: true,
-    openEffect: 'zoom',
-    closeEffect: 'fade'
-  });
-
-  /* — Burger menu — */
-  const burger   = document.getElementById('burger-toggle');
-  const navLinks = document.getElementById('nav-links');
-
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    const expanded = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', String(!expanded));
-  });
-
-  /* — Language switcher — */
-  const langSelect = document.getElementById('lang-select');
-
-  langSelect.addEventListener('change', e => {
-    const lang        = e.target.value;
-    const currentPath = window.location.pathname;
-    const fileName    = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-
-    if (lang === 'en' && fileName.includes('-fr.html')) {
-      window.location.href = fileName.replace('-fr.html', '.html');
-    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
-      window.location.href = fileName.replace('.html', '-fr.html');
-    }
-  });
-</script>
 
 <!-- YouTube IFrame API -->
-
-<script>
-  const QUALITY_MIN = 'hd720';                     // plancher souhaité
-  const LADDER      = ['highres','hd2160','hd1440','hd1080','hd720'];
-  const btn         = document.getElementById('toggle-play');
-  let   isPaused    = false;                       // état bouton
-
-  /* === helper : demande HD si YouTube a rétrogradé === */
-  function requestHD(player){
-    const q = player.getPlaybackQuality();
-    if (LADDER.indexOf(q) < LADDER.indexOf(QUALITY_MIN)){
-      player.setPlaybackQuality(QUALITY_MIN);
-    }
-  }
-
-  /* === callback API === */
-  function onYouTubeIframeAPIReady () {
-    const player = new YT.Player('player', {
-      host: 'https://www.youtube-nocookie.com',
-      videoId: 'bXlrFH7NC4c',
-      playerVars: {
-        autoplay: 1, mute: 1,
-        controls: 0, modestbranding: 1,
-        rel: 0,
-        loop: 1, playlist: 'bXlrFH7NC4c',
-        vq: QUALITY_MIN,                   // 1ʳᵉ demande
-        disablekb: 1, fs: 0, playsinline: 1
-      },
-      events: {
-        /* prêt : mute + demande HD immédiate + re-tentative 3 s après */
-        onReady:  e => {
-          e.target.mute();
-          requestHD(e.target);
-          setTimeout(()=>requestHD(e.target), 3000);
-        },
-        /* si YT retrograde : on redemande */
-        onPlaybackQualityChange: e => requestHD(e.target),
-        /* synchro bouton & relance HD chaque fois que ça rejoue */
-        onStateChange: e => {
-          if (e.data === YT.PlayerState.PLAYING){
-            isPaused = false; btn.classList.remove('is-paused');
-            requestHD(e.target);
-          }
-          if (e.data === YT.PlayerState.PAUSED){
-            isPaused = true;  btn.classList.add('is-paused');
-          }
-        }
-      }
-    });
-
-    /* toggle Play / Pause (n’empêche pas le lien overlay) */
-    btn.addEventListener('click', ev => {
-      ev.stopPropagation();
-      isPaused ? player.playVideo() : player.pauseVideo();
-    });
-  }
-</script>
-<script src="https://www.youtube.com/iframe_api"></script>
 
 </body>
 </html>

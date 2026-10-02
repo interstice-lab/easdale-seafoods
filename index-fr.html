@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- 🔍 SEO + Rich Preview (Open Graph) -->
-  <meta name="description" content="Fresh Seafood Distribution from the West Coast of Scotland. 
+  <meta name="description" content="Fresh Seafood Distribution from the West Coast of Scotland.
 Langoustines, razor clams, and lobsters — shipped live across Europe.">
 
   <!-- Canonical (FR page) -->
-  <link rel="canonical" href="https://www.easdaleseafoods.com/index-fr.html" />
+
 
   <!-- Open Graph -->
   <meta property="og:title" content="Easdale Seafoods – Fresh Scottish Seafood Distribution" />
-  <meta property="og:description" content="We export live shellfish from creel boats off Scotland’s West Coast. Premium quality, traceable seafood — all year round." />
+  <meta property="og:description" content="Entreprise familiale sur l’île de Seil, en Écosse. Langoustines vivantes, couteaux et homards pour les professionnels et la clientèle locale." />
   <meta property="og:url" content="https://www.easdaleseafoods.com/index-fr.html" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
@@ -26,10 +26,16 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+  <link rel="canonical" href="https://www.easdaleseafoods.com/index-fr.html" />
+  <link rel="alternate" hreflang="en" href="https://www.easdaleseafoods.com/" />
+  <link rel="alternate" hreflang="fr" href="https://www.easdaleseafoods.com/index-fr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.easdaleseafoods.com/" />
+  <script src="scripts/site.js" defer></script>
 </head>
 
 
   <body class="index-page">
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
     <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-container">
@@ -37,13 +43,12 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
           <a href="index-fr.html">
             <img
               id="img-logo"
-              src="Images/logo-detoure.png"
-              alt="Logo Easdale Seafoods"
-            />
+              src="assets/logo-trimmed.webp"
+              alt="Logo Easdale Seafoods" width="320" height="125" decoding="async" />
           </a>
-          <h1 class="site-title">Easdale Seafoods</h1>
+          <p class="site-title">Easdale Seafoods</p>
         </div>
-        <nav id="nav-links">
+        <nav id="nav-links" aria-label="Navigation principale">
           <a href="index-fr.html">À propos</a>
           <a href="products-fr.html">Produits</a>
           <a href="clients-fr.html">Nos clients</a>
@@ -54,13 +59,11 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
             <option value="fr" selected>FR</option>
           </select>
         </nav>
-        <button id="burger-toggle" class="burger" aria-label="Menu mobile">
-          &#9776;
-        </button>
+        <button id="burger-toggle" class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-links" aria-expanded="false">&#9776;</button>
       </div>
     </header>
 
-    <div id="flex-container">
+    <main id="main-content">
       <!-- HERO BANNER -->
       <section class="hero-banner"></section>
 
@@ -80,7 +83,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
             Depuis <time datetime="1990">1990</time>, nous exportons des crustacés et coquillages vivants avec un engagement fort envers la <em>qualité</em>, la <em>durabilité</em> et la <em>confiance</em>.
           </p>
           <p>
-            Nos produits proviennent exclusivement de bateaux locaux utilisant des <strong>nasses « creel »</strong>, garantissant une manipulation douce et une fraîcheur optimale à chaque étape.
+            Toutes nos langoustines sont pêchées au <strong>casier (« creel »)</strong> sur la côte ouest de l’Écosse.
           </p>
           <p>
             Nous servons grossistes, et distributeurs du monde entier — qui apprécient l’attention et la constance qu’offre une petite équipe soudée.
@@ -90,15 +93,15 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
           <div class="media-block">
             <video
               class="hero-video"
-              autoplay
+
               muted
               loop
               playsinline
               controls
-              preload="metadata"
+              preload="none"
               title="Bateau OLGA au quai déchargeant des langoustines"
               aria-label="Bateau Olga dans la baie"
-            >
+             poster="assets/olja-boat-in-bay-960.webp">
               <source src="videos/olja-boat-loop.mp4" type="video/mp4" />
               Votre navigateur ne supporte pas la vidéo HTML5.
             </video>
@@ -113,7 +116,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
               <div class="product-card">
                 <a href="products-fr.html#langoustines" class="product-link">
                   <div class="img-container">
-                    <img src="Images/liveprawns.jpeg" alt="Langoustines vivantes" loading="lazy" />
+                    <img src="assets/liveprawns-960.webp" alt="Langoustines vivantes" loading="lazy" width="960" height="906" decoding="async" srcset="assets/liveprawns-480.webp 480w, assets/liveprawns-960.webp 960w, assets/liveprawns-1600.webp 1600w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
                   </div>
                   <div class="card-body">
                     <h3>Langoustines</h3>
@@ -123,7 +126,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
               <div class="product-card">
                 <a href="products-fr.html#razor-clams" class="product-link">
                   <div class="img-container">
-                    <img src="Images/razor-clams.jpeg" alt="Couteaux de mer" loading="lazy" />
+                    <img src="assets/razor-clams-960.webp" alt="Couteaux de mer" loading="lazy" width="960" height="1280" decoding="async" srcset="assets/razor-clams-480.webp 480w, assets/razor-clams-960.webp 960w, assets/razor-clams-1600.webp 1200w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
                   </div>
                   <div class="card-body">
                     <h3>Couteaux</h3>
@@ -133,7 +136,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
               <div class="product-card">
                 <a href="products-fr.html#lobsters" class="product-link">
                   <div class="img-container">
-                    <img src="Images/lobsters-freshly-caught.png" alt="Homards vivants" loading="lazy" />
+                    <img src="assets/lobsters-freshly-caught-960.webp" alt="Homards vivants" loading="lazy" width="960" height="960" decoding="async" srcset="assets/lobsters-freshly-caught-480.webp 480w, assets/lobsters-freshly-caught-960.webp 960w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
                   </div>
                   <div class="card-body">
                     <h3>Homards</h3>
@@ -150,7 +153,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
           <h2 id="clients-heading">Nos clients</h2>
 
           <p>
-            Nous expédions chaque jour depuis notre « île » des <strong>langoustines vivantes</strong>, des
+            Nous proposons depuis l’île de Seil des <strong>langoustines vivantes</strong>, des
             <strong>couteaux récoltés par nos plongeurs</strong> et des <strong>homards</strong> vers l’Europe et l’Asie.
           </p>
 
@@ -165,7 +168,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
           <a href="clients-fr.html#locals" class="button">Voir plus</a>
         </div>
         <div class="media-block">
-          <img src="Images/boat-balvicar.png" alt="Vue aérienne de Balvicar" loading="lazy" />
+          <img src="assets/boat-balvicar-960.webp" alt="Vue aérienne de Balvicar" loading="lazy" width="960" height="469" decoding="async" srcset="assets/boat-balvicar-480.webp 480w, assets/boat-balvicar-960.webp 960w, assets/boat-balvicar-1600.webp 1600w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
           <figcaption>Vue de Balvicar depuis les airs</figcaption>
         </div>
       </section>
@@ -174,8 +177,8 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
         <!-- GALERIE -->
         <section id="gallery" class="content-block">
           <div class="media-block">
-            <a href="gallery.html" aria-label="Voir la galerie complète">
-              <img src="Images/easdale-island-view-from-ellenabeich.JPG" alt="Aperçu de la galerie : Ile Easdale vue depuis Ellenabeich" class="gallery-cover" loading="lazy" />
+            <a href="gallery-fr.html" aria-label="Voir la galerie complète">
+              <img src="assets/easdale-island-view-from-ellenabeich-960.webp" alt="Aperçu de la galerie : Ile Easdale vue depuis Ellenabeich" class="gallery-cover" loading="lazy" width="960" height="485" decoding="async" srcset="assets/easdale-island-view-from-ellenabeich-480.webp 480w, assets/easdale-island-view-from-ellenabeich-960.webp 960w, assets/easdale-island-view-from-ellenabeich-1600.webp 1600w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
             </a>
           </div>
           <div class="text-block">
@@ -183,15 +186,15 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
             <p>
               Découvrez notre environnement, notre métier et notre quotidien — en images.
             </p>
-            <a href="gallery.html" class="button">Voir la galerie</a>
+            <a href="gallery-fr.html" class="button">Voir la galerie</a>
           </div>
         </section>
       </div>
-    </div>
+    </main>
 
     <!-- VIDÉO EN BAS DE PAGE -->
     <section class="hero-video-footer">
-      <video src="videos/landscape.mp4" autoplay muted loop playsinline></video>
+      <video src="videos/landscape.mp4" muted loop playsinline preload="none" controls poster="assets/landscape-poster.webp"></video>
     </section>
 
     <!-- FOOTER -->
@@ -200,9 +203,9 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
         <h4>Easdale Seafoods Ltd</h4>
         <p>
           Balvicar, Isle of Seil<br />
-          Oban, Argyll, Scotland PA34 4T
+          Oban, Argyll, Scotland PA34 4TF
         </p>
-        <p>Phone: +44 1852 300295</p>
+        <p>Téléphone : <a href="tel:+441852300295">+44 1852 300295</a></p>
       </div>
       <div class="footer-col">
         <h4>Nos Produits</h4>
@@ -214,7 +217,7 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
         </ul>
       </div>
       <div class="footer-col">
-        <h4>Links</h4>
+        <h4>Liens</h4>
         <ul>
           <li><a href="index-fr.html">À propos</a></li>
           <li><a href="products-fr.html">Produits</a></li>
@@ -230,45 +233,6 @@ Langoustines, razor clams, and lobsters — shipped live across Europe.">
     </div>
 
     <!-- JS -->
-<script>
-  const burger = document.getElementById('burger-toggle');
-  const navLinks = document.getElementById('nav-links');
-  burger.addEventListener('click', () => {
-    navLinks.classList.toggle('show');
-    const expanded = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!expanded));
-  });
 
-  // 🔄 Sélecteur de langue bi-directionnel
-  const langSelect = document.getElementById('lang-select');
-  langSelect.addEventListener('change', (e) => {
-    const lang = e.target.value;
-    const currentPath = window.location.pathname;
-    const fileName = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-
-    if (lang === 'en' && fileName.includes('-fr.html')) {
-      window.location.href = fileName.replace('-fr.html', '.html');
-    } else if (lang === 'fr' && !fileName.includes('-fr.html')) {
-      window.location.href = fileName.replace('.html', '-fr.html');
-    }
-  });
-</script>
-
-<script>
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.1 }
-  );
-  document.querySelectorAll('.product-section, .media-gallery').forEach((el) =>
-    observer.observe(el)
-  );
-</script>
 </body>
 </html>
