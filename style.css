@@ -1156,3 +1156,14 @@ html { scroll-padding-top: var(--header-offset); }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .product-section { opacity: 1; transform: none; }
 }
+
+/* Confirmed product grades: compact, accessible table on all screen sizes. */
+.grade-table { width: 100%; table-layout: fixed; border-collapse: collapse; margin-top: 1.5rem; }
+.grade-table caption { text-align: left; font-weight: 600; margin-bottom: .75rem; }
+.grade-table th, .grade-table td { padding: .65rem .5rem; text-align: left; border-bottom: 1px solid #c8d4dc; vertical-align: top; overflow-wrap: anywhere; }
+.grade-table thead { background: #edf3f6; }
+.grade-table tbody th { font-weight: 600; }
+@media (max-width: 480px) {
+  .grade-table { font-size: .875rem; }
+  .grade-table th, .grade-table td { padding: .55rem .3rem; }
+}

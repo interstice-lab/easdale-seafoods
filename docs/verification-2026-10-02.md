@@ -30,3 +30,18 @@ Google Fonts, Maps and YouTube returned `ERR_EMPTY_RESPONSE` in this local brows
 Numerical grade equivalences and tubes/loose presentation; razor-clam species, harvest area, classification and restrictions; razor/lobster packing details; bespoke packaging; the English summer-catch claim; exact shipping scope and exceptions. Confirmed packing weights and seasonal qualifications supplied by the owner are recorded in the working discussion and can be incorporated with this pass. Do not infer numerical grades from competitors.
 
 The old `.co.uk` domain is a separate access/provider dependency. Prefer page-matched permanent redirects, preserve the domain and its email service, and obtain specific approval before any legacy hosting or DNS change.
+
+
+## Confirmed product content update — 2 October, evening
+
+Owner supplied Stephen’s packing details and confirmed langoustine sizes are pieces/kg. EN/FR products now use the same five-row grade table: XXL 2–4 / 5 kg tubed; XL 5–9 / 5 kg tubed; L 10–14 / 5 kg tubed; M (MD) 15–24 / 4 kg loose; S (SM) 25–35 / 4 kg loose. Langoustine weights are net. Ice packs and boat-code traceability are described.
+
+Razor clams: Ensis siliqua, hand-dived, 22 kg boxes with gel packs; general spring fishing break and availability qualification, without fixed closure dates or Class A claim. Lobsters: variable box weights around 5–6 kg, packing list, mixed grades possible, sizes including 2 kg and over, availability confirmed on enquiry. Unconfirmed lobster fishing-method wording was omitted pending confirmation.
+
+Client pages now match in EN/FR and outline the owner-confirmed langoustine route to France (usual Monday–Thursday departures, expected next-morning Boulogne arrival, then clients’ carriers). No carrier name, internal volumes, customer prices or guaranteed delivery promise. Removed bespoke packaging and unsubstantiated environmental assertions. Home/product/client metadata aligned with the languages and updated content.
+
+Static checks: grade row counts and mappings, packing figures, local links and whitespace validation passed. Existing mobile tests documented above predate this new table; do not treat them as a visual mobile test of the evening content update.
+
+Hosted-preview checks earlier today confirmed EN/FR contact text, language switching and Google Maps rendering. The YouTube player loaded but playback could not be confirmed in the test browser. Real Formspree delivery remains untested; no valid form submission was sent.
+
+Remaining business confirmation: razor harvest areas/classification and whether the spring closure dates are fixed or indicative. These claims are not needed to review the current general copy. Production still requires explicit owner approval.
