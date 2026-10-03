@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 🔍 SEO + Aperçu enrichi (Open Graph) -->
-    <meta name="description" content="Distribution de fruits de mer vivants depuis la côte ouest de l'Écosse. Langoustines, couteaux, homards — expédiés dans toute l'Europe." />
-    <meta property="og:title" content="Easdale Seafoods – Distribution de coquillages écossais premium" />
-    <meta property="og:description" content="Nous exportons des langoustines, homards et couteaux depuis la côte ouest de l'Écosse. Qualité, traçabilité, fraîcheur toute l'année." />
+    <meta name="description" content="Grossistes, export et clientèle locale : produits vivants et modalités de transport auprès d’Easdale Seafoods." />
+    <meta property="og:title" content="Easdale Seafoods – Grossistes, export et clientèle locale" />
+    <meta property="og:description" content="Grossistes, export et clientèle locale : produits vivants et modalités de transport auprès d’Easdale Seafoods." />
     <meta property="og:url" content="https://www.easdaleseafoods.com/clients-fr.html" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
@@ -15,18 +15,24 @@
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
-  </head>
+    <link rel="canonical" href="https://www.easdaleseafoods.com/clients-fr.html" />
+  <link rel="alternate" hreflang="en" href="https://www.easdaleseafoods.com/clients.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.easdaleseafoods.com/clients-fr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.easdaleseafoods.com/clients.html" />
+  <script src="scripts/site.js" defer></script>
+</head>
   <body class="locals-page">
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
     <!-- NAVIGATION -->
     <header class="navbar">
       <div class="nav-container">
         <div class="brand">
           <a href="index-fr.html">
-            <img id="img-logo" src="Images/logo-detoure.png" alt="Logo Easdale Seafoods" />
+            <img id="img-logo" src="assets/logo-trimmed.webp" alt="Logo Easdale Seafoods" width="320" height="125" decoding="async" />
           </a>
-          <h1 class="site-title">Easdale Seafoods</h1>
+          <p class="site-title">Easdale Seafoods</p>
         </div>
-        <nav id="nav-links">
+        <nav id="nav-links" aria-label="Navigation principale">
           <a href="index-fr.html">Accueil</a>
           <a href="products-fr.html">Produits</a>
           <a href="clients-fr.html">Nos clients</a>
@@ -37,33 +43,25 @@
             <option value="en">EN</option>
           </select>
         </nav>
-        <div class="burger" id="burger-toggle">☰</div>
+        <button id="burger-toggle" class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-links" aria-expanded="false">&#9776;</button>
       </div>
     </header>
 
     <!-- HERO BANNER -->
     <section class="hero-banner"></section>
 
-    <main class="site-container">
+    <main id="main-content" class="site-container">
       <h1 class="page-title">Nos Clients</h1>
 
       <!-- SECTION: GROSSISTES & EXPORT -->
       <section class="content-block" id="wholesale">
         <div class="text-block">
-          <h2>Grossistes & Export</h2>
-          <p>
-            Nous expédions des langoustines, homards et couteaux vivants dans toute l'Europe et en Asie, avec traçabilité, documents d'exportation et formats d'emballage personnalisés.
-          </p>
-          <p>
-            Nos clients incluent des grossistes en produits de la mer et des distributeurs premium en <strong>France</strong> (Vendée, Bretagne, Paris, Toulouse), en <strong>Espagne</strong>, ainsi que des importateurs haut de gamme à <strong>Hong Kong</strong> et <strong>Singapour</strong>.
-          </p>
-          <p>
-            Nous cherchons à développer notre réseau de clients indépendants en France et en Espagne : poissonniers, restaurateurs et acheteurs directs sont les bienvenus.
-          </p>
-          <p style="margin-top: 2rem; font-weight: 500;">
-            Envie d'apparaître ici ?<br />
-            <a href="contact-fr.html" class="button">Contactez-nous →</a>
-          </p>
+          <h2>Grossistes et export</h2>
+          <p>Nous fournissons des langoustines, homards et couteaux vivants à des acheteurs professionnels en Europe et en Asie. Les produits et les modalités d’expédition dépendent de la destination et des disponibilités.</p>
+          <p>Pour les langoustines vivantes à destination de la France, les départs d’Écosse ont généralement lieu du lundi au jeudi, avec une arrivée prévue à Boulogne-sur-Mer le lendemain matin. Les colis sont ensuite remis aux transporteurs des clients pour la suite de la livraison.</p>
+          <p>Pour une première demande, indiquez votre entreprise, le produit et le calibre recherchés, la quantité souhaitée et le pays de destination. Nous confirmerons les disponibilités et les modalités de transport avec vous.</p>
+          <p>Les demandes de nouveaux acheteurs et fournisseurs sont les bienvenues.</p>
+          <p><a href="contact-fr.html" class="button">Faire une demande →</a></p>
         </div>
       </section>
 
@@ -83,7 +81,7 @@
               <article>
                 <figure>
                   <a href="https://tighantruish.co.uk" target="_blank" rel="noopener">
-                    <img src="Images/tigh-an-truish.png" alt="Extérieur Tigh an Truish Inn" loading="lazy" />
+                    <img src="assets/tigh-an-truish-960.webp" alt="Extérieur Tigh an Truish Inn" loading="lazy" width="960" height="517" decoding="async" srcset="assets/tigh-an-truish-480.webp 480w, assets/tigh-an-truish-960.webp 960w, assets/tigh-an-truish-1600.webp 1217w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
                   </a>
                   <figcaption>Tigh an Truish Inn</figcaption>
                 </figure>
@@ -102,7 +100,7 @@
               <article>
                 <figure>
                   <a href="https://oysterbareasdale.com" target="_blank" rel="noopener">
-                    <img src="Images/oyster-bar.jpg" alt="Oyster Bar Ellenabeich" loading="lazy" />
+                    <img src="assets/oyster-bar-480.webp" alt="Oyster Bar Ellenabeich" loading="lazy" width="480" height="319" decoding="async" />
                   </a>
                   <figcaption>Oyster Bar, Ellenabeich</figcaption>
                 </figure>
@@ -122,15 +120,15 @@
     <footer class="footer-grid">
       <div class="footer-col">
         <h4>Easdale Seafoods Ltd</h4>
-        <p>Balvicar, Isle of Seil<br />Oban, Argyll, Scotland PA34 4T</p>
-        <p>Phone: +44 1852 300295</p>
+        <p>Balvicar, Isle of Seil<br />Oban, Argyll, Scotland PA34 4TF</p>
+        <p>Téléphone : <a href="tel:+441852300295">+44 1852 300295</a></p>
       </div>
       <div class="footer-col">
         <h4>Produits</h4>
         <ul>
-          <li>Langoustines vivantes</li>
-          <li>Couteaux</li>
-          <li>Homards</li>
+          <li><a href="products-fr.html#langoustines">Langoustines vivantes</a></li>
+          <li><a href="products-fr.html#razor-clams">Couteaux</a></li>
+          <li><a href="products-fr.html#lobsters">Homards</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -140,7 +138,7 @@
           <li><a href="products-fr.html">Produits</a></li>
           <li><a href="gallery-fr.html">Galerie</a></li>
           <li><a href="contact-fr.html">Contact</a></li>
-          <li><a href="#">Mentions légales</a></li>
+
         </ul>
       </div>
     </footer>
@@ -149,43 +147,6 @@
     </div>
 
     <!-- SCRIPTS -->
-    <script>
-      const burger = document.getElementById("burger-toggle");
-      const navLinks = document.getElementById("nav-links");
-      burger.addEventListener("click", () => {
-        navLinks.classList.toggle("show");
-      });
 
-      // Lang switcher (bidirectional)
-      const langSelect = document.getElementById("lang-select");
-      langSelect.addEventListener("change", (e) => {
-        const lang = e.target.value;
-        const path = window.location.pathname;
-        const fileName = path.substring(path.lastIndexOf("/") + 1);
-
-        if (lang === "fr" && !fileName.includes("-fr.html")) {
-          window.location.href = fileName.replace(".html", "-fr.html");
-        } else if (lang === "en" && fileName.includes("-fr.html")) {
-          window.location.href = fileName.replace("-fr.html", ".html");
-        }
-      });
-    </script>
-
-    <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.1 }
-      );
-      document.querySelectorAll(".content-block").forEach((block) =>
-        observer.observe(block)
-      );
-    </script>
   </body>
 </html>

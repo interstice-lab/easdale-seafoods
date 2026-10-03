@@ -5,12 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- 🔍 SEO + Rich Preview (Open Graph) -->
-  <meta name="description" content="Langoustines vivantes, couteaux et homards — pêchés sur la côte ouest de l’Écosse et expédiés partout en Europe." />
-
-  <link rel="canonical" href="https://www.easdaleseafoods.com/products-fr.html" />
+  <meta name="description" content="Langoustines vivantes, couteaux de plongée et homards : calibres, conditionnements et disponibilité auprès d’Easdale Seafoods." />
 
   <meta property="og:title" content="Nos Produits – Easdale Seafoods" />
-  <meta property="og:description" content="Nous exportons des crustacés vivants depuis l’île de Seil : langoustines, couteaux et homards écossais, traçables toute l’année." />
+  <meta property="og:description" content="Langoustines vivantes, couteaux de plongée et homards : calibres, conditionnements et disponibilité auprès d’Easdale Seafoods." />
   <meta property="og:url" content="https://www.easdaleseafoods.com/products-fr.html" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://www.easdaleseafoods.com/Images/social-preview.png" />
@@ -22,20 +20,26 @@
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/x-icon" href="Images/favicon1.ico" />
+  <link rel="canonical" href="https://www.easdaleseafoods.com/products-fr.html" />
+  <link rel="alternate" hreflang="en" href="https://www.easdaleseafoods.com/products.html" />
+  <link rel="alternate" hreflang="fr" href="https://www.easdaleseafoods.com/products-fr.html" />
+  <link rel="alternate" hreflang="x-default" href="https://www.easdaleseafoods.com/products.html" />
+  <script src="scripts/site.js" defer></script>
 </head>
 
 <body class="products-page">
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
   <!-- NAVIGATION -->
   <header class="navbar">
     <div class="nav-container">
       <div class="brand">
         <a href="index-fr.html">
-          <img id="img-logo" src="Images/logo-detoure.png" alt="Logo Easdale Seafoods" />
+          <img id="img-logo" src="assets/logo-trimmed.webp" alt="Logo Easdale Seafoods" width="320" height="125" decoding="async" />
         </a>
-        <h1 class="site-title">Easdale Seafoods</h1>
+        <p class="site-title">Easdale Seafoods</p>
       </div>
 
-      <nav id="nav-links">
+      <nav id="nav-links" aria-label="Navigation principale">
         <a href="index-fr.html">À propos</a>
         <a href="products-fr.html">Produits</a>
         <a href="clients-fr.html">Nos clients</a>
@@ -47,13 +51,13 @@
         </select>
       </nav>
 
-      <div class="burger" id="burger-toggle">&#9776;</div>
+      <button id="burger-toggle" class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="nav-links" aria-expanded="false">&#9776;</button>
     </div>
   </header>
 
   <section class="hero-banner"></section>
 
-  <main class="site-container">
+  <main id="main-content" class="site-container">
     <h1 class="page-title">Nos Produits</h1>
 
     <!-- 🦐 LANGOUSTINES -->
@@ -67,12 +71,12 @@
 
       <div class="product-intro">
         <div class="product-image">
-          <img src="Images/langoustines-vivantes-tube.jpeg" alt="Langoustines en tube prêtes à l'expédition" loading="lazy" itemprop="image" />
+          <img src="assets/langoustines-vivantes-tube-960.webp" alt="Langoustines en tube prêtes à l'expédition" loading="lazy" itemprop="image" width="960" height="1280" decoding="async" srcset="assets/langoustines-vivantes-tube-480.webp 480w, assets/langoustines-vivantes-tube-960.webp 960w, assets/langoustines-vivantes-tube-1600.webp 1200w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </div>
         <div class="product-overview" itemprop="description">
           <h3 class="section-subtitle">Présentation</h3>
           <p>
-            Nos <strong>langoustines écossaises vivantes</strong>, capturées en nasses (« creels »),
+            Nos <strong>langoustines écossaises vivantes</strong>, pêchées au casier (« creel »),
             sont réputées pour leur <strong itemprop="flavor">chair douce et sucrée</strong> et leur
             <em itemprop="texture">texture tendre</em>.
           </p>
@@ -82,21 +86,26 @@
       <section class="product-details">
         <h3 class="visually-hidden">Caractéristiques principales</h3>
         <dl class="characteristics">
-          <dt>Méthode de pêche</dt>
-          <dd>Nasses individuelles, impact minimal sur l’habitat.</dd>
-
-          <dt>Conditionnement & transport</dt>
-          <dd>Expédiées vivantes en caisses isothermes avec  gel packs d'eau de mer.</dd>
-
-          <dt>Tailles</dt>
-          <dd>XXL, XL, L, M, S.</dd>
-
-          <dt>Disponibilité</dt>
-          <dd>Toute l’année.</dd>
-
-          <dt>Traçabilité</dt>
-          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la tracabilité.</dd>
-        </dl>
+            <dt>Méthode de pêche</dt>
+            <dd>Pêche au casier sur la côte ouest de l’Écosse.</dd>
+            <dt>Conditionnement</dt>
+            <dd>Expédiées vivantes avec des accumulateurs de froid. Poids nets et présentations selon le calibre, ci-dessous.</dd>
+            <dt>Disponibilité</dt>
+            <dd>Commercialisées toute l’année. Les volumes et les calibres varient selon la saison et les conditions de pêche ; disponibilité à confirmer lors de votre demande.</dd>
+            <dt>Traçabilité</dt>
+            <dd>Chaque caisse porte un code permettant d’identifier le bateau de pêche.</dd>
+          </dl>
+          <table class="grade-table">
+            <caption>Calibres et conditionnement des langoustines</caption>
+            <thead><tr><th scope="col">Calibre</th><th scope="col">Pièces / kg</th><th scope="col">Poids net / colis</th><th scope="col">Présentation</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">XXL</th><td>2–4</td><td>5 kg</td><td>En tubes</td></tr>
+              <tr><th scope="row">XL</th><td>5–9</td><td>5 kg</td><td>En tubes</td></tr>
+              <tr><th scope="row">LARGE</th><td>10–14</td><td>5 kg</td><td>En tubes</td></tr>
+              <tr><th scope="row">MEDIUM</th><td>15–24</td><td>4 kg</td><td>En vrac</td></tr>
+              <tr><th scope="row">SMALL</th><td>25–35</td><td>4 kg</td><td>En vrac</td></tr>
+            </tbody>
+          </table>
       </section>
 
       <footer>
@@ -115,12 +124,12 @@
 
       <div class="product-intro">
         <div class="product-image">
-          <img src="Images/couteaux.jpeg" alt="Couteaux de mer frais emballés pour livraison" loading="lazy" itemprop="image" />
+          <img src="assets/couteaux-960.webp" alt="Couteaux de mer frais emballés pour livraison" loading="lazy" itemprop="image" width="960" height="1280" decoding="async" srcset="assets/couteaux-480.webp 480w, assets/couteaux-960.webp 960w, assets/couteaux-1600.webp 1200w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </div>
         <div class="product-overview" itemprop="description">
           <h3 class="section-subtitle">Présentation</h3>
           <p>
-            Récoltés à la main par nos plongeurs dans des eaux de classe A,
+            Récoltés à la main en plongée dans des eaux de classe A,
             ces couteaux offrent une saveur douce et légèrement iodée,
             très recherchée en Europe et en Asie.
           </p>
@@ -130,21 +139,18 @@
       <section class="product-details">
         <h3 class="visually-hidden">Caractéristiques principales</h3>
         <dl class="characteristics">
-          <dt>Méthode de récolte</dt>
-          <dd>Plongée – aucune drague mécanique.</dd>
-
-          <dt>Conditionnement & transport</dt>
-          <dd>Expédiées vivantes en caisses isothermes avec  gel packs d'eau de mer.</dd>
-
-          <dt>Tailles</dt>
-          <dd>Extra-Large , Large , Medium </dd>
-
-          <dt>Disponibilité</dt>
-          <dd>Toute l’année.</dd>
-
-          <dt>Traçabilité</dt>
-          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la tracabilité.</dd>
-        </dl>
+            <dt>Méthode de récolte</dt>
+            <dd>Récoltés à la main en plongée.</dd>
+            <dt>Conditionnement</dt>
+            <dd>Colis de 22 kg avec des accumulateurs de froid pour le transport.</dd>
+            <dt>Calibres</dt>
+            <dd>À confirmer lors de votre demande.</dd>
+            <dt>Disponibilité</dt>
+            <dd>Disponibilité selon les périodes de pêche, avec une interruption au printemps. Contactez-nous pour connaître les disponibilités.</dd>
+            <dt>Traçabilité</dt>
+            <dd>Chaque caisse porte un code permettant d’identifier le bateau de pêche.</dd>
+          </dl>
+          <p>Pour toute question technique sur nos couteaux, appelez-nous au <a href="tel:+441852300295">+44 1852 300295</a>.</p>
       </section>
 
       <footer>
@@ -156,19 +162,19 @@
     <section id="lobsters" class="product-section" itemscope itemtype="http://schema.org/Product">
       <header>
         <h2 itemprop="name" class="product-title">
-          Homards Européen 
+          Homards européens
           <small itemprop="alternateName">(Homarus gammarus)</small>
         </h2>
       </header>
 
       <div class="product-intro">
         <div class="product-image">
-          <img src="Images/packed-lobsters-ready-to-be-shipped.png" alt="Homards écossais prêts à être expédiés" loading="lazy" itemprop="image" />
+          <img src="assets/packed-lobsters-ready-to-be-shipped-960.webp" alt="Homards écossais prêts à être expédiés" loading="lazy" itemprop="image" width="960" height="960" decoding="async" srcset="assets/packed-lobsters-ready-to-be-shipped-480.webp 480w, assets/packed-lobsters-ready-to-be-shipped-960.webp 960w" sizes="(max-width: 780px) calc(100vw - 48px), 480px" />
         </div>
         <div class="product-overview" itemprop="description">
           <h3 class="section-subtitle">Présentation</h3>
           <p>
-            Pêchés en nasses, nos homards se distinguent par une
+            Nos homards européens se distinguent par une
             <strong itemprop="flavor">chair sucrée et ferme</strong>
             <em itemprop="texture"> tout en restant délicate</em>.
           </p>
@@ -178,21 +184,15 @@
       <section class="product-details">
         <h3 class="visually-hidden">Caractéristiques principales</h3>
         <dl class="characteristics">
-          <dt>Méthode de pêche</dt>
-          <dd>Nasses (creels), approche éco-responsable.</dd>
-
-          <dt>Conditionnement & transport</dt>
-          <dd>Expédiées vivantes en caisses isothermes avec  gel packs d'eau de mer.</dd>
-
-          <dt>Tailles</dt>
-          <dd>De 400 grs à 2 kg.</dd>
-
-          <dt>Disponibilité</dt>
-          <dd>Toute l’année.</dd>
-
-          <dt>Traçabilité</dt>
-          <dd>Chaque caisse est reliée à un bateau identifié pour garantir la tracabilité.</dd>
-        </dl>
+            <dt>Conditionnement</dt>
+            <dd>Colis à poids variable, généralement d’environ 5 à 6 kg, avec des accumulateurs de froid. Une packing list détaille le poids de chaque colis.</dd>
+            <dt>Calibres</dt>
+            <dd>Plusieurs calibres, dont 2 kg et plus, selon disponibilité. Des calibres mélangés peuvent être proposés selon les volumes disponibles.</dd>
+            <dt>Disponibilité</dt>
+            <dd>Variable selon les arrivages. Précisez le calibre, la quantité et la destination souhaités lors de votre demande.</dd>
+            <dt>Traçabilité</dt>
+            <dd>Chaque caisse porte un code permettant d’identifier le bateau de pêche.</dd>
+          </dl>
       </section>
 
       <footer>
@@ -207,9 +207,9 @@
       <h4>Easdale Seafoods Ltd</h4>
         <p>
           Balvicar, Isle of Seil<br />
-          Oban, Argyll, Scotland PA34 4T
+          Oban, Argyll, Scotland PA34 4TF
         </p>
-        <p>Phone: +44 1852 300295</p>
+        <p>Téléphone : <a href="tel:+441852300295">+44 1852 300295</a></p>
     </div>
 
     <div class="footer-col">
@@ -238,29 +238,6 @@
   </div>
 
   <!-- SCRIPTS -->
-  <script>
-    const burger   = document.getElementById('burger-toggle');
-    const navLinks = document.getElementById('nav-links');
-    burger.addEventListener('click', () => navLinks.classList.toggle('show'));
 
-    document.getElementById('lang-select').addEventListener('change', (e) => {
-      if (e.target.value === 'en') {
-        window.location.href = window.location.pathname.replace('-fr.html', '.html');
-      }
-    });
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll('.product-section').forEach((el) => observer.observe(el));
-  </script>
 </body>
 </html>
