@@ -45,3 +45,8 @@ Static checks: grade row counts and mappings, packing figures, local links and w
 Hosted-preview checks earlier today confirmed EN/FR contact text, language switching and Google Maps rendering. The YouTube player loaded but playback could not be confirmed in the test browser. Real Formspree delivery remains untested; no valid form submission was sent.
 
 Remaining business confirmation: razor harvest areas/classification and whether the spring closure dates are fixed or indicative. These claims are not needed to review the current general copy. Production still requires explicit owner approval.
+
+
+## Razor-clam confirmation — 3 October
+
+The owner relayed Stephen’s confirmation that Easdale’s razor clams are harvested in Class A waters. She requested broad public wording and a telephone contact for technical questions. EN/FR product pages now use that bounded claim about Easdale’s razors, retain general seasonal availability, and provide the existing public office phone link. No named harvesting areas, fixed closure dates or regulatory explanations are published. This supersedes the earlier pending Class A wording; the confirmation is supplied by the business, not an independent classification audit. Still preview only.
